@@ -5,6 +5,10 @@ import {
   type Project,
   type ProjectAgent,
 } from "@elizaos/core";
+import { initDatabase } from "./libs/database/init";
+import { testDatabaseConnection } from "./libs/database/testConnection";
+import { userRoutes } from "./routes";
+import { startWebSocketServer } from "./libs/socket/init";
 
 /**
  * Represents the default character (Eliza) with her specific attributes and behaviors.
@@ -132,13 +136,22 @@ const initCharacter = ({ runtime }: { runtime: IAgentRuntime }) => {
   logger.info("Name: ", character.name);
 };
 
+const customInlinePlugin = {
+  name: "userRoutes",
+  description: "User routes for a custom API",
+  routes: userRoutes,
+};
 
 export const projectAgent: ProjectAgent = {
   character,
   init: async (runtime: IAgentRuntime) => {
     await initCharacter({ runtime });
+    await initDatabase();
+    await testDatabaseConnection();
+
+    startWebSocketServer(8080);
   },
-  plugins: [], // <-- Import custom plugins here
+  plugins: [customInlinePlugin],
 };
 const project: Project = {
   agents: [projectAgent],
