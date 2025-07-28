@@ -149,7 +149,7 @@ export const projectAgent: ProjectAgent = {
     await initDatabase();
     await testDatabaseConnection();
 
-    startWebSocketServer(8080);
+    startWebSocketServer(8086);
   },
   plugins: [customInlinePlugin],
 };
