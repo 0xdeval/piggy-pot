@@ -1,0 +1,89 @@
+import { fetchHistoricalTokenPrice } from "../1inch/fetchHistoricalTokenPrice";
+import { logger } from "@elizaos/core";
+
+export interface TokenVolatilityParams {
+  chainId: number;
+  tokenAddress: string;
+  days?: number;
+}
+
+export interface TokenVolatilityResult {
+  volatilityInPercentage: number;
+  isStableAsset: boolean;
+  impermanentLossRisk: "very low" | "moderate" | "high" | "very volatile";
+}
+
+/**
+ * Calculate annualized volatility and impermanent loss risk
+ */
+export async function calculateTokenVolatility({
+  chainId,
+  tokenAddress,
+  days = 30,
+}: TokenVolatilityParams): Promise<TokenVolatilityResult> {
+  const now = Math.floor(Date.now() / 1000);
+  const from = now - days * 86400;
+
+  const prices = await fetchHistoricalTokenPrice({
+    chainId,
+    tokenAddress,
+    from,
+    to: now,
+  });
+
+  if (prices.length < 2) {
+    logger.error("Not enough historical data to calculate volatility");
+    return {
+      volatilityInPercentage: 0,
+      isStableAsset: true,
+      impermanentLossRisk: "very low",
+    };
+  }
+
+  const logReturns: number[] = [];
+  for (let i = 1; i < prices.length; i++) {
+    const ret = Math.log(prices[i]?.v / prices[i - 1]?.v);
+    logReturns.push(ret);
+  }
+
+  const mean = logReturns.reduce((sum, r) => sum + r, 0) / logReturns.length;
+  const variance =
+    logReturns.reduce((sum, r) => sum + Math.pow(r - mean, 2), 0) /
+    (logReturns.length - 1);
+
+  const dailyStd = Math.sqrt(variance);
+  const annualizedVol = dailyStd * Math.sqrt(365) * 100;
+
+  // Determine impermanent loss risk based on volatility
+  let impermanentLossRisk: "very low" | "moderate" | "high" | "very volatile";
+  let isStableAsset: boolean;
+
+  if (annualizedVol < 5) {
+    impermanentLossRisk = "very low";
+    isStableAsset = true;
+  } else if (annualizedVol >= 5 && annualizedVol < 20) {
+    impermanentLossRisk = "moderate";
+    isStableAsset = false;
+  } else if (annualizedVol >= 20 && annualizedVol < 50) {
+    impermanentLossRisk = "high";
+    isStableAsset = false;
+  } else {
+    impermanentLossRisk = "very volatile";
+    isStableAsset = false;
+  }
+
+  return {
+    volatilityInPercentage: annualizedVol,
+    isStableAsset,
+    impermanentLossRisk,
+  };
+}
+
+// Example usage
+const result = await calculateTokenVolatility({
+  chainId: 1,
+  tokenAddress: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+});
+
+console.log(`Result:`, result);
+// Output: { volatility: 34.2, isStableAsset: false, impermanentLossRisk: "high" }

@@ -5,61 +5,17 @@ import {
   TOP_POOLS_PER_QUERY,
 } from "../../config/subgraph";
 import { fetchStablecoins, type Stablecoin } from "../defillama";
+import { Pool, GraphQLResponse } from "../../types/subgraph";
+import { isStablecoinPool } from "../../utils/pools/isStablecoinPool";
 
-interface Token {
-  id: string;
-  symbol: string;
-  name: string;
-  decimals: number;
-}
-
-interface Tick {
-  id: string;
-  tickIdx: string;
-  liquidityGross: string;
-  liquidityNet: string;
-  price0: string;
-  price1: string;
-}
-
-interface Pool {
-  id: string;
-  token0: Token;
-  token1: Token;
-  feeTier: string;
-  liquidity: string;
-  totalValueLockedUSD: string;
-  ticks: Tick[];
-  isStablecoinPool: boolean;
-}
-
-interface GraphQLResponse {
-  data: {
-    pools: Pool[];
-  };
-}
-
-// Check if a pool contains only stablecoins
-function isStablecoinPool(
-  token0: Token,
-  token1: Token,
-  stablecoins: Stablecoin[]
-): boolean {
-  const stablecoinSymbols = stablecoins.map((coin) =>
-    coin.symbol.toUpperCase()
-  );
-  const token0Symbol = token0.symbol.toUpperCase();
-  const token1Symbol = token1.symbol.toUpperCase();
-
-  return (
-    stablecoinSymbols.includes(token0Symbol) &&
-    stablecoinSymbols.includes(token1Symbol)
-  );
-}
-
-// Fetch pools from Uniswap V3 subgraph
 async function fetchPools(): Promise<Pool[]> {
-  const stablecoins = await fetchStablecoins();
+  let stablecoins: Stablecoin[] = [];
+  try {
+    stablecoins = await fetchStablecoins();
+  } catch (error) {
+    console.error("Error fetching stablecoins:", error);
+    stablecoins = [];
+  }
 
   const query = `
     query GetPools {
@@ -134,7 +90,7 @@ async function fetchPools(): Promise<Pool[]> {
             ),
           };
         })
-        .filter((pool) => pool.ticks.length > 0); // Only keep pools with valid ticks
+        .filter((pool) => pool.ticks.length > 0);
 
       return filteredPools;
     }
@@ -146,7 +102,7 @@ async function fetchPools(): Promise<Pool[]> {
   }
 }
 
-// Main function to run the script
+// Function to test the fetchPools function
 async function main() {
   console.log("Fetching Uniswap V3 pools...");
 

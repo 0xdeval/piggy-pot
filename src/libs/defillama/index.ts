@@ -19,6 +19,13 @@ export async function fetchStablecoins(): Promise<Stablecoin[]> {
       throw new Error(`Failed to fetch stablecoins: ${response.statusText}`);
     }
     const data = (await response.json()) as StablecoinsResponse;
+
+    // Check if the response has the expected structure
+    if (!data || !data.peggedAssets || !Array.isArray(data.peggedAssets)) {
+      console.error("Error fetching stablecoins: Invalid response structure");
+      return [];
+    }
+
     return data.peggedAssets;
   } catch (error) {
     console.error("Error fetching stablecoins:", error);
