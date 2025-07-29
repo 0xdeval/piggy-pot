@@ -1,0 +1,2672 @@
+[
+  {
+    "pool": {
+      "feeTier": "500",
+      "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+      "liquidity": "4238720467414425241",
+      "ticks": [
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-887270",
+          "liquidityGross": "44984643220159607",
+          "liquidityNet": "44984643220159607",
+          "price0": "0.000000000000000000000000000000000000002939544628336670031698378204689082",
+          "price1": "340188745685363564484273285553137100000",
+          "tickIdx": "-887270"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-887260",
+          "liquidityGross": "23703747677073",
+          "liquidityNet": "23703747677073",
+          "price0": "0.000000000000000000000000000000000000002942485496112896546477456124094651",
+          "price1": "339848743968671120505409564884146600000",
+          "tickIdx": "-887260"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-886800",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000000000000000000000000000000000003080994181769359689381975052642655",
+          "price1": "324570557749550159409168872294089200000",
+          "tickIdx": "-886800"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-875030",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000000000000000000000000000000000009996084687873012746267017852214869",
+          "price1": "100039168456943319092864252594907000000",
+          "tickIdx": "-875030"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-460540",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.00000000000000000001000004406388801028637721858338356",
+          "price1": "99999559363061514807.28851207247648",
+          "tickIdx": "-460540"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-355340",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000003702980624234542260881118908880714",
+          "price1": "2700527227864482.67367591920069593",
+          "tickIdx": "-355340"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-354570",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000003999359485702611277893727057521499",
+          "price1": "2500400385549035.107521329660562945",
+          "tickIdx": "-354570"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-332730",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.00000000000000355174820366365708320222765548087",
+          "price1": "281551490324818.6029024621894650913",
+          "tickIdx": "-332730"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-203000",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000001528490686780151368759949674097575",
+          "price1": "654240165.5757250975674980049763726",
+          "tickIdx": "-203000"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-202860",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000001550038965010263808290682344048033",
+          "price1": "645145072.2036386708892982144751605",
+          "tickIdx": "-202860"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-202710",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000001573463624025852879296379374605085",
+          "price1": "635540590.0273735504152160700378894",
+          "tickIdx": "-202710"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-202540",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000001600439804743090222747001102364064",
+          "price1": "624828248.4829377798055535062080612",
+          "tickIdx": "-202540"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-92110",
+          "liquidityGross": "398290794261",
+          "liquidityNet": "398290794261",
+          "price0": "0.00009998009110959786021727135218224337",
+          "price1": "10001.99128548305839408829466499453",
+          "tickIdx": "-92110"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-83760",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0002304258986976505571348862148101373",
+          "price1": "4339.789952656897627368838118140686",
+          "tickIdx": "-83760"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-83700",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0002318125405246666319203252872815677",
+          "price1": "4313.830467224409421880653754214227",
+          "tickIdx": "-83700"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-82720",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0002556793525717841550816882404904569",
+          "price1": "3911.148827394036387927661776471481",
+          "tickIdx": "-82720"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-82710",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0002559351470107514887590234857809183",
+          "price1": "3907.239828838324245092589445215489",
+          "tickIdx": "-82710"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-82660",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0002572179629735846224760099008749579",
+          "price1": "3887.753360766240391790994463724156",
+          "tickIdx": "-82660"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-82650",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0002574752967155131029938619105068706",
+          "price1": "3883.86774481479473001477233068696",
+          "tickIdx": "-82650"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-81220",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0002970547992056651968611379712986808",
+          "price1": "3366.382238812618321459147589455049",
+          "tickIdx": "-81220"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-79010",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0003705193172225854844862548571688053",
+          "price1": "2698.914613942410951460851824167692",
+          "tickIdx": "-79010"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-78240",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0004001749121429764834544753765022756",
+          "price1": "2498.907276932730418306081495871482",
+          "tickIdx": "-78240"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-77290",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0004400537956161813881695986561789877",
+          "price1": "2272.449436777971546639944041056733",
+          "tickIdx": "-77290"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-77110",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0004480460791014253428390113656023537",
+          "price1": "2231.913293395047050574591439716529",
+          "tickIdx": "-77110"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-77070",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0004498417626080409398666828137060781",
+          "price1": "2223.003916315627914946965046675626",
+          "tickIdx": "-77070"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-76700",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0004667967940225987798172165461823552",
+          "price1": "2142.259785853601091331010725326918",
+          "tickIdx": "-76700"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-76280",
+          "liquidityGross": "29651014881301328537",
+          "liquidityNet": "29651014881301328537",
+          "price0": "0.0004868187769323702139965140650737854",
+          "price1": "2054.152484218828504485249941001241",
+          "tickIdx": "-76280"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-76010",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0005001412620548683318369684355012385",
+          "price1": "1999.435111375182499584648435532302",
+          "tickIdx": "-76010"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-75980",
+          "liquidityGross": "29651014881301328537",
+          "liquidityNet": "-29651014881301328537",
+          "price0": "0.000501643863487467749609529755367402",
+          "price1": "1993.446093505302822434930902108748",
+          "tickIdx": "-75980"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-75630",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0005195113627409342348839646380354198",
+          "price1": "1924.885713228705625171320946101719",
+          "tickIdx": "-75630"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-75520",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0005252572448587836101294407424348416",
+          "price1": "1903.829047172594192341736121017099",
+          "tickIdx": "-75520"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-75410",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0005310666773889628210900802072208922",
+          "price1": "1883.002723719345600104030717708645",
+          "tickIdx": "-75410"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-75060",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0005499821553852869473345192697544526",
+          "price1": "1818.240810557672636817084281852398",
+          "tickIdx": "-75060"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-46050",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.01000400500818288116092515190711005",
+          "price1": "99.95996595184023576217394076839705",
+          "tickIdx": "-46050"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-32190",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.04000147059259258700221041712397144",
+          "price1": "24.99908091341968104769774197536626",
+          "tickIdx": "-32190"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-20",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.9980020984608850751370342421938461",
+          "price1": "1.002001901140484655078767753259867",
+          "tickIdx": "-20"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#-10",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.9990005497800714799850038562430514",
+          "price1": "1.00100045012002100252021001200045",
+          "tickIdx": "-10"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#0",
+          "liquidityGross": "13570724854034",
+          "liquidityNet": "13570724854034",
+          "price0": "1",
+          "price1": "1",
+          "tickIdx": "0"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#100",
+          "liquidityGross": "100",
+          "liquidityNet": "100",
+          "price0": "1.01004966209287656885501886290726",
+          "price1": "0.9900503287412094817103488094315269",
+          "tickIdx": "100"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#110",
+          "liquidityGross": "100",
+          "liquidityNet": "-100",
+          "price0": "1.011060166398544560257916276223344",
+          "price1": "0.9890608227224087763534387999349978",
+          "tickIdx": "110"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#150",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "1.015112303331957826764353098312306",
+          "price1": "0.9851126783880424865309649427654627",
+          "tickIdx": "150"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#200",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "1.020200319893934137968089116008484",
+          "price1": "0.9801996534405769655174731753215109",
+          "tickIdx": "200"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#350",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "1.035617896587531679579394885497809",
+          "price1": "0.9656071059558777991839032473956784",
+          "tickIdx": "350"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#22990",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "9.963068013648343469743285556135264",
+          "price1": "0.1003706888912237037544892826318392",
+          "tickIdx": "22990"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#23030",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "10.00299809615967335016888700786108",
+          "price1": "0.09997002802428979395747793895403228",
+          "tickIdx": "23030"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#35380",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "34.39197016833946620076970751797931",
+          "price1": "0.0290765546464848716678116012068153",
+          "tickIdx": "35380"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#35440",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "34.5989319057936546491081164053448",
+          "price1": "0.02890262632161047042727833112036055",
+          "tickIdx": "35440"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#35620",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "35.22731978662207440207755276888085",
+          "price1": "0.02838705885253751156149814690583951",
+          "tickIdx": "35620"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#35670",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "35.40388861149007082947746739038985",
+          "price1": "0.02824548486675154034543230588338558",
+          "tickIdx": "35670"
+        },
+        {
+          "id": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640#39060",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "49.69005005796944651627712948421728",
+          "price1": "0.0201247533225138471105837703674145",
+          "tickIdx": "39060"
+        }
+      ],
+      "token0": {
+        "decimals": "6",
+        "id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "name": "USD Coin",
+        "symbol": "USDC"
+      },
+      "token1": {
+        "decimals": "18",
+        "id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "name": "Wrapped Ether",
+        "symbol": "WETH"
+      },
+      "totalValueLockedUSD": "469434302.7814979505916768168664411",
+      "isStablecoinPool": false
+    },
+    "token0": {
+      "tokenQuality": {
+        "hasInProviders": true,
+        "hasInternalTags": true,
+        "hasEip2612": true,
+        "rating": 8,
+        "qualityScore": "Good",
+        "trustworthiness": "High",
+        "assessment": "This token shows good quality with solid provider support and reasonable rating. It appears to be a reliable token with good standing. Specific factors: listed in major providers, has internal quality tags, supports EIP-2612 (gasless approvals), has a rating of 8/10.",
+        "recommendation": "This token shows good quality metrics. Suitable for LP positions with moderate confidence."
+      }
+    },
+    "token1": {
+      "tokenQuality": {
+        "hasInProviders": true,
+        "hasInternalTags": true,
+        "hasEip2612": false,
+        "rating": 7,
+        "qualityScore": "Good",
+        "trustworthiness": "High",
+        "assessment": "This token shows good quality with solid provider support and reasonable rating. It appears to be a reliable token with good standing. Specific factors: listed in major providers, has internal quality tags, does not support EIP-2612, has a rating of 7/10.",
+        "recommendation": "This token shows good quality metrics. Suitable for LP positions with moderate confidence."
+      }
+    },
+    "impermanentLoss": {
+      "impermanentLoss": {
+        "impermanent_loss_percentage": -2.269583813278686,
+        "price_ratio": 1.5375587868193978,
+        "initial_ratio": 0.0002664469779089909,
+        "current_ratio": 0.00040967789210544296,
+        "severity": "Low",
+        "riskLevel": "Low",
+        "impact": "Small impact on position value",
+        "recommendation": "Low impermanent loss risk. Consider monitoring price movements.",
+        "price_movement": {
+          "token0": {
+            "initial": 0.9997915193333315,
+            "current": 0.9998047950977723,
+            "change_percentage": 0.0013278532758129516,
+            "movement": "Stable"
+          },
+          "token1": {
+            "initial": 3752.3094732747386,
+            "current": 2440.4655812875603,
+            "change_percentage": -34.96097273773898,
+            "movement": "Strong decrease"
+          }
+        },
+        "hodl_vs_lp_comparison": {
+          "hodl_value": 1,
+          "lp_value": 0.9773041618672131,
+          "difference": -0.02269583813278686,
+          "performance": "LP position underperforming HODL strategy"
+        }
+      }
+    },
+    "tokenCorrelation": {
+      "tokenCorrelation": {
+        "correlation": 0,
+        "stable_pair": false,
+        "impermanent_loss_risk": "very risky",
+        "correlationStrength": "No Correlation",
+        "relationship": "Uncorrelated - tokens move independently",
+        "assessment": "These tokens show no correlation, indicating they move completely independently of each other",
+        "recommendation": "This pair has very high impermanent loss risk. Consider avoiding or using very small position sizes."
+      }
+    },
+    "tokensVolatility": {
+      "token0": {
+        "tokenPriceVolatility": {
+          "volatilityInPercentage": 0.09031751998349877,
+          "isStableAsset": true,
+          "impermanentLossRisk": "very low",
+          "volatilityLevel": "Very Low",
+          "stability": "Very Stable",
+          "assessment": "This token exhibits very low price volatility, indicating extremely stable price movements. It behaves like a stablecoin or highly stable asset. The annualized volatility is 0.09%, which is very low compared to typical assets. This makes it very suitable for liquidity provision with minimal impermanent loss concerns.",
+          "recommendation": "This token has very low volatility risk. Excellent for LP positions with minimal impermanent loss concerns."
+        }
+      },
+      "token1": {
+        "tokenPriceVolatility": {
+          "volatilityInPercentage": 57.21189157356451,
+          "isStableAsset": false,
+          "impermanentLossRisk": "very volatile",
+          "volatilityLevel": "High",
+          "stability": "Volatile",
+          "assessment": "This token shows high price volatility, indicating significant price fluctuations and unstable behavior. The annualized volatility is 57.21%, which is high compared to typical assets. This presents very high impermanent loss risk that makes liquidity provision extremely risky.",
+          "recommendation": "This token has high volatility risk. Consider smaller position sizes and active monitoring for impermanent loss."
+        }
+      }
+    },
+    "poolGrowthTendency": {
+      "poolGrowthTrend": {
+        "poolGrowthTrendInPercentage": 20.93440197020903,
+        "trend": "positive",
+        "performance": "Strong growth",
+        "strength": "Strong",
+        "assessment": "This pool has shown strong positive performance with healthy growth in TVL and fees",
+        "recommendation": "This pool shows strong performance. Consider maintaining current position or moderate increase."
+      }
+    },
+    "apyVolatility": {
+      "apyVolatility": {
+        "stdDev": 1.8434442950366385,
+        "mean": 3.60435977187346,
+        "coefficientOfVariation": 0.5114484712158632,
+        "stabilityScore": "Moderate",
+        "riskLevel": "Medium",
+        "description": "This pool shows moderate APY volatility with some fluctuations."
+      }
+    }
+  },
+  {
+    "pool": {
+      "feeTier": "3000",
+      "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8",
+      "liquidity": "1249089893800672013",
+      "ticks": [
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-887220",
+          "liquidityGross": "1895582601121025",
+          "liquidityNet": "1895582601121025",
+          "price0": "0.000000000000000000000000000000000000002954278418582885262890650958806081",
+          "price1": "338492131855223783697272027725930700000",
+          "tickIdx": "-887220"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-887160",
+          "liquidityGross": "75847743082028",
+          "liquidityNet": "75847743082028",
+          "price0": "0.000000000000000000000000000000000000002972056481062021427395145623545054",
+          "price1": "336467360688469975957440017642336300000",
+          "tickIdx": "-887160"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-759900",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000000000000000000000000000000999107713846756958465322880414777",
+          "price1": "1000893083038872323525966637386860",
+          "tickIdx": "-759900"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-690720",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000000000000000000000000001009046837078248381029635525468557",
+          "price1": "991034274380717544912961511036.0267",
+          "tickIdx": "-690720"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-355740",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000003557791792252358767050832804370817",
+          "price1": "2810732213665944.362842356102087063",
+          "tickIdx": "-355740"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-354180",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000004158407838377213128792882748636488",
+          "price1": "2404766532929204.836713604170186394",
+          "tickIdx": "-354180"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-345420",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000009985044991568652147317072593371032",
+          "price1": "1001497740715637.818923159196798757",
+          "tickIdx": "-345420"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-300240",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.00000000000009149437498684691034528643666164424",
+          "price1": "10929633653913.24276867398106114532",
+          "tickIdx": "-300240"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-203760",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000001416635322928071149644681114672084",
+          "price1": "705897970.9281006185365396189270598",
+          "tickIdx": "-203760"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-202860",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000001550038965010263808290682344048033",
+          "price1": "645145072.2036386708892982144751605",
+          "tickIdx": "-202860"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-201240",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000001822614429201399734576785371122104",
+          "price1": "548662396.1592150541683608182673181",
+          "tickIdx": "-201240"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-198540",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000002387527879952001911288728048709504",
+          "price1": "418843276.5108081907475298588175515",
+          "tickIdx": "-198540"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-197940",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000002535156753854322725554069401013476",
+          "price1": "394452926.2262189989968002273538734",
+          "tickIdx": "-197940"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-196980",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000002790583381511243447115198422342696",
+          "price1": "358348009.4611790165950956408753442",
+          "tickIdx": "-196980"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-84120",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000222278506620094462990000602984761",
+          "price1": "4498.860529547924421730052772146379",
+          "tickIdx": "-84120"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-83460",
+          "liquidityGross": "1358110157960897446",
+          "liquidityNet": "1358110157960897446",
+          "price0": "0.0002374430559121993600803518549462172",
+          "price1": "4211.536092972858149230153569487033",
+          "tickIdx": "-83460"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-83340",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0002403093928963483492157774700337134",
+          "price1": "4161.302177777652828321338111796914",
+          "tickIdx": "-83340"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-82980",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0002491176887303326202543447070556937",
+          "price1": "4014.166979055790338130134668808218",
+          "tickIdx": "-82980"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-81480",
+          "liquidityGross": "1358110157960897446",
+          "liquidityNet": "-1358110157960897446",
+          "price0": "0.000289431290638111967036735338981163",
+          "price1": "3455.05144863670518794740574855175",
+          "tickIdx": "-81480"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-81360",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0002929252130421125457342590174021731",
+          "price1": "3413.840651047796556362927654040389",
+          "tickIdx": "-81360"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-80940",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000305489445882765683291425587042808",
+          "price1": "3273.435509728735359560121366949973",
+          "tickIdx": "-80940"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-80100",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0003322577527032774153944283990544477",
+          "price1": "3009.711562375639715186338613911201",
+          "tickIdx": "-80100"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-79380",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0003570612842119617579818774884802902",
+          "price1": "2800.639677883339181634848803645128",
+          "tickIdx": "-79380"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-78600",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000386025539493210028358145670612347",
+          "price1": "2590.502175873753131073196052858181",
+          "tickIdx": "-78600"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-77880",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0004148429156238656562314856127274991",
+          "price1": "2410.550987706129743532584038297728",
+          "tickIdx": "-77880"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-77640",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0004249190720498402550614460435558151",
+          "price1": "2353.389305817523946628536271590027",
+          "tickIdx": "-77640"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-76140",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0004936818259150759809596679178062766",
+          "price1": "2025.596138051923679677737821952354",
+          "tickIdx": "-76140"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-76020",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0004996413957605122661205544361180469",
+          "price1": "2001.435446472332007457715061875249",
+          "tickIdx": "-76020"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-75420",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0005305359026814497138111057167417697",
+          "price1": "1884.886574020290494058736690451873",
+          "tickIdx": "-75420"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-74640",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0005735721488402770592295070410483081",
+          "price1": "1743.459828065101066916999094989892",
+          "tickIdx": "-74640"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-74040",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000609038042724090781548907383660727",
+          "price1": "1641.93355726552635815190562740961",
+          "tickIdx": "-74040"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-73380",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0006505885622056789647373673872129693",
+          "price1": "1537.069752056073012651557999280958",
+          "tickIdx": "-73380"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-51420",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.005847489137502439856445964199540932",
+          "price1": "171.0135712072680616306561868123071",
+          "tickIdx": "-51420"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-49320",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.007213843314069042288430262732602867",
+          "price1": "138.6223620978454197256156589757253",
+          "tickIdx": "-49320"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-23640",
+          "liquidityGross": "84117458436",
+          "liquidityNet": "84117458436",
+          "price0": "0.09405441249270853700152385432175798",
+          "price1": "10.63214338909962230763083722113553",
+          "tickIdx": "-23640"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-1740",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.8403042077859023045607653103039314",
+          "price1": "1.190045213072152005202431109200761",
+          "tickIdx": "-1740"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-1080",
+          "liquidityGross": "955255939572502",
+          "liquidityNet": "955255939572502",
+          "price0": "0.8976324433094195884383843668365469",
+          "price1": "1.114041729945910239807309095780991",
+          "tickIdx": "-1080"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#-60",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.994018262239490337401066230369515",
+          "price1": "1.006017734268818165222506292999137",
+          "tickIdx": "-60"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#0",
+          "liquidityGross": "3183471432",
+          "liquidityNet": "3183471432",
+          "price0": "1",
+          "price1": "1",
+          "tickIdx": "0"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#1500",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "1.161825529585008366553741025173324",
+          "price1": "0.8607144313287635259554775623241821",
+          "tickIdx": "1500"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#1560",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "1.16881708688877988446314458767405",
+          "price1": "0.8555658633138686602441481229035321",
+          "tickIdx": "1560"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#22980",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "9.953110423130939829812023049440951",
+          "price1": "0.1004711047589715192132792366380101",
+          "tickIdx": "22980"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#46080",
+          "liquidityGross": "439049627017196",
+          "liquidityNet": "439049627017196",
+          "price0": "100.2602810816591915339715672222582",
+          "price1": "0.009974039462202664295231746582056602",
+          "tickIdx": "46080"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#62460",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "515.7838182518952952033427139641593",
+          "price1": "0.001938796768361635990088891929700565",
+          "tickIdx": "62460"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#63780",
+          "liquidityGross": "2936263980950",
+          "liquidityNet": "2936263980950",
+          "price0": "588.5613216920645024707307205175046",
+          "price1": "0.001699058302242974035647598650480348",
+          "tickIdx": "63780"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#69060",
+          "liquidityGross": "9808405604303",
+          "liquidityNet": "9808405604303",
+          "price0": "997.9016486598998775322638130630191",
+          "price1": "0.001002102763677079836804470243642486",
+          "tickIdx": "69060"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#73140",
+          "liquidityGross": "1096515",
+          "liquidityNet": "1096515",
+          "price0": "1500.62103445759729620537110304243",
+          "price1": "0.0006663907655815661367396560574919887",
+          "tickIdx": "73140"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#74160",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "1661.754456481234641508244217219896",
+          "price1": "0.0006017736231124664342180978324285759",
+          "tickIdx": "74160"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#74940",
+          "liquidityGross": "1690409158907788",
+          "liquidityNet": "1690409156714758",
+          "price0": "1796.553389943038443894826024301778",
+          "price1": "0.000556621364885630267356135374286257",
+          "tickIdx": "74940"
+        },
+        {
+          "id": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8#75480",
+          "liquidityGross": "1690409157811273",
+          "liquidityNet": "-1690409157811273",
+          "price0": "1896.229320549607663335381035919963",
+          "price1": "0.0005273623760390740064994723310272307",
+          "tickIdx": "75480"
+        }
+      ],
+      "token0": {
+        "decimals": "6",
+        "id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "name": "USD Coin",
+        "symbol": "USDC"
+      },
+      "token1": {
+        "decimals": "18",
+        "id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "name": "Wrapped Ether",
+        "symbol": "WETH"
+      },
+      "totalValueLockedUSD": "359765905.5888385813537554906807391",
+      "isStablecoinPool": false
+    },
+    "token0": {
+      "tokenQuality": {
+        "hasInProviders": true,
+        "hasInternalTags": true,
+        "hasEip2612": true,
+        "rating": 8,
+        "qualityScore": "Good",
+        "trustworthiness": "High",
+        "assessment": "This token shows good quality with solid provider support and reasonable rating. It appears to be a reliable token with good standing. Specific factors: listed in major providers, has internal quality tags, supports EIP-2612 (gasless approvals), has a rating of 8/10.",
+        "recommendation": "This token shows good quality metrics. Suitable for LP positions with moderate confidence."
+      }
+    },
+    "token1": {
+      "tokenQuality": {
+        "hasInProviders": true,
+        "hasInternalTags": true,
+        "hasEip2612": false,
+        "rating": 7,
+        "qualityScore": "Good",
+        "trustworthiness": "High",
+        "assessment": "This token shows good quality with solid provider support and reasonable rating. It appears to be a reliable token with good standing. Specific factors: listed in major providers, has internal quality tags, does not support EIP-2612, has a rating of 7/10.",
+        "recommendation": "This token shows good quality metrics. Suitable for LP positions with moderate confidence."
+      }
+    },
+    "impermanentLoss": {
+      "impermanentLoss": {
+        "impermanent_loss_percentage": -2.269583813278686,
+        "price_ratio": 1.5375587868193978,
+        "initial_ratio": 0.0002664469779089909,
+        "current_ratio": 0.00040967789210544296,
+        "severity": "Low",
+        "riskLevel": "Low",
+        "impact": "Small impact on position value",
+        "recommendation": "Low impermanent loss risk. Consider monitoring price movements.",
+        "price_movement": {
+          "token0": {
+            "initial": 0.9997915193333315,
+            "current": 0.9998047950977723,
+            "change_percentage": 0.0013278532758129516,
+            "movement": "Stable"
+          },
+          "token1": {
+            "initial": 3752.3094732747386,
+            "current": 2440.4655812875603,
+            "change_percentage": -34.96097273773898,
+            "movement": "Strong decrease"
+          }
+        },
+        "hodl_vs_lp_comparison": {
+          "hodl_value": 1,
+          "lp_value": 0.9773041618672131,
+          "difference": -0.02269583813278686,
+          "performance": "LP position underperforming HODL strategy"
+        }
+      }
+    },
+    "tokenCorrelation": {
+      "tokenCorrelation": {
+        "correlation": 0,
+        "stable_pair": false,
+        "impermanent_loss_risk": "very risky",
+        "correlationStrength": "No Correlation",
+        "relationship": "Uncorrelated - tokens move independently",
+        "assessment": "These tokens show no correlation, indicating they move completely independently of each other",
+        "recommendation": "This pair has very high impermanent loss risk. Consider avoiding or using very small position sizes."
+      }
+    },
+    "tokensVolatility": {
+      "token0": {
+        "tokenPriceVolatility": {
+          "volatilityInPercentage": 0.09031751998349877,
+          "isStableAsset": true,
+          "impermanentLossRisk": "very low",
+          "volatilityLevel": "Very Low",
+          "stability": "Very Stable",
+          "assessment": "This token exhibits very low price volatility, indicating extremely stable price movements. It behaves like a stablecoin or highly stable asset. The annualized volatility is 0.09%, which is very low compared to typical assets. This makes it very suitable for liquidity provision with minimal impermanent loss concerns.",
+          "recommendation": "This token has very low volatility risk. Excellent for LP positions with minimal impermanent loss concerns."
+        }
+      },
+      "token1": {
+        "tokenPriceVolatility": {
+          "volatilityInPercentage": 57.21189157356451,
+          "isStableAsset": false,
+          "impermanentLossRisk": "very volatile",
+          "volatilityLevel": "High",
+          "stability": "Volatile",
+          "assessment": "This token shows high price volatility, indicating significant price fluctuations and unstable behavior. The annualized volatility is 57.21%, which is high compared to typical assets. This presents very high impermanent loss risk that makes liquidity provision extremely risky.",
+          "recommendation": "This token has high volatility risk. Consider smaller position sizes and active monitoring for impermanent loss."
+        }
+      }
+    },
+    "poolGrowthTendency": {
+      "poolGrowthTrend": {
+        "poolGrowthTrendInPercentage": 21.831531202244346,
+        "trend": "positive",
+        "performance": "Strong growth",
+        "strength": "Strong",
+        "assessment": "This pool has shown strong positive performance with healthy growth in TVL and fees",
+        "recommendation": "This pool shows strong performance. Consider maintaining current position or moderate increase."
+      }
+    },
+    "apyVolatility": {
+      "apyVolatility": {
+        "stdDev": 1.1936537535270728,
+        "mean": 2.47661698181443,
+        "coefficientOfVariation": 0.4819694616858247,
+        "stabilityScore": "Stable",
+        "riskLevel": "Low-Medium",
+        "description": "This pool demonstrates stable APY performance with moderate volatility."
+      }
+    }
+  },
+  {
+    "pool": {
+      "feeTier": "3000",
+      "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed",
+      "liquidity": "31019345904160348",
+      "ticks": [
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#-887220",
+          "liquidityGross": "448286027769925",
+          "liquidityNet": "448286027769925",
+          "price0": "0.000000000000000000000000000000000000002954278418582885262890650958806081",
+          "price1": "338492131855223783697272027725930700000",
+          "tickIdx": "-887220"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#-887160",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000000000000000000000000000000000002972056481062021427395145623545054",
+          "price1": "336467360688469975957440017642336300000",
+          "tickIdx": "-887160"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#-152160",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000002466638765618067988268894091762332",
+          "price1": "4054099.910934583331178434377445496",
+          "tickIdx": "-152160"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#-92100",
+          "liquidityGross": "456406095307",
+          "liquidityNet": "456406095307",
+          "price0": "0.000100080116203748168163561592702797",
+          "price1": "9991.994793093059210757145302033327",
+          "tickIdx": "-92100"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#0",
+          "liquidityGross": "10943161472679",
+          "liquidityNet": "10943161472679",
+          "price0": "1",
+          "price1": "1",
+          "tickIdx": "0"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#18060",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "6.085504951694703224472963481284576",
+          "price1": "0.1643249012099674752640316135798879",
+          "tickIdx": "18060"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#26640",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "14.35167713476632341962597163183394",
+          "price1": "0.06967826760661601096565502297618664",
+          "tickIdx": "26640"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#92040",
+          "liquidityGross": "1620915153",
+          "liquidityNet": "1620915153",
+          "price0": "9932.225300536398525247462985491484",
+          "price1": "0.0001006823717486547676557039792075576",
+          "tickIdx": "92040"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#92100",
+          "liquidityGross": "3355682144151",
+          "liquidityNet": "3355682144151",
+          "price0": "9991.994793093059210757145302033331",
+          "price1": "0.000100080116203748168163561592702797",
+          "tickIdx": "92100"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#114060",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "89808.03599821199888423834983641958",
+          "price1": "0.00001113486102758008363462223028698233",
+          "tickIdx": "114060"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#114660",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "95361.16873149830812616135871128204",
+          "price1": "0.0000104864486593660487403204036142717",
+          "tickIdx": "114660"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#115620",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "104969.1670146328256044635097631999",
+          "price1": "0.000009526606987941504969199084446229159",
+          "tickIdx": "115620"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#115860",
+          "liquidityGross": "556573869747",
+          "liquidityNet": "556573869747",
+          "price0": "107518.772436128531232392408677484",
+          "price1": "0.00000930070142489814474562779512531815",
+          "tickIdx": "115860"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#130260",
+          "liquidityGross": "17251205334",
+          "liquidityNet": "17251205334",
+          "price0": "453771.3625335619462092860569958722",
+          "price1": "0.000002203752996700045742675531030926624",
+          "tickIdx": "130260"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#139200",
+          "liquidityGross": "556573869747",
+          "liquidityNet": "-556573869747",
+          "price0": "1109371.333245009543050065211871848",
+          "price1": "0.0000009014114300888876469767367190520135",
+          "tickIdx": "139200"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#145080",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "1997235.731721102902661025788522836",
+          "price1": "0.0000005006920235390829428770842673280902",
+          "tickIdx": "145080"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#145140",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "2009254.565626789107033964426865493",
+          "price1": "0.0000004976970151554932176039221521545022",
+          "tickIdx": "145140"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#148560",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "2828500.440541564858100282323191496",
+          "price1": "0.0000003535442263563985414197506471502072",
+          "tickIdx": "148560"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#151800",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "3910755.166777549600111108179585494",
+          "price1": "0.0000002557050895170195397242790055776713",
+          "tickIdx": "151800"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#152640",
+          "liquidityGross": "40166358066529",
+          "liquidityNet": "40166358066529",
+          "price0": "4253432.452736477669987245017444356",
+          "price1": "0.0000002351042390144558425554865765208667",
+          "tickIdx": "152640"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#152880",
+          "liquidityGross": "40166358066529",
+          "liquidityNet": "-40166358066529",
+          "price0": "4356744.451391768072525262568078891",
+          "price1": "0.0000002295291842698161030813965289245356",
+          "tickIdx": "152880"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#153360",
+          "liquidityGross": "155684471699734",
+          "liquidityNet": "155684471699734",
+          "price0": "4570957.461568180059114527015296139",
+          "price1": "0.0000002187725456663788895563824372093826",
+          "tickIdx": "153360"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#153420",
+          "liquidityGross": "155684471699734",
+          "liquidityNet": "-155684471699734",
+          "price0": "4598464.26892596898770326550052104",
+          "price1": "0.0000002174639056690034864060564712704958",
+          "tickIdx": "153420"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#153780",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "4767016.289196674071485564080635414",
+          "price1": "0.0000002097748233557048647616795512757365",
+          "tickIdx": "153780"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#154020",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "4882802.771274786564759040308384367",
+          "price1": "0.0000002048004080531237986818600535703875",
+          "tickIdx": "154020"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#154260",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "5001401.601500818707324527644551546",
+          "price1": "0.0000001999439516514571389238373184074303",
+          "tickIdx": "154260"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#154920",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "5342613.184522652251596064946131143",
+          "price1": "0.0000001871743219024282105347960825337159",
+          "tickIdx": "154920"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#155520",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "5672964.915595475378390807601354185",
+          "price1": "0.0000001762746667533431724236812879961037",
+          "tickIdx": "155520"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#159000",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "8034096.079941017941765869989481581",
+          "price1": "0.0000001244695097058562271849062106994538",
+          "tickIdx": "159000"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#161160",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "9971028.077428698944041262096083294",
+          "price1": "0.0000001002905610368993390194999357198471",
+          "tickIdx": "161160"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#161220",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "10031031.07478558973140906055977535",
+          "price1": "0.00000009969064920092221914198135960692474",
+          "tickIdx": "161220"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#168600",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "20981613.32465301233574052717974452",
+          "price1": "0.00000004766077729709270113007904775394202",
+          "tickIdx": "168600"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#176220",
+          "liquidityGross": "358354299830",
+          "liquidityNet": "358354299830",
+          "price0": "44952590.98609474387607042596917136",
+          "price1": "0.00000002224565877213466033297331257432645",
+          "tickIdx": "176220"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#180900",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "71778501.00604297110237378015870197",
+          "price1": "0.00000001393174816949452383250795086248896",
+          "tickIdx": "180900"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#183180",
+          "liquidityGross": "358354299830",
+          "liquidityNet": "-358354299830",
+          "price0": "90158894.04648705210778982946829916",
+          "price1": "0.0000000110915291339353331818342754720259",
+          "tickIdx": "183180"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#184200",
+          "liquidityGross": "76175955773",
+          "liquidityNet": "76175955773",
+          "price0": "99839959.94519880714766083090761372",
+          "price1": "0.00000001001602965935573665070681837168992",
+          "tickIdx": "184200"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#190020",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "178669799.2511283200728700601510833",
+          "price1": "0.00000000559691679394823569454032765565734",
+          "tickIdx": "190020"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#191160",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "200243415.8486910458058154877440009",
+          "price1": "0.000000004993922001188918567625835612512806",
+          "tickIdx": "191160"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#191760",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "212625139.3193676264365355587024371",
+          "price1": "0.000000004703112732582284401148572731985353",
+          "tickIdx": "191760"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#192900",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "238298718.4799510753592417811118409",
+          "price1": "0.000000004196413670953642083687483729280857",
+          "tickIdx": "192900"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#193380",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "250015422.6328569819884280427193744",
+          "price1": "0.000000003999753253096235909587685196780323",
+          "tickIdx": "193380"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#195180",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "299320111.3107498899801035360570573",
+          "price1": "0.000000003340904811310237010607500694114163",
+          "tickIdx": "195180"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#195300",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "302933408.409936670866852218251531",
+          "price1": "0.000000003301055519920656257949206478365567",
+          "tickIdx": "195300"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#195660",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "314037123.695933915816550744022205",
+          "price1": "0.000000003184336896959509955833610084135153",
+          "tickIdx": "195660"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#196080",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "327506894.7059065471984557618697691",
+          "price1": "0.000000003053370833301009955985880454057561",
+          "tickIdx": "196080"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#196560",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "343609798.7323453575977901254894792",
+          "price1": "0.000000002910277889889133772664422834156884",
+          "tickIdx": "196560"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#196800",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "351955767.6548662999148338331543666",
+          "price1": "0.000000002841266124613183468311247633875249",
+          "tickIdx": "196800"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#197220",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "367051956.0932129080488805423387547",
+          "price1": "0.000000002724409946329368767034563836217935",
+          "tickIdx": "197220"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#197640",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "382795654.6061480575224194081313843",
+          "price1": "0.000000002612359853010565134441397955501431",
+          "tickIdx": "197640"
+        },
+        {
+          "id": "0xcbcdf9626bc03e24f779434178a73a0b4bad62ed#197820",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "389748012.2928894084895334670945861",
+          "price1": "0.00000000256576035915358553793370827088896",
+          "tickIdx": "197820"
+        }
+      ],
+      "token0": {
+        "decimals": "8",
+        "id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "name": "Wrapped BTC",
+        "symbol": "WBTC"
+      },
+      "token1": {
+        "decimals": "18",
+        "id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "name": "Wrapped Ether",
+        "symbol": "WETH"
+      },
+      "totalValueLockedUSD": "340381508.3095505277450875344816953",
+      "isStablecoinPool": false
+    },
+    "token0": {
+      "tokenQuality": {
+        "hasInProviders": true,
+        "hasInternalTags": true,
+        "hasEip2612": false,
+        "rating": 8,
+        "qualityScore": "Good",
+        "trustworthiness": "High",
+        "assessment": "This token shows good quality with solid provider support and reasonable rating. It appears to be a reliable token with good standing. Specific factors: listed in major providers, has internal quality tags, does not support EIP-2612, has a rating of 8/10.",
+        "recommendation": "This token shows good quality metrics. Suitable for LP positions with moderate confidence."
+      }
+    },
+    "token1": {
+      "tokenQuality": {
+        "hasInProviders": true,
+        "hasInternalTags": true,
+        "hasEip2612": false,
+        "rating": 7,
+        "qualityScore": "Good",
+        "trustworthiness": "High",
+        "assessment": "This token shows good quality with solid provider support and reasonable rating. It appears to be a reliable token with good standing. Specific factors: listed in major providers, has internal quality tags, does not support EIP-2612, has a rating of 7/10.",
+        "recommendation": "This token shows good quality metrics. Suitable for LP positions with moderate confidence."
+      }
+    },
+    "impermanentLoss": {
+      "impermanentLoss": {
+        "impermanent_loss_percentage": -1.4446180769258632,
+        "price_ratio": 1.407789309250414,
+        "initial_ratio": 31.280419462406872,
+        "current_ratio": 44.03624010804497,
+        "severity": "Low",
+        "riskLevel": "Low",
+        "impact": "Small impact on position value",
+        "recommendation": "Low impermanent loss risk. Consider monitoring price movements.",
+        "price_movement": {
+          "token0": {
+            "initial": 117373.81427679681,
+            "current": 107468.92831299854,
+            "change_percentage": -8.438752736142723,
+            "movement": "Moderate decrease"
+          },
+          "token1": {
+            "initial": 3752.3094732747386,
+            "current": 2440.4655812875603,
+            "change_percentage": -34.96097273773898,
+            "movement": "Strong decrease"
+          }
+        },
+        "hodl_vs_lp_comparison": {
+          "hodl_value": 1,
+          "lp_value": 0.9855538192307414,
+          "difference": -0.014446180769258632,
+          "performance": "LP position underperforming HODL strategy"
+        }
+      }
+    },
+    "tokenCorrelation": {
+      "tokenCorrelation": {
+        "correlation": 0.58,
+        "stable_pair": false,
+        "impermanent_loss_risk": "moderate",
+        "correlationStrength": "Moderate Positive",
+        "relationship": "Moderately correlated - tokens have some relationship",
+        "assessment": "These tokens show moderate positive correlation, indicating some relationship in their price movements",
+        "recommendation": "This pair has moderate impermanent loss risk. Monitor performance and consider position sizing carefully."
+      }
+    },
+    "tokensVolatility": {
+      "token0": {
+        "tokenPriceVolatility": {
+          "volatilityInPercentage": 29.99164290879599,
+          "isStableAsset": false,
+          "impermanentLossRisk": "high",
+          "volatilityLevel": "Moderate",
+          "stability": "Moderately Stable",
+          "assessment": "This token shows moderate price volatility, indicating some price fluctuations but generally stable behavior. The annualized volatility is 29.99%, which is moderate compared to typical assets. This presents high impermanent loss risk that requires careful consideration for liquidity provision.",
+          "recommendation": "This token has moderate volatility risk. Consider position sizing and monitor for impermanent loss."
+        }
+      },
+      "token1": {
+        "tokenPriceVolatility": {
+          "volatilityInPercentage": 57.21189157356451,
+          "isStableAsset": false,
+          "impermanentLossRisk": "very volatile",
+          "volatilityLevel": "High",
+          "stability": "Volatile",
+          "assessment": "This token shows high price volatility, indicating significant price fluctuations and unstable behavior. The annualized volatility is 57.21%, which is high compared to typical assets. This presents very high impermanent loss risk that makes liquidity provision extremely risky.",
+          "recommendation": "This token has high volatility risk. Consider smaller position sizes and active monitoring for impermanent loss."
+        }
+      }
+    },
+    "poolGrowthTendency": {
+      "poolGrowthTrend": {
+        "poolGrowthTrendInPercentage": 23.46547354940065,
+        "trend": "positive",
+        "performance": "Strong growth",
+        "strength": "Strong",
+        "assessment": "This pool has shown strong positive performance with healthy growth in TVL and fees",
+        "recommendation": "This pool shows strong performance. Consider maintaining current position or moderate increase."
+      }
+    },
+    "apyVolatility": {
+      "apyVolatility": {
+        "stdDev": 0.6469110915581606,
+        "mean": 1.053791015123844,
+        "coefficientOfVariation": 0.613889359724835,
+        "stabilityScore": "Moderate",
+        "riskLevel": "Medium",
+        "description": "This pool shows moderate APY volatility with some fluctuations."
+      }
+    }
+  },
+  {
+    "pool": {
+      "feeTier": "3000",
+      "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36",
+      "liquidity": "9012168746580646218",
+      "ticks": [
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-887220",
+          "liquidityGross": "12884308711801241",
+          "liquidityNet": "12884308711801241",
+          "price0": "0.000000000000000000000000000000000000002954278418582885262890650958806081",
+          "price1": "338492131855223783697272027725930700000",
+          "tickIdx": "-887220"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-887160",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000000000000000000000000000000000002972056481062021427395145623545054",
+          "price1": "336467360688469975957440017642336300000",
+          "tickIdx": "-887160"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-887100",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000000000000000000000000000000000002989941527196971480024261044287021",
+          "price1": "334454701171860730676124234856218800000",
+          "tickIdx": "-887100"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-887040",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000000000000000000000000000000000003007934200786947215460301633116328",
+          "price1": "332454080856681036041752804362911300000",
+          "tickIdx": "-887040"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-431880",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000000001756417148224815151017987253961499",
+          "price1": "5693408317099871282.618636660117225",
+          "tickIdx": "-431880"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-414840",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000000009652247874789983650398390481464478",
+          "price1": "1036028097259943486.384122164883644",
+          "tickIdx": "-414840"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-414480",
+          "liquidityGross": "32281153328245",
+          "liquidityNet": "32281153328245",
+          "price0": "0.000000000000000001000604118149093065438891743868424",
+          "price1": "999396246589299915.3216344427830165",
+          "tickIdx": "-414480"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-414240",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000000000000001024907880453391665267169973883549",
+          "price1": "975697444689006499.5456263592776547",
+          "tickIdx": "-414240"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-413880",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000000000000001062474834057694331271738589980181",
+          "price1": "941198763438850700.1094844045786956",
+          "tickIdx": "-413880"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-407580",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000000000000001994851154016802055278804904954812",
+          "price1": "501290533875880991.5394198001174218",
+          "tickIdx": "-407580"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-391440",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.00000000000000001001905463521354682669753331388917",
+          "price1": "99809816036469385.96738647195149353",
+          "tickIdx": "-391440"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-368460",
+          "liquidityGross": "36488597426",
+          "liquidityNet": "36488597426",
+          "price0": "0.00000000000000009972075711966230906041401599223283",
+          "price1": "10028002482973791.1799425174695346",
+          "tickIdx": "-368460"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-361500",
+          "liquidityGross": "7291342873418",
+          "liquidityNet": "7291342873418",
+          "price0": "0.0000000000000002000043374177967852512527664416284",
+          "price1": "4999891566906678.512384162621452769",
+          "tickIdx": "-361500"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-360600",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000002188386179217035646146988923317012",
+          "price1": "4569577387651852.291766969048535133",
+          "tickIdx": "-360600"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-359700",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000000000000239446510571625125417075631423201",
+          "price1": "4176298070131500.734264157668145039",
+          "tickIdx": "-359700"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-359280",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000002497169194601604322699315081192734",
+          "price1": "4004534423065149.657891301923145087",
+          "tickIdx": "-359280"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-358980",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000002573215459057494400960604512035244",
+          "price1": "3886188373694426.000817202889091163",
+          "tickIdx": "-358980"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-358740",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000002635716517908185114415902125977604",
+          "price1": "3794034727200639.285282963304640857",
+          "tickIdx": "-358740"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-358680",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000002651577559520891287247948063075711",
+          "price1": "3771339806408258.244574536737266132",
+          "tickIdx": "-358680"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-358140",
+          "liquidityGross": "24199791669961254",
+          "liquidityNet": "24199791669961254",
+          "price0": "0.0000000000000002798691729520103153753229822300283",
+          "price1": "3573098063828101.029248243219075422",
+          "tickIdx": "-358140"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-357960",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000000000000284952173692592920009583355270609",
+          "price1": "3509360841299643.388074783831108579",
+          "tickIdx": "-357960"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-357780",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000000000000290127492198137775801102404779516",
+          "price1": "3446760568684978.42045873928960356",
+          "tickIdx": "-357780"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-357720",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000002918734023502647843645354820524166",
+          "price1": "3426142950839839.72654695766838501",
+          "tickIdx": "-357720"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-357600",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000002953968051494408506460825396874707",
+          "price1": "3385276964976318.314212472346057123",
+          "tickIdx": "-357600"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-357360",
+          "liquidityGross": "55365840142507116",
+          "liquidityNet": "55365840142507116",
+          "price0": "0.0000000000000003025717243883115908965257195181296",
+          "price1": "3305001490214034.717333996152179135",
+          "tickIdx": "-357360"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-357180",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000003080670502326083563244209843499626",
+          "price1": "3246046596820213.121011058359424447",
+          "tickIdx": "-357180"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-357120",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000003099209158778868507479980263910319",
+          "price1": "3226629597319639.767709063554168901",
+          "tickIdx": "-357120"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-357060",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000003117859375939887222682694409569694",
+          "price1": "3207328745218174.791294594069845458",
+          "tickIdx": "-357060"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-356940",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000003155497181797375887752029468803408",
+          "price1": "3169072708315329.607596418801241099",
+          "tickIdx": "-356940"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-356880",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000003174486125323437100518095008558524",
+          "price1": "3150116146430199.176663083249114093",
+          "tickIdx": "-356880"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-356760",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000003212807511273115211447710244185877",
+          "price1": "3112542523917772.704198651192651732",
+          "tickIdx": "-356760"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-356520",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000003290843678291780514342131130029222",
+          "price1": "3038734433350789.050785098514459227",
+          "tickIdx": "-356520"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-356400",
+          "liquidityGross": "55365840142507116",
+          "liquidityNet": "-55365840142507116",
+          "price0": "0.0000000000000003330569695580020765618569534785056",
+          "price1": "3002489337866413.822482441927688302",
+          "tickIdx": "-356400"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-356220",
+          "liquidityGross": "24199791669961254",
+          "liquidityNet": "-24199791669961254",
+          "price0": "0.0000000000000003391059702573746087338086034815107",
+          "price1": "2948930681583164.459311670398102415",
+          "tickIdx": "-356220"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-356040",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000003452648332710219879330174847762346",
+          "price1": "2896327409096516.898614392045640946",
+          "tickIdx": "-356040"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-355680",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000003579201637841915784820484044303084",
+          "price1": "2793919150648777.870336158986975211",
+          "tickIdx": "-355680"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-355320",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000003710393625369389971026668854444101",
+          "price1": "2695131840359510.462337145623460604",
+          "tickIdx": "-355320"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-355080",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000003800515705711383750159582245167759",
+          "price1": "2631221858910379.512957825552879668",
+          "tickIdx": "-355080"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-354960",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000003846394321467356022703389356603205",
+          "price1": "2599837448851347.321399476415280907",
+          "tickIdx": "-354960"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-354840",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000003892826769267890300323846928298914",
+          "price1": "2568827382442364.226620789931556081",
+          "tickIdx": "-354840"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-354780",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000003916252766319886388536027070642087",
+          "price1": "2553461330688577.540262791347288784",
+          "tickIdx": "-354780"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-354540",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000004011374977621847376412399668589505",
+          "price1": "2492910798862419.577808834951321602",
+          "tickIdx": "-354540"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-354420",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000000000000405979901938409199073971399910824",
+          "price1": "2463176120850704.058017786009665637",
+          "tickIdx": "-354420"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-353760",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000004336771468414949277201610120068206",
+          "price1": "2305862799741880.218881993839163845",
+          "tickIdx": "-353760"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-353460",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000004468839119531579826431904353300569",
+          "price1": "2237717611335310.739917186960926668",
+          "tickIdx": "-353460"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-353340",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000004522785522787363820453807735682075",
+          "price1": "2211026799660635.663433399956595259",
+          "tickIdx": "-353340"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-353040",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000004660517857739553913350704759157662",
+          "price1": "2145684300596201.058323486985517875",
+          "tickIdx": "-353040"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-352800",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000004773717589956290342770458845599893",
+          "price1": "2094803433919006.327322321874263024",
+          "tickIdx": "-352800"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-352320",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000005008432392737517310893209589559909",
+          "price1": "1996632721747529.342353828496361011",
+          "tickIdx": "-352320"
+        },
+        {
+          "id": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36#-351960",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000000000005192011376679980237758603212794301",
+          "price1": "1926035841314831.06571127624646874",
+          "tickIdx": "-351960"
+        }
+      ],
+      "token0": {
+        "decimals": "18",
+        "id": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "name": "Wrapped Ether",
+        "symbol": "WETH"
+      },
+      "token1": {
+        "decimals": "6",
+        "id": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "name": "Tether USD",
+        "symbol": "USDT"
+      },
+      "totalValueLockedUSD": "253996406.0699852197265484293601952",
+      "isStablecoinPool": false
+    },
+    "token0": {
+      "tokenQuality": {
+        "hasInProviders": true,
+        "hasInternalTags": true,
+        "hasEip2612": false,
+        "rating": 7,
+        "qualityScore": "Good",
+        "trustworthiness": "High",
+        "assessment": "This token shows good quality with solid provider support and reasonable rating. It appears to be a reliable token with good standing. Specific factors: listed in major providers, has internal quality tags, does not support EIP-2612, has a rating of 7/10.",
+        "recommendation": "This token shows good quality metrics. Suitable for LP positions with moderate confidence."
+      }
+    },
+    "token1": {
+      "tokenQuality": {
+        "hasInProviders": true,
+        "hasInternalTags": true,
+        "hasEip2612": false,
+        "rating": 8,
+        "qualityScore": "Good",
+        "trustworthiness": "High",
+        "assessment": "This token shows good quality with solid provider support and reasonable rating. It appears to be a reliable token with good standing. Specific factors: listed in major providers, has internal quality tags, does not support EIP-2612, has a rating of 8/10.",
+        "recommendation": "This token shows good quality metrics. Suitable for LP positions with moderate confidence."
+      }
+    },
+    "impermanentLoss": {
+      "impermanentLoss": {
+        "impermanent_loss_percentage": -2.273161393906964,
+        "price_ratio": 0.6501569836521834,
+        "initial_ratio": 3753.0147342634928,
+        "current_ratio": 2440.0487392309533,
+        "severity": "Low",
+        "riskLevel": "Low",
+        "impact": "Small impact on position value",
+        "recommendation": "Low impermanent loss risk. Consider monitoring price movements.",
+        "price_movement": {
+          "token0": {
+            "initial": 3752.3094732747386,
+            "current": 2440.4655812875603,
+            "change_percentage": -34.96097273773898,
+            "movement": "Strong decrease"
+          },
+          "token1": {
+            "initial": 0.9998120814761755,
+            "current": 1.0001708334960302,
+            "change_percentage": 0.03588194486758058,
+            "movement": "Stable"
+          }
+        },
+        "hodl_vs_lp_comparison": {
+          "hodl_value": 1,
+          "lp_value": 0.9772683860609304,
+          "difference": -0.02273161393906964,
+          "performance": "LP position underperforming HODL strategy"
+        }
+      }
+    },
+    "tokenCorrelation": {
+      "tokenCorrelation": {
+        "correlation": 0.39,
+        "stable_pair": false,
+        "impermanent_loss_risk": "high",
+        "correlationStrength": "Weak Positive",
+        "relationship": "Weakly correlated - minimal relationship",
+        "assessment": "These tokens show weak positive correlation, indicating minimal relationship in their price movements",
+        "recommendation": "This pair has high impermanent loss risk. Consider smaller position sizes and active monitoring."
+      }
+    },
+    "tokensVolatility": {
+      "token0": {
+        "tokenPriceVolatility": {
+          "volatilityInPercentage": 57.21189157356451,
+          "isStableAsset": false,
+          "impermanentLossRisk": "very volatile",
+          "volatilityLevel": "High",
+          "stability": "Volatile",
+          "assessment": "This token shows high price volatility, indicating significant price fluctuations and unstable behavior. The annualized volatility is 57.21%, which is high compared to typical assets. This presents very high impermanent loss risk that makes liquidity provision extremely risky.",
+          "recommendation": "This token has high volatility risk. Consider smaller position sizes and active monitoring for impermanent loss."
+        }
+      },
+      "token1": {
+        "tokenPriceVolatility": {
+          "volatilityInPercentage": 0.41205676346213393,
+          "isStableAsset": true,
+          "impermanentLossRisk": "very low",
+          "volatilityLevel": "Very Low",
+          "stability": "Very Stable",
+          "assessment": "This token exhibits very low price volatility, indicating extremely stable price movements. It behaves like a stablecoin or highly stable asset. The annualized volatility is 0.41%, which is very low compared to typical assets. This makes it very suitable for liquidity provision with minimal impermanent loss concerns.",
+          "recommendation": "This token has very low volatility risk. Excellent for LP positions with minimal impermanent loss concerns."
+        }
+      }
+    },
+    "poolGrowthTendency": {
+      "poolGrowthTrend": {
+        "poolGrowthTrendInPercentage": 33.939746641578175,
+        "trend": "positive",
+        "performance": "Strong growth",
+        "strength": "Strong",
+        "assessment": "This pool has shown strong positive performance with healthy growth in TVL and fees",
+        "recommendation": "This pool shows strong performance. Consider maintaining current position or moderate increase."
+      }
+    },
+    "apyVolatility": {
+      "apyVolatility": {
+        "stdDev": 7.079815329805769,
+        "mean": 13.644614062663528,
+        "coefficientOfVariation": 0.5188725234214311,
+        "stabilityScore": "Moderate",
+        "riskLevel": "Medium",
+        "description": "This pool shows moderate APY volatility with some fluctuations."
+      }
+    }
+  },
+  {
+    "pool": {
+      "feeTier": "3000",
+      "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35",
+      "liquidity": "15820120476197",
+      "ticks": [
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-887220",
+          "liquidityGross": "15737447478",
+          "liquidityNet": "15737447478",
+          "price0": "0.000000000000000000000000000000000000002954278418582885262890650958806081",
+          "price1": "338492131855223783697272027725930700000",
+          "tickIdx": "-887220"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-887160",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000000000000000000000000000000000002972056481062021427395145623545054",
+          "price1": "336467360688469975957440017642336300000",
+          "tickIdx": "-887160"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-669900",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000000000000000000000000000008092211586172526392523157392155977",
+          "price1": "123575612099507941047135004435.082",
+          "tickIdx": "-669900"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-184200",
+          "liquidityGross": "102097802",
+          "liquidityNet": "102097802",
+          "price0": "0.00000001001602965935573665070681837168992",
+          "price1": "99839959.94519880714766083090761371",
+          "tickIdx": "-184200"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-172740",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.00000003150447122378377271334363649567693",
+          "price1": "31741526.23914115258514904372512391",
+          "tickIdx": "-172740"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-172560",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.00000003207665732371416877636090971181647",
+          "price1": "31175318.23556637373511537974921705",
+          "tickIdx": "-172560"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-171720",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.00000003488735280465430427053556712216833",
+          "price1": "28663682.38368003950911296680308723",
+          "tickIdx": "-171720"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-171540",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.00000003552097900318325750723135398969781",
+          "price1": "28152377.21658470432019618069318488",
+          "tickIdx": "-171540"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-163440",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000000798446588372296402504932642195008",
+          "price1": "12524319.27899633154748542048805723",
+          "tickIdx": "-163440"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-162660",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.00000008632153321051746305498904762752977",
+          "price1": "11584594.97656558595888053269299609",
+          "tickIdx": "-162660"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-162300",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.00000008948556101732604906830279608085625",
+          "price1": "11174987.21169532169812860211560677",
+          "tickIdx": "-162300"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-162120",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.00000009111080315501769480168301706368458",
+          "price1": "10975646.85384872006625851718657444",
+          "tickIdx": "-162120"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-161700",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.00000009501875403862423180162176001483739",
+          "price1": "10524238.1897947155213368586648273",
+          "tickIdx": "-161700"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-161460",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.00000009732667299550108250878131063372884",
+          "price1": "10274675.67956653484016042711337379",
+          "tickIdx": "-161460"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-160440",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000001077773994039904360294730350467473",
+          "price1": "9278383.088940771063238675949384573",
+          "tickIdx": "-160440"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-160140",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000001110595432952262632996404735354858",
+          "price1": "9004178.932572502118573230432073475",
+          "tickIdx": "-160140"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-159540",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000001179267281563764119702289261508847",
+          "price1": "8479841.81053469713493156748403098",
+          "tickIdx": "-159540"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-159420",
+          "liquidityGross": "6403858773573",
+          "liquidityNet": "6403858773573",
+          "price0": "0.0000001193503020782825398447091079637068",
+          "price1": "8378696.849414711410105641670661534",
+          "tickIdx": "-159420"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-159240",
+          "liquidityGross": "6403858773573",
+          "liquidityNet": "-6403858773573",
+          "price0": "0.0000001215179494381319664917360975388867",
+          "price1": "8229236.953254602996501346689756569",
+          "tickIdx": "-159240"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-159180",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000001222492121667423263325402032945589",
+          "price1": "8180011.815831138448570527879303943",
+          "tickIdx": "-159180"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-158760",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000001274927606830953309727406363817168",
+          "price1": "7843582.605334493850450822680579547",
+          "tickIdx": "-158760"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-157620",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000001428869680391801526421284018107595",
+          "price1": "6998538.871129214378439945542713581",
+          "tickIdx": "-157620"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-157320",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000001472383032159467234784285063727438",
+          "price1": "6791710.975732668339555975527590024",
+          "tickIdx": "-157320"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-154260",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000001999439516514571389238373184074303",
+          "price1": "5001401.601500818707324527644551547",
+          "tickIdx": "-154260"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-154080",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000002035753457189046408610990814623076",
+          "price1": "4912186.180839367153329991166242936",
+          "tickIdx": "-154080"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-151860",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000002541755287275010804603686294704484",
+          "price1": "3934289.052161624559343960680740704",
+          "tickIdx": "-151860"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-151800",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000002557050895170195397242790055776713",
+          "price1": "3910755.166777549600111108179585494",
+          "tickIdx": "-151800"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-150180",
+          "liquidityGross": "10041280775",
+          "liquidityNet": "10041280775",
+          "price0": "0.0000003006710129837731928882444357823084",
+          "price1": "3325894.272534907263689288637499325",
+          "tickIdx": "-150180"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-149820",
+          "liquidityGross": "10041280775",
+          "liquidityNet": "-10041280775",
+          "price0": "0.00000031169180247162780664906720743702",
+          "price1": "3208297.401697070407259891205125524",
+          "tickIdx": "-149820"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-147960",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000003754050542235527482927722977822899",
+          "price1": "2663789.388952932320475492045154659",
+          "tickIdx": "-147960"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-147240",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000004034295954575650033550946930453297",
+          "price1": "2478747.249233938840277300511984054",
+          "tickIdx": "-147240"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-146040",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000004548628697088725315534191802432427",
+          "price1": "2198464.782671826976442837524720021",
+          "tickIdx": "-146040"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-145620",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000004743729792902158252830036992163015",
+          "price1": "2108045.870353445506854948816989584",
+          "tickIdx": "-145620"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-144840",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0000005128533765727499278918316673214191",
+          "price1": "1949875.043589864580292482919142217",
+          "tickIdx": "-144840"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-137100",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000001112039828593768442591979702739476",
+          "price1": "899248.367088210708915951047898459",
+          "tickIdx": "-137100"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-101280",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.00003996551367859461421745622941574155",
+          "price1": "25021.57254982553654289505658525518",
+          "tickIdx": "-101280"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-99060",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.00004989924263299254457703175221707417",
+          "price1": "20040.38432717246747839242529341816",
+          "tickIdx": "-99060"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-92100",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000100080116203748168163561592702797",
+          "price1": "9991.994793093059210757145302033327",
+          "tickIdx": "-92100"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-83460",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0002374430559121993600803518549462172",
+          "price1": "4211.536092972858149230153569487033",
+          "tickIdx": "-83460"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-82440",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.000262939174689923745171108675186148",
+          "price1": "3803.160944652959766187363325399443",
+          "tickIdx": "-82440"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-81900",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.0002775275009132665397004021086165384",
+          "price1": "3603.246513261840809093944159609519",
+          "tickIdx": "-81900"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-69060",
+          "liquidityGross": "32124036974",
+          "liquidityNet": "32124036974",
+          "price0": "0.001002102763677079836804470243642486",
+          "price1": "997.9016486598998775322638130630188",
+          "tickIdx": "-69060"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-68100",
+          "liquidityGross": "32124036974",
+          "liquidityNet": "-32124036974",
+          "price0": "0.001103068405782863836807366725479354",
+          "price1": "906.5620905806701293959272168027103",
+          "tickIdx": "-68100"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-46140",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.009914377373726793130570180867745673",
+          "price1": "100.8636208109256336323424425794421",
+          "tickIdx": "-46140"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-46080",
+          "liquidityGross": "0",
+          "liquidityNet": "0",
+          "price0": "0.009974039462202664295231746582056602",
+          "price1": "100.2602810816591915339715672222582",
+          "tickIdx": "-46080"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-46020",
+          "liquidityGross": "1661424200075",
+          "liquidityNet": "1661424200075",
+          "price0": "0.01003406058127290597113794232225985",
+          "price1": "99.66055037243371818909582849651286",
+          "tickIdx": "-46020"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-45960",
+          "liquidityGross": "1661424200075",
+          "liquidityNet": "-1661424200075",
+          "price0": "0.01009444289148822945586851970750918",
+          "price1": "99.0644070950377560987929307272467",
+          "tickIdx": "-45960"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-45900",
+          "liquidityGross": "660594398480",
+          "liquidityNet": "660594398480",
+          "price0": "0.01015518856640096610189813822718478",
+          "price1": "98.47182979039486742132922085260579",
+          "tickIdx": "-45900"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-45840",
+          "liquidityGross": "660594398480",
+          "liquidityNet": "-660594398480",
+          "price0": "0.01021629979264330761115085984248775",
+          "price1": "97.88279712779118214887212557514818",
+          "tickIdx": "-45840"
+        },
+        {
+          "id": "0x99ac8ca7087fa4a2a1fb6357269965a2014abc35#-45780",
+          "liquidityGross": "328321448011",
+          "liquidityNet": "328321448011",
+          "price0": "0.01027777877000601715885638659748013",
+          "price1": "97.29728790410756688844212226498366",
+          "tickIdx": "-45780"
+        }
+      ],
+      "token0": {
+        "decimals": "8",
+        "id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "name": "Wrapped BTC",
+        "symbol": "WBTC"
+      },
+      "token1": {
+        "decimals": "6",
+        "id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "name": "USD Coin",
+        "symbol": "USDC"
+      },
+      "totalValueLockedUSD": "207776669.5854071305657215219660402",
+      "isStablecoinPool": false
+    },
+    "token0": {
+      "tokenQuality": {
+        "hasInProviders": true,
+        "hasInternalTags": true,
+        "hasEip2612": false,
+        "rating": 8,
+        "qualityScore": "Good",
+        "trustworthiness": "High",
+        "assessment": "This token shows good quality with solid provider support and reasonable rating. It appears to be a reliable token with good standing. Specific factors: listed in major providers, has internal quality tags, does not support EIP-2612, has a rating of 8/10.",
+        "recommendation": "This token shows good quality metrics. Suitable for LP positions with moderate confidence."
+      }
+    },
+    "token1": {
+      "tokenQuality": {
+        "hasInProviders": true,
+        "hasInternalTags": true,
+        "hasEip2612": true,
+        "rating": 8,
+        "qualityScore": "Good",
+        "trustworthiness": "High",
+        "assessment": "This token shows good quality with solid provider support and reasonable rating. It appears to be a reliable token with good standing. Specific factors: listed in major providers, has internal quality tags, supports EIP-2612 (gasless approvals), has a rating of 8/10.",
+        "recommendation": "This token shows good quality metrics. Suitable for LP positions with moderate confidence."
+      }
+    },
+    "impermanentLoss": {
+      "impermanentLoss": {
+        "impermanent_loss_percentage": -0.09710750050263561,
+        "price_ratio": 0.9156003148097993,
+        "initial_ratio": 117398.28955046802,
+        "current_ratio": 107489.9108705405,
+        "severity": "Minimal",
+        "riskLevel": "Very Low",
+        "impact": "Negligible impact on position value",
+        "recommendation": "This pool has minimal impermanent loss risk. Safe for long-term holding.",
+        "price_movement": {
+          "token0": {
+            "initial": 117373.81427679681,
+            "current": 107468.92831299854,
+            "change_percentage": -8.438752736142723,
+            "movement": "Moderate decrease"
+          },
+          "token1": {
+            "initial": 0.9997915193333315,
+            "current": 0.9998047950977723,
+            "change_percentage": 0.0013278532758129516,
+            "movement": "Stable"
+          }
+        },
+        "hodl_vs_lp_comparison": {
+          "hodl_value": 1,
+          "lp_value": 0.9990289249949736,
+          "difference": -0.0009710750050263561,
+          "performance": "LP position underperforming HODL strategy"
+        }
+      }
+    },
+    "tokenCorrelation": {
+      "tokenCorrelation": {
+        "correlation": 0.03,
+        "stable_pair": false,
+        "impermanent_loss_risk": "high",
+        "correlationStrength": "Very Weak Positive",
+        "relationship": "Very weakly correlated - almost independent",
+        "assessment": "These tokens show very weak positive correlation, indicating they move almost independently",
+        "recommendation": "This pair has very high impermanent loss risk. Consider alternatives or very small position sizes."
+      }
+    },
+    "tokensVolatility": {
+      "token0": {
+        "tokenPriceVolatility": {
+          "volatilityInPercentage": 29.99164290879599,
+          "isStableAsset": false,
+          "impermanentLossRisk": "high",
+          "volatilityLevel": "Moderate",
+          "stability": "Moderately Stable",
+          "assessment": "This token shows moderate price volatility, indicating some price fluctuations but generally stable behavior. The annualized volatility is 29.99%, which is moderate compared to typical assets. This presents high impermanent loss risk that requires careful consideration for liquidity provision.",
+          "recommendation": "This token has moderate volatility risk. Consider position sizing and monitor for impermanent loss."
+        }
+      },
+      "token1": {
+        "tokenPriceVolatility": {
+          "volatilityInPercentage": 0.09031751998349877,
+          "isStableAsset": true,
+          "impermanentLossRisk": "very low",
+          "volatilityLevel": "Very Low",
+          "stability": "Very Stable",
+          "assessment": "This token exhibits very low price volatility, indicating extremely stable price movements. It behaves like a stablecoin or highly stable asset. The annualized volatility is 0.09%, which is very low compared to typical assets. This makes it very suitable for liquidity provision with minimal impermanent loss concerns.",
+          "recommendation": "This token has very low volatility risk. Excellent for LP positions with minimal impermanent loss concerns."
+        }
+      }
+    },
+    "poolGrowthTendency": {
+      "poolGrowthTrend": {
+        "poolGrowthTrendInPercentage": 9.803577294308793,
+        "trend": "positive",
+        "performance": "Moderate growth",
+        "strength": "Moderate",
+        "assessment": "This pool has shown moderate positive performance with steady growth in TVL and fees",
+        "recommendation": "This pool shows moderate growth. Monitor performance and consider maintaining position."
+      }
+    },
+    "apyVolatility": {
+      "apyVolatility": {
+        "stdDev": 5.028604691235416,
+        "mean": 6.863852595115421,
+        "coefficientOfVariation": 0.7326213116543271,
+        "stabilityScore": "Moderate",
+        "riskLevel": "Medium",
+        "description": "This pool shows moderate APY volatility with some fluctuations."
+      }
+    }
+  }
+]

@@ -1,21 +1,39 @@
-# Uniswap V3 Pool Fetcher
+# Uniswap V3 Subgraph Utilities
 
-This script fetches information about Uniswap V3 pools based on specific criteria and provides detailed analysis.
+This directory contains utilities for fetching and analyzing Uniswap V3 pool data using The Graph's subgraph API.
+
+## Files
+
+### `fetchPools.ts`
+
+Fetches current pool information and provides detailed analysis of active Uniswap V3 pools.
+
+### `fetchPoolDayData.ts`
+
+Fetches historical daily data for specific pools, including TVL and fees over time.
 
 ## Features
 
+### Pool Fetching (`fetchPools.ts`)
+
 - Fetches pools with TVL > $1,000,000 USD
-- Filters pools based on adjusted liquidity (considering token decimals)
-- Filters ticks based on adjusted liquidity thresholds
+- Filters pools based on liquidity thresholds
 - Identifies stablecoin pools by comparing against the stablecoins.llama.fi API
 - Provides detailed pool information including:
   - Pool ID
   - Token information (symbol, name, decimals)
   - Fee tier
-  - Raw and adjusted liquidity values
+  - Liquidity values
   - TVL in USD
-  - Filtered tick data with adjusted liquidity
+  - Tick data with liquidity information
   - Stablecoin pool detection
+
+### Historical Data Fetching (`fetchPoolDayData.ts`)
+
+- Fetches daily pool data for a specific pool ID
+- Retrieves historical TVL and fees data
+- Supports date range filtering
+- Returns structured daily data for analysis
 
 ## Prerequisites
 
@@ -28,43 +46,57 @@ UNISWAP_V3_SUBGRAPH_ID=your_uniswap_v3_subgraph_id
 
 ## Usage
 
-### Run the script directly:
-
-```bash
-npm run fetch-pools
-```
-
-### Import and use in your code:
+### Fetch Current Pools
 
 ```typescript
-import { fetchPools, main } from "./src/libs/subgraph";
+import { fetchPools } from "./src/libs/subgraph/fetchPools";
 
-// Run the complete analysis
-await main();
-
-// Or fetch pools programmatically
+// Fetch all qualifying pools
 const pools = await fetchPools();
+```
+
+### Fetch Historical Pool Data
+
+```typescript
+import { fetchPoolDayData } from "./src/libs/subgraph/fetchPoolDayData";
+
+// Fetch historical data for a specific pool
+const poolId = "0xd0b53d9277642d899df5c87a3966a349a798f224";
+const fromTimestamp = 1743897600; // Unix timestamp
+
+const historicalData = await fetchPoolDayData(poolId, fromTimestamp);
 ```
 
 ## Output
 
-The script will output:
+### Pool Data (`fetchPools.ts`)
 
-1. **Pool Details**: For each pool, it shows:
+Returns an array of pool objects with the following structure:
 
-   - Pool ID
-   - Token pair information
-   - Fee tier (as percentage)
-   - Raw and adjusted liquidity amounts
-   - TVL in USD
-   - Whether it's a stablecoin pool
-   - Number of valid ticks
-   - Sample tick data with adjusted liquidity
+```typescript
+interface Pool {
+  id: string;
+  token0: Token;
+  token1: Token;
+  feeTier: string;
+  liquidity: string;
+  totalValueLockedUSD: string;
+  ticks: Tick[];
+  isStablecoinPool: boolean;
+}
+```
 
-2. **Summary Statistics**:
-   - Total number of pools found
-   - Number of stablecoin pools
-   - Total TVL across all pools
+### Historical Data (`fetchPoolDayData.ts`)
+
+Returns an array of daily data objects with the following structure:
+
+```typescript
+interface PoolDayData {
+  date: number;
+  tvlUSD: number;
+  feesUSD: number;
+}
+```
 
 ## API Dependencies
 
@@ -73,15 +105,26 @@ The script will output:
 
 ## Error Handling
 
-The script includes comprehensive error handling for:
+Both utilities include comprehensive error handling for:
 
 - Network failures
 - Invalid API responses
 - Missing environment variables
 - GraphQL query errors
+- Insufficient data scenarios
+
+## Configuration
+
+The utilities use configuration from `src/config/subgraph.ts`:
+
+- `SUBGRAPH_URL`: The Graph API endpoint
+- `SUBGRAPH_KEY`: API key for authentication
+- `TOP_TICKS_PER_POOL`: Maximum number of ticks to fetch per pool
+- `TOP_POOLS_PER_QUERY`: Maximum number of pools to fetch per query
 
 ## Notes
 
-- The script uses the built-in `fetch` API (no axios dependency)
+- Uses the built-in `fetch` API (no axios dependency)
 - Stablecoin detection is based on symbol matching from the stablecoins.llama.fi API
-- APR calculation is simplified using liquidity as a proxy since exact APR calculation requires complex historical data analysis
+- Historical data is limited to 1000 records per query
+- All timestamps are in Unix format (seconds since epoch)

@@ -25,7 +25,7 @@ export async function fetchTokensDetails(
   tokenAddresses.forEach((address) => params.append("addresses", address));
 
   const url = `https://api.1inch.dev/token/v1.3/${chainId}/custom?${params}`;
-  console.log("current token details url: ", url);
+  //   console.log("current token details url: ", url);
   const res = await fetch(url, {
     headers: {
       Authorization: `Bearer ${appConfig.oneInch.apiKey}`,
@@ -33,14 +33,16 @@ export async function fetchTokensDetails(
   });
 
   if (!res.ok) {
-    throw new Error(`Failed to fetch current token details: ${res.statusText}`);
+    console.error(`Failed to fetch current token details: ${res.statusText}`);
+    return {};
   }
 
-  const prices = (await res.json()) as TokenDetailsResponse;
+  const tokensInfo = (await res.json()) as TokenDetailsResponse;
 
-  if (!prices) {
-    throw new Error(`No token details for ${tokenAddresses}`);
+  if (!tokensInfo) {
+    console.log(`No token details for ${tokenAddresses}`);
+    return {};
   }
 
-  return prices;
+  return tokensInfo;
 }

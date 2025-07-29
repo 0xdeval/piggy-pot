@@ -30,3 +30,15 @@ export interface GraphQLResponse {
     pools: Pool[];
   };
 }
+
+export interface PoolDayData {
+  date: number;
+  tvlUSD: number;
+  feesUSD: number;
+}
+
+export interface PoolHistoryResponse {
+  data: {
+    poolDayDatas: PoolDayData[];
+  };
+}

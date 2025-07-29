@@ -1,5 +1,5 @@
 import { Pool, PoolClient } from "pg";
-import { getDatabaseUrl } from "src/config/database";
+import { appConfig } from "../../config";
 import { logger } from "@elizaos/core";
 
 class DatabaseConnection {
@@ -8,7 +8,7 @@ class DatabaseConnection {
 
   private constructor() {
     this.pool = new Pool({
-      connectionString: getDatabaseUrl(),
+      connectionString: appConfig.database.url,
       max: 20,
       idleTimeoutMillis: 30000,
       connectionTimeoutMillis: 2000,

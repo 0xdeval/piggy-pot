@@ -1,14 +1,11 @@
-import {
-  SUBGRAPH_URL,
-  SUBGRAPH_KEY,
-  TOP_TICKS_PER_POOL,
-  TOP_POOLS_PER_QUERY,
-} from "../../config/subgraph";
+import { TOP_TICKS_PER_POOL, TOP_POOLS_PER_QUERY } from "../../config/subgraph";
 import { fetchStablecoins, type Stablecoin } from "../defillama";
 import { Pool, GraphQLResponse } from "../../types/subgraph";
 import { isStablecoinPool } from "../../utils/pools/isStablecoinPool";
+import { isSpamTokens } from "../../utils/pools/filterSpamTokens";
+import { appConfig } from "../../config";
 
-async function fetchPools(): Promise<Pool[]> {
+export async function fetchPools(): Promise<Pool[]> {
   let stablecoins: Stablecoin[] = [];
   try {
     stablecoins = await fetchStablecoins();
@@ -61,11 +58,11 @@ async function fetchPools(): Promise<Pool[]> {
   `;
 
   try {
-    const response = await fetch(SUBGRAPH_URL, {
+    const response = await fetch(appConfig.subgraph.url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${SUBGRAPH_KEY}`,
+        Authorization: `Bearer ${appConfig.subgraph.apiKey}`,
       },
       body: JSON.stringify({ query }),
     });
@@ -75,12 +72,19 @@ async function fetchPools(): Promise<Pool[]> {
     }
 
     const result = (await response.json()) as GraphQLResponse;
-    console.log(result);
+    // console.log(result);
 
     if (result.data?.pools) {
       // Filter pools based on adjusted liquidity and filter ticks
       const filteredPools = result.data.pools
         .map((pool) => {
+          if (
+            isSpamTokens(pool.token0.symbol) ||
+            isSpamTokens(pool.token1.symbol)
+          ) {
+            return null;
+          }
+
           return {
             ...pool,
             isStablecoinPool: isStablecoinPool(
@@ -90,7 +94,7 @@ async function fetchPools(): Promise<Pool[]> {
             ),
           };
         })
-        .filter((pool) => pool.ticks.length > 0);
+        .filter((pool): pool is Pool => pool !== null);
 
       return filteredPools;
     }
@@ -100,63 +104,4 @@ async function fetchPools(): Promise<Pool[]> {
     console.error("Error fetching pools:", error);
     return [];
   }
-}
-
-// Function to test the fetchPools function
-async function main() {
-  console.log("Fetching Uniswap V3 pools...");
-
-  const pools = await fetchPools();
-
-  console.log(`Found ${pools.length} pools matching criteria:`);
-  console.log("- TVL > $1,000,000 USD");
-  console.log(`- Returned pools with at least ${TOP_TICKS_PER_POOL} ticks`);
-  console.log(`- Returned top ${TOP_POOLS_PER_QUERY} pools`);
-  console.log("\n");
-
-  pools.slice(0, 3).forEach((pool, index) => {
-    console.log(`Pool ${index + 1}:`);
-    console.log(`  Pool ID: ${pool.id}`);
-    console.log(`  Token 0: ${pool.token0.symbol} (${pool.token0.name})`);
-    console.log(`  Token 1: ${pool.token1.symbol} (${pool.token1.name})`);
-    console.log(`  Fee Tier: ${parseInt(pool.feeTier) / 10000}%`);
-
-    console.log(`  Raw Liquidity: ${pool.liquidity}`);
-
-    console.log(
-      `  TVL: $${parseFloat(pool.totalValueLockedUSD).toLocaleString()}`
-    );
-    console.log(`  Stablecoin Pool: ${pool.isStablecoinPool ? "YES" : "NO"}`);
-    console.log(`  Number of Ticks: ${pool.ticks.length}`);
-
-    if (pool.ticks.length > 0) {
-      console.log("  Sample Ticks:");
-      console.log("TOP-1 tick for a pool: ", pool.ticks[0]);
-      console.log("TOP-2 tick for a pool: ", pool.ticks[1]);
-    }
-
-    console.log("---");
-  });
-
-  // Summary statistics
-  const stablecoinPools = pools.filter((pool) => pool.isStablecoinPool);
-  const totalTVL = pools.reduce(
-    (sum, pool) => sum + parseFloat(pool.totalValueLockedUSD),
-    0
-  );
-
-  console.log("\nSummary:");
-  console.log(`Total pools found: ${pools.length}`);
-  console.log(`Stablecoin pools: ${stablecoinPools.length}`);
-  console.log(`Total TVL: $${totalTVL.toLocaleString()}`);
-
-  console.log("Pool example: ", pools[0]);
-}
-
-// Export functions for use in other modules
-export { fetchPools, isStablecoinPool, main };
-
-// Run the script if this file is executed directly
-if (require.main === module) {
-  main().catch(console.error);
 }

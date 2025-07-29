@@ -1,23 +1,20 @@
 import { fetchHistoricalTokenPrice } from "../1inch/fetchHistoricalTokenPrice";
 import { logger } from "@elizaos/core";
+import { TokenCorrelationResult } from "../../types/metrics/rawFormat";
+import { TokenCorrelationLLMOutput } from "../../types/metrics/llmFormats";
+import { tokenCorrelationToLLM } from "../../utils/metrics/tokenCorrelationToLLM";
 
-export interface TokenCorrelationParams {
+interface TokenCorrelationParams {
   chainId: number;
   token0Address: string;
   token1Address: string;
   days?: number;
 }
 
-export interface TokenCorrelationResult {
-  correlation: number;
-  stable_pair: boolean;
-  impermanent_loss_risk: "low" | "moderate" | "high" | "very risky";
-}
-
 /**
- * Calculate correlation between two tokens and impermanent loss risk
+ * Calculate correlation between two tokens and impermanent loss risk (raw data format)
  */
-export async function calculateTokenCorrelation({
+export async function calculateTokenCorrelationRaw({
   chainId,
   token0Address,
   token1Address,
@@ -43,11 +40,7 @@ export async function calculateTokenCorrelation({
 
   if (prices0.length < 2 || prices1.length < 2) {
     logger.error("Not enough historical data to calculate correlation");
-    return {
-      correlation: 0,
-      stable_pair: false,
-      impermanent_loss_risk: "high",
-    };
+    return null;
   }
 
   // Sort by timestamp and align data points
@@ -80,37 +73,36 @@ export async function calculateTokenCorrelation({
 
   const correlation = denominator !== 0 ? numerator / denominator : 0;
 
-  // Determine impermanent loss risk based on correlation
-  let impermanent_loss_risk: "low" | "moderate" | "high" | "very risky";
-  let stable_pair: boolean;
-
-  if (correlation > 0.9) {
-    impermanent_loss_risk = "low";
-    stable_pair = true;
-  } else if (correlation >= 0.5 && correlation <= 0.9) {
-    impermanent_loss_risk = "moderate";
-    stable_pair = false;
-  } else if (correlation >= 0 && correlation < 0.5) {
-    impermanent_loss_risk = "high";
-    stable_pair = false;
-  } else {
-    impermanent_loss_risk = "very risky";
-    stable_pair = false;
-  }
-
   return {
     correlation: Math.round(correlation * 100) / 100, // Round to 2 decimal places
-    stable_pair,
-    impermanent_loss_risk,
   };
 }
 
-// Example usage
-const result = await calculateTokenCorrelation({
-  chainId: 1,
-  token0Address: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599", // WBTC
-  token1Address: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", // WETH
-});
+/**
+ * Calculate correlation between two tokens with LLM-friendly output format (default)
+ */
+export async function calculateTokenCorrelation({
+  chainId,
+  token0Address,
+  token1Address,
+  days = 30,
+}: TokenCorrelationParams): Promise<TokenCorrelationLLMOutput> {
+  const result = await calculateTokenCorrelationRaw({
+    chainId,
+    token0Address,
+    token1Address,
+    days,
+  });
 
-console.log(`Result:`, result);
-// Output: { correlation: 0.91, stable_pair: true, impermanent_loss_risk: "low" }
+  return tokenCorrelationToLLM(result);
+}
+
+// Example usage
+// const result = await calculateTokenCorrelation({
+//   chainId: 1,
+//   token0Address: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599", // WBTC
+//   token1Address: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", // WETH
+// });
+
+// console.log(`Result:`, result);
+// // Output: { correlation: 0.91, stable_pair: true, impermanent_loss_risk: "low" }

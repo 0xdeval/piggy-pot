@@ -5,7 +5,7 @@ interface CurrentTokenPriceParams {
   tokenAddresses: string[];
   chainId: number;
 }
-
+// NOT USED FOR NOW
 export async function fetchCurrentTokensPrices({
   tokenAddresses,
   chainId,
@@ -25,7 +25,8 @@ export async function fetchCurrentTokensPrices({
   const prices = (await res.json()) as CurrentPriceResponse;
 
   if (!prices) {
-    throw new Error(`No current price for ${tokenAddresses}`);
+    console.log(`No current price for ${tokenAddresses}`);
+    return {};
   }
 
   return prices;

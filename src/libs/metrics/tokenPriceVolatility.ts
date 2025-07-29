@@ -1,22 +1,19 @@
 import { fetchHistoricalTokenPrice } from "../1inch/fetchHistoricalTokenPrice";
 import { logger } from "@elizaos/core";
+import { TokenVolatilityResult } from "../../types/metrics/rawFormat";
+import { TokenPriceVolatilityLLMOutput } from "../../types/metrics/llmFormats";
+import { tokenPriceVolatilityToLLM } from "../../utils/metrics/tokenPriceVolatilityToLLM";
 
-export interface TokenVolatilityParams {
+interface TokenVolatilityParams {
   chainId: number;
   tokenAddress: string;
   days?: number;
 }
 
-export interface TokenVolatilityResult {
-  volatilityInPercentage: number;
-  isStableAsset: boolean;
-  impermanentLossRisk: "very low" | "moderate" | "high" | "very volatile";
-}
-
 /**
- * Calculate annualized volatility and impermanent loss risk
+ * Calculate annualized volatility and impermanent loss risk (raw data format)
  */
-export async function calculateTokenVolatility({
+export async function calculateTokenVolatilityRaw({
   chainId,
   tokenAddress,
   days = 30,
@@ -79,11 +76,28 @@ export async function calculateTokenVolatility({
   };
 }
 
-// Example usage
-const result = await calculateTokenVolatility({
-  chainId: 1,
-  tokenAddress: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
-});
+/**
+ * Calculate annualized volatility and impermanent loss risk with LLM-friendly output format (default)
+ */
+export async function calculateTokenVolatility({
+  chainId,
+  tokenAddress,
+  days = 30,
+}: TokenVolatilityParams): Promise<TokenPriceVolatilityLLMOutput> {
+  const result = await calculateTokenVolatilityRaw({
+    chainId,
+    tokenAddress,
+    days,
+  });
 
-console.log(`Result:`, result);
-// Output: { volatility: 34.2, isStableAsset: false, impermanentLossRisk: "high" }
+  return tokenPriceVolatilityToLLM(result);
+}
+
+// // Example usage
+// const result = await calculateTokenVolatility({
+//   chainId: 1,
+//   tokenAddress: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+// });
+
+// console.log(`Result:`, result);
+// // Output: { volatility: 34.2, isStableAsset: false, impermanentLossRisk: "high" }
