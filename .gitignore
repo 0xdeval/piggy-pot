@@ -45,3 +45,9 @@ pnpm-lock.yaml
 yarn.lock
 bun.lockb
 bun.lock
+
+
+.next
+
+
+examples
