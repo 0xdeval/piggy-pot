@@ -1,3 +1,5 @@
+import { logger } from "@/utils/logger";
+
 export function isSpamTokens(token: string): boolean {
   const spamPatterns = [
     /https?:\/\//i,
@@ -12,9 +14,9 @@ export function isSpamTokens(token: string): boolean {
     /\$/,
   ];
 
-  console.log("token", token);
+  logger.debug("Checking token for spam", { token });
   const isSpam = spamPatterns.some((pattern) => pattern.test(token));
-  console.log("isSpam", isSpam);
+  logger.debug("Spam check result", { token, isSpam });
 
   return isSpam;
 }

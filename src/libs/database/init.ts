@@ -1,5 +1,5 @@
 import db from "@/libs/database/connection";
-import { logger } from "@elizaos/core";
+import { logger } from "@/utils/logger";
 
 export async function initDatabase(): Promise<void> {
   try {
@@ -29,9 +29,6 @@ export async function initDatabase(): Promise<void> {
             id SERIAL PRIMARY KEY,
             user_id_raw VARCHAR(255) NOT NULL UNIQUE,
             user_id UUID NOT NULL UNIQUE,
-            channel_id UUID NOT NULL,
-            room_id UUID NOT NULL,
-            agent_id UUID NOT NULL,
             delegated_wallet_hash VARCHAR(255) NOT NULL,
             created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
             updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
@@ -44,15 +41,6 @@ export async function initDatabase(): Promise<void> {
       );
       await db.query(
         "CREATE INDEX IF NOT EXISTS idx_users_user_id ON users(user_id);"
-      );
-      await db.query(
-        "CREATE INDEX IF NOT EXISTS idx_users_channel_id ON users(channel_id);"
-      );
-      await db.query(
-        "CREATE INDEX IF NOT EXISTS idx_users_room_id ON users(room_id);"
-      );
-      await db.query(
-        "CREATE INDEX IF NOT EXISTS idx_users_agent_id ON users(agent_id);"
       );
       await db.query(
         "CREATE INDEX IF NOT EXISTS idx_users_delegated_wallet_hash ON users(delegated_wallet_hash);"
@@ -106,6 +94,8 @@ export async function initDatabase(): Promise<void> {
             non_risky_investment DECIMAL(20,8) NOT NULL,
             log_id UUID,
             status TEXT NOT NULL DEFAULT 'RECOMMENDATION_INIT' CHECK (status IN ('RECOMMENDATION_INIT', 'RECOMMENDATION_FINISHED', 'RECOMMENDATION_FAILED', 'DEPOSIT_INIT', 'DEPOSIT_FAILED', 'ACTIVE_INVESTMENT', 'CLOSED_INVESTMENT')),
+            recommended_pools JSONB,
+            profit DECIMAL(20,8) DEFAULT 0,
             created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
             updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
             FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
@@ -126,6 +116,12 @@ export async function initDatabase(): Promise<void> {
       );
       await db.query(
         "CREATE INDEX IF NOT EXISTS idx_operations_created_at ON operations(created_at);"
+      );
+      await db.query(
+        "CREATE INDEX IF NOT EXISTS idx_operations_recommended_pools ON operations USING GIN (recommended_pools);"
+      );
+      await db.query(
+        "CREATE INDEX IF NOT EXISTS idx_operations_profit ON operations(profit);"
       );
 
       await db.query(`

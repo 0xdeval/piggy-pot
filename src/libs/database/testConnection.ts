@@ -1,5 +1,5 @@
 import db from "@/libs/database/connection";
-import { logger } from "@elizaos/core";
+import { logger } from "@/utils/logger";
 
 export async function testDatabaseConnection(): Promise<void> {
   try {

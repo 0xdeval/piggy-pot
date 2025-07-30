@@ -7,23 +7,20 @@ import {
   UserQueryResult,
   UsersQueryResult,
 } from "@/types/user";
-import { logger } from "@elizaos/core";
+import { logger } from "@/utils/logger";
 
 export class UserModel {
   static async create(userData: CreateUser): Promise<UserQueryResult> {
     try {
       const query = `
-        INSERT INTO users (user_id_raw, user_id, channel_id, room_id, agent_id, delegated_wallet_hash, created_at, updated_at)
-        VALUES ($1, $2, $3, $4, $5, $6, NOW(), NOW())
+        INSERT INTO users (user_id_raw, user_id, delegated_wallet_hash, created_at, updated_at)
+        VALUES ($1, $2, $3, NOW(), NOW())
         RETURNING *
       `;
 
       const values = [
         userData.userIdRaw,
         userData.userId,
-        userData.channelId,
-        userData.roomId,
-        userData.agentId,
         userData.delegatedWalletHash,
       ];
 
@@ -108,17 +105,9 @@ export class UserModel {
       const values = [];
       let paramCount = 1;
 
-      if (updateData.channelId !== undefined) {
-        fields.push(`channel_id = $${paramCount++}`);
-        values.push(updateData.channelId);
-      }
-      if (updateData.roomId !== undefined) {
-        fields.push(`room_id = $${paramCount++}`);
-        values.push(updateData.roomId);
-      }
-      if (updateData.agentId !== undefined) {
-        fields.push(`agent_id = $${paramCount++}`);
-        values.push(updateData.agentId);
+      if (updateData.delegatedWalletHash !== undefined) {
+        fields.push(`delegated_wallet_hash = $${paramCount++}`);
+        values.push(updateData.delegatedWalletHash);
       }
 
       if (fields.length === 0) {
@@ -178,9 +167,6 @@ export class UserModel {
     return {
       userIdRaw: dbRow.user_id_raw,
       userId: dbRow.user_id,
-      channelId: dbRow.channel_id,
-      roomId: dbRow.room_id,
-      agentId: dbRow.agent_id,
       delegatedWalletHash: dbRow.delegated_wallet_hash,
       createdAt: dbRow.created_at ? new Date(dbRow.created_at) : undefined,
       updatedAt: dbRow.updated_at ? new Date(dbRow.updated_at) : undefined,

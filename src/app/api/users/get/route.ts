@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { logger } from "@elizaos/core";
+import { logger } from "@/utils/logger";
 import { UserModel } from "@/libs/database/models/userModel";
 
 export async function GET(request: NextRequest) {

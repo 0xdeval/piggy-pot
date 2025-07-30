@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/api/users/get/route": [
+    "/api/pools/recommendations/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/api/users/get/route.js"
+      "static/chunks/app/api/pools/recommendations/route.js"
     ]
   }
 }

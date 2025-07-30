@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { logger } from "@elizaos/core";
 import { broadcastEvent } from "@/libs/socket/init";
 import { OperationModel } from "@/libs/database/models/operationModel";
 import { OperationLogModel } from "@/libs/database/models/operationLogModel";
 import { UserModel } from "@/libs/database/models/userModel";
+import { recommendLiquidityPools } from "@/processors/liquidityManagement/recommendLiquidityPools";
+import { logger } from "@/utils/logger";
 
 export async function POST(request: NextRequest) {
   logger.info("POST /api/pools/recommendations called");
@@ -105,13 +106,106 @@ export async function POST(request: NextRequest) {
       operationId: operation.operationId,
     });
 
-    return NextResponse.json({
-      success: true,
-      data: {
-        operation,
-        message: "Pool recommendation operation created successfully",
-      },
-    });
+    // Determine if user wants volatile pools based on investment preferences
+    const isLookingForVolatilePool = riskyInvestment > 0;
+
+    logger.info(
+      `Starting pool recommendations for user ${userResult.data!.userId}, volatile: ${isLookingForVolatilePool}`
+    );
+
+    try {
+      // Get pool recommendations
+      const recommendations = await recommendLiquidityPools({
+        userId: userResult.data!.userId,
+        isLookingForVolatilePool,
+      });
+
+      logger.info(
+        `Pool recommendations generated: ${JSON.stringify(recommendations)}`
+      );
+
+      // Log the recommendations
+      const recommendationsLogResult = await OperationLogModel.create({
+        operationId: operation.operationId,
+        description: `Pool recommendations generated: ${JSON.stringify(recommendations)}`,
+        stepNumber: 2,
+      });
+
+      if (recommendationsLogResult.success) {
+        await OperationModel.update(operation.operationId, {
+          logId: recommendationsLogResult.data!.logId,
+        });
+
+        broadcastEvent("OPERATION_LOG_CREATED", {
+          operationId: operation.operationId,
+          log: recommendationsLogResult.data,
+          userIdRaw,
+        });
+      }
+
+      // Update the existing operation with recommendations and completed status
+      await OperationModel.update(operation.operationId, {
+        status: "RECOMMENDATION_FINISHED",
+        recommendedPools: JSON.stringify(recommendations),
+        profit: 0, // Initialize profit to 0, will be updated by future LLM recommendations
+      });
+
+      broadcastEvent("LOG_MESSAGE", {
+        message: "Pool recommendations completed successfully",
+        operationId: operation.operationId,
+      });
+
+      return NextResponse.json({
+        success: true,
+        data: {
+          operationId: operation.operationId,
+          recommendations,
+          message: "Pool recommendations completed successfully",
+        },
+      });
+    } catch (recommendationError) {
+      logger.error(
+        "Error generating pool recommendations:",
+        recommendationError
+      );
+
+      // Log the error
+      const errorLogResult = await OperationLogModel.create({
+        operationId: operation.operationId,
+        description: `Error generating pool recommendations: ${recommendationError instanceof Error ? recommendationError.message : "Unknown error"}`,
+        stepNumber: 2,
+      });
+
+      if (errorLogResult.success) {
+        await OperationModel.update(operation.operationId, {
+          logId: errorLogResult.data!.logId,
+        });
+
+        broadcastEvent("OPERATION_LOG_CREATED", {
+          operationId: operation.operationId,
+          log: errorLogResult.data,
+          userIdRaw,
+        });
+      }
+
+      // Update the existing operation status to failed
+      await OperationModel.update(operation.operationId, {
+        status: "RECOMMENDATION_FAILED",
+      });
+
+      broadcastEvent("LOG_MESSAGE", {
+        message: "Pool recommendations failed",
+        operationId: operation.operationId,
+      });
+
+      return NextResponse.json({
+        success: false,
+        error: "Failed to generate pool recommendations",
+        data: {
+          operation,
+        },
+      });
+    }
   } catch (error) {
     logger.error("Error in poolsRecommendationsHandler:", error);
     return NextResponse.json(

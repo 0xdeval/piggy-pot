@@ -7,7 +7,7 @@ import {
   OperationLogQueryResult,
   OperationLogsQueryResult,
 } from "@/types/operationLog";
-import { logger } from "@elizaos/core";
+import { logger } from "@/utils/logger";
 
 export class OperationLogModel {
   static async create(

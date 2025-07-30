@@ -1,5 +1,6 @@
 import { appConfig } from "@/config";
 import { CurrentPriceResponse } from "@/types/1inch/tokenPrice";
+import { logger } from "@/utils/logger";
 
 interface CurrentTokenPriceParams {
   tokenAddresses: string[];
@@ -25,7 +26,7 @@ export async function fetchCurrentTokensPrices({
   const prices = (await res.json()) as CurrentPriceResponse;
 
   if (!prices) {
-    console.log(`No current price for ${tokenAddresses}`);
+    logger.warn(`No current price for ${tokenAddresses}`);
     return {};
   }
 

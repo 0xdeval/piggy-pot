@@ -1,5 +1,5 @@
 import { fetchHistoricalTokenPrice } from "../1inch/fetchHistoricalTokenPrice";
-import { logger } from "@elizaos/core";
+import { logger } from "@/utils/logger";
 import { TokenVolatilityResult } from "@/types/metrics/rawFormat";
 import { TokenPriceVolatilityLLMOutput } from "@/types/metrics/llmFormats";
 import { tokenPriceVolatilityToLLM } from "@/utils/metrics/tokenPriceVolatilityToLLM";

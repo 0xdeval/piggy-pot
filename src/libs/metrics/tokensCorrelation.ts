@@ -1,5 +1,5 @@
 import { fetchHistoricalTokenPrice } from "@/libs/1inch/fetchHistoricalTokenPrice";
-import { logger } from "@elizaos/core";
+import { logger } from "@/utils/logger";
 import { TokenCorrelationResult } from "@/types/metrics/rawFormat";
 import { TokenCorrelationLLMOutput } from "@/types/metrics/llmFormats";
 import { tokenCorrelationToLLM } from "@/utils/metrics/tokenCorrelationToLLM";

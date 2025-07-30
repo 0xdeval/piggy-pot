@@ -1,10 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { logger } from "@elizaos/core";
-import { UserModel } from "@/libs/database/models/userModel";
 import { generateUuid } from "@/utils/uuidGenerator";
-import { generateRoomId } from "@/utils/uuidGenerator";
-import { getAgentId } from "@/utils/getAgent";
-import { createCentralChannel } from "@/utils/createChannel";
+import { logger } from "@/utils/logger";
+import { UserModel } from "@/libs/database/models/userModel";
 
 export async function POST(request: NextRequest) {
   logger.info("POST /api/users/create called");
@@ -36,18 +33,10 @@ export async function POST(request: NextRequest) {
     }
 
     const generatedUserId = generateUuid(userIdRaw);
-    const generatedRoomId = generateRoomId(userIdRaw);
-
-    const agentId = await getAgentId();
-
-    const channelId = await createCentralChannel(generatedUserId, agentId);
 
     const userData = {
       userIdRaw,
       userId: generatedUserId,
-      channelId,
-      roomId: generatedRoomId,
-      agentId,
       delegatedWalletHash,
     };
 

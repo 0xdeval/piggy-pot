@@ -1,4 +1,5 @@
 import { WebSocketServer, WebSocket } from "ws";
+import { logger } from "@/utils/logger";
 
 let wss: WebSocketServer;
 const clients = new Set<WebSocket>();
@@ -11,17 +12,17 @@ export function startWebSocketServer(port = 8080) {
 
     broadcastEvent("CONNECTED");
 
-    console.log("[WS] New client connected");
+    logger.info("[WS] New client connected");
 
     ws.on("close", () => {
       broadcastEvent("DISCONNECTED");
 
       clients.delete(ws);
-      console.log("[WS] Client disconnected");
+      logger.info("[WS] Client disconnected");
     });
   });
 
-  console.log(`[WS] WebSocket server started on ws://localhost:${port}`);
+  logger.info(`[WS] WebSocket server started on ws://localhost:${port}`);
 }
 
 export function broadcastEvent(event: string, payload?: any) {

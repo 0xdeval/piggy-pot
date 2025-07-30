@@ -1,4 +1,5 @@
 import { appConfig } from "@/config";
+import { logger } from "@/utils/logger";
 
 interface TokenDetails {
   address: string;
@@ -33,14 +34,14 @@ export async function fetchTokensDetails(
   });
 
   if (!res.ok) {
-    console.error(`Failed to fetch current token details: ${res.statusText}`);
+    logger.error(`Failed to fetch current token details: ${res.statusText}`);
     return {};
   }
 
   const tokensInfo = (await res.json()) as TokenDetailsResponse;
 
   if (!tokensInfo) {
-    console.log(`No token details for ${tokenAddresses}`);
+    logger.warn(`No token details for ${tokenAddresses}`);
     return {};
   }
 

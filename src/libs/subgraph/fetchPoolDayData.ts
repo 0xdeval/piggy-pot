@@ -1,5 +1,6 @@
 import { appConfig } from "@/config";
 import { PoolDayData, PoolHistoryResponse } from "@/types/subgraph";
+import { logger } from "@/utils/logger";
 
 export async function fetchPoolDayData(
   poolId: string,
@@ -36,19 +37,19 @@ export async function fetchPoolDayData(
 
   // Debug: print errors or empty state
   if ((json as any).errors) {
-    console.error(
-      "GraphQL Error:",
-      JSON.stringify((json as any).errors, null, 2)
-    );
+    logger.error("GraphQL Error:", (json as any).errors);
     throw new Error("Subgraph query failed");
   }
 
   if (!json.data || !json.data.poolDayDatas) {
-    console.error("Unexpected response format:", JSON.stringify(json, null, 2));
+    logger.error("Unexpected response format:", json);
     throw new Error("Missing poolDayDatas in response");
   }
 
-  console.log("response for pool day data", json);
+  logger.debug("response for pool day data", {
+    poolId,
+    dataLength: json.data.poolDayDatas.length,
+  });
 
   return json.data.poolDayDatas;
 }

@@ -8,6 +8,8 @@ CREATE TABLE IF NOT EXISTS operations (
     non_risky_investment DECIMAL(20,8) NOT NULL,
     log_id UUID,
     status TEXT NOT NULL DEFAULT 'RECOMMENDATION_INIT' CHECK (status IN ('RECOMMENDATION_INIT', 'RECOMMENDATION_FINISHED', 'RECOMMENDATION_FAILED', 'DEPOSIT_INIT', 'DEPOSIT_FAILED', 'ACTIVE_INVESTMENT', 'CLOSED_INVESTMENT')),
+    recommended_pools JSONB,
+    profit DECIMAL(20,8) DEFAULT 0,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
@@ -19,6 +21,8 @@ CREATE INDEX IF NOT EXISTS idx_operations_operation_date ON operations(operation
 CREATE INDEX IF NOT EXISTS idx_operations_status ON operations(status);
 CREATE INDEX IF NOT EXISTS idx_operations_log_id ON operations(log_id);
 CREATE INDEX IF NOT EXISTS idx_operations_created_at ON operations(created_at);
+CREATE INDEX IF NOT EXISTS idx_operations_recommended_pools ON operations USING GIN (recommended_pools);
+CREATE INDEX IF NOT EXISTS idx_operations_profit ON operations(profit);
 
 -- Create trigger for updated_at
 CREATE TRIGGER update_operations_updated_at 

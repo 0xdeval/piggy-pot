@@ -27,6 +27,8 @@ export const OperationSchema = z.object({
       }),
     }
   ),
+  recommendedPools: z.any().optional(), // JSONB field for storing pool recommendations
+  profit: z.number().optional(), // Decimal field for storing profit/loss
   createdAt: z.date().optional(),
   updatedAt: z.date().optional(),
 });

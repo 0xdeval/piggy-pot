@@ -1,6 +1,6 @@
 import { Pool, PoolClient } from "pg";
 import { appConfig } from "@/config";
-import { logger } from "@elizaos/core";
+import { logger } from "@/utils/logger";
 
 class DatabaseConnection {
   private pool: Pool;

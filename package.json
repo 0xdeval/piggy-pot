@@ -7,7 +7,6 @@
     "server"
   ],
   "dependencies": {
-    "@elizaos/core": "latest",
     "@types/pg": "^8.15.4",
     "@types/uuid": "^10.0.0",
     "@types/ws": "^8.18.1",
@@ -30,9 +29,9 @@
     "vitest": "3.1.4"
   },
   "scripts": {
-    "dev": "next dev",
-    "start": "next start",
-    "build": "next build",
+    "dev": "bun scripts/initServices.ts && next dev",
+    "start": "bun scripts/initServices.ts && next start",
+    "build": "bun scripts/initServices.ts && next build",
     "lint": "prettier --write ./src"
   }
 }

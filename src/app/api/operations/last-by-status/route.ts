@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { logger } from "@elizaos/core";
+import { logger } from "@/utils/logger";
 import { OperationModel } from "@/libs/database/models/operationModel";
 
 export async function GET(request: NextRequest) {

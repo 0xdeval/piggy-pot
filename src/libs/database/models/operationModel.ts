@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import db from "@/libs/database/connection";
+import { logger } from "@/utils/logger";
 import {
   Operation,
   CreateOperation,
@@ -7,7 +8,6 @@ import {
   OperationQueryResult,
   OperationsQueryResult,
 } from "@/types/operation";
-import { logger } from "@elizaos/core";
 
 export class OperationModel {
   static async create(
@@ -22,8 +22,8 @@ export class OperationModel {
       );
 
       const query = `
-        INSERT INTO operations (operation_id, user_id, invested_amount, risky_investment, non_risky_investment, status)
-        VALUES ($1, $2, $3, $4, $5, $6)
+        INSERT INTO operations (operation_id, user_id, invested_amount, risky_investment, non_risky_investment, status, recommended_pools, profit)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
         RETURNING *
       `;
 
@@ -35,6 +35,10 @@ export class OperationModel {
         operationData.riskyInvestment,
         operationData.nonRiskyInvestment,
         operationData.status || "RECOMMENDATION_INIT",
+        operationData.recommendedPools
+          ? JSON.stringify(operationData.recommendedPools)
+          : null,
+        operationData.profit || null,
       ];
 
       logger.info(`Query values: ${JSON.stringify(values)}`);
@@ -198,6 +202,14 @@ export class OperationModel {
         fields.push(`status = $${paramCount++}`);
         values.push(updateData.status);
       }
+      if (updateData.recommendedPools !== undefined) {
+        fields.push(`recommended_pools = $${paramCount++}`);
+        values.push(updateData.recommendedPools);
+      }
+      if (updateData.profit !== undefined) {
+        fields.push(`profit = $${paramCount++}`);
+        values.push(updateData.profit);
+      }
 
       if (fields.length === 0) {
         return { success: false, error: "No fields to update" };
@@ -258,6 +270,51 @@ export class OperationModel {
       nonRiskyInvestment: parseFloat(dbRow.non_risky_investment),
       logId: dbRow.log_id,
       status: dbRow.status,
+      recommendedPools: dbRow.recommended_pools
+        ? (() => {
+            logger.debug(
+              "dbRaw from Operation model:",
+              dbRow.recommended_pools
+            );
+            // If it's already an object (PostgreSQL JSONB parsed it), return it directly
+            if (
+              typeof dbRow.recommended_pools === "object" &&
+              dbRow.recommended_pools !== null
+            ) {
+              return dbRow.recommended_pools;
+            }
+
+            // If it's a string, try to parse it
+            if (typeof dbRow.recommended_pools === "string") {
+              try {
+                // Check if it's already a malformed string like "[object Obj"
+                if (dbRow.recommended_pools.startsWith("[object ")) {
+                  logger.warn(
+                    "Found malformed recommendedPools data, returning null",
+                    {
+                      value: dbRow.recommended_pools.substring(0, 50),
+                    }
+                  );
+                  return null;
+                }
+                return JSON.parse(dbRow.recommended_pools);
+              } catch (error) {
+                logger.error("Error parsing recommendedPools JSON:", error, {
+                  value: dbRow.recommended_pools.substring(0, 50),
+                });
+                return null;
+              }
+            }
+
+            // If it's neither object nor string, log and return null
+            logger.warn("Unexpected recommendedPools data type", {
+              type: typeof dbRow.recommended_pools,
+              value: String(dbRow.recommended_pools).substring(0, 50),
+            });
+            return null;
+          })()
+        : null,
+      profit: dbRow.profit ? parseFloat(dbRow.profit) : 0,
       createdAt: dbRow.created_at ? new Date(dbRow.created_at) : undefined,
       updatedAt: dbRow.updated_at ? new Date(dbRow.updated_at) : undefined,
     };

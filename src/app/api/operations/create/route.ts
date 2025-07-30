@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { logger } from "@elizaos/core";
+import { logger } from "@/utils/logger";
 import { OperationModel } from "@/libs/database/models/operationModel";
 import { UserModel } from "@/libs/database/models/userModel";
 import { CreateOperationSchema } from "@/types/operation";

@@ -3,9 +3,6 @@ import { z } from "zod";
 export const UserSchema = z.object({
   userIdRaw: z.string().min(1, "userIdRaw is required"),
   userId: z.string().uuid("userId must be a valid UUID"),
-  channelId: z.string().uuid("channelId must be a valid UUID"),
-  roomId: z.string().uuid("roomId must be a valid UUID"),
-  agentId: z.string().uuid("agentId must be a valid UUID"),
   delegatedWalletHash: z.string().min(1, "delegatedWalletHash is required"),
   createdAt: z.date().optional(),
   updatedAt: z.date().optional(),

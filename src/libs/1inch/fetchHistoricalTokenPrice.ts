@@ -1,5 +1,6 @@
 import { ChartRangeResponse } from "@/types/1inch/tokenPrice";
 import { appConfig } from "@/config";
+import { logger } from "@/utils/logger";
 
 interface HistoricalTokenPriceParams {
   tokenAddress: string;
@@ -26,7 +27,7 @@ export async function fetchHistoricalTokenPrice({
   });
 
   if (!res.ok) {
-    console.error(`Failed to fetch historical price: ${res.statusText}`);
+    logger.error(`Failed to fetch historical price: ${res.statusText}`);
     return [];
   }
 
@@ -36,7 +37,7 @@ export async function fetchHistoricalTokenPrice({
   //   console.log("Historical data to timestamp:", to);
 
   if (!data.d?.length) {
-    console.log(`No price data found for ${tokenAddress}`);
+    logger.warn(`No price data found for ${tokenAddress}`);
     return [];
   }
 
