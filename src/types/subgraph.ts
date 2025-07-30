@@ -5,15 +5,6 @@ export interface Token {
   decimals: number;
 }
 
-export interface Tick {
-  id: string;
-  tickIdx: string;
-  liquidityGross: string;
-  liquidityNet: string;
-  price0: string;
-  price1: string;
-}
-
 export interface Pool {
   id: string;
   token0: Token;
@@ -21,7 +12,6 @@ export interface Pool {
   feeTier: string;
   liquidity: string;
   totalValueLockedUSD: string;
-  ticks: Tick[];
   isStablecoinPool: boolean;
 }
 

@@ -1,19 +1,29 @@
-import { TokenQualityInfo } from "./rawFormat";
-import { ImpermanentLossResult } from "./rawFormat";
-import { TokenVolatilityResult } from "./rawFormat";
-import { TokenCorrelationResult } from "./rawFormat";
-import { PoolGrowthTrendResult } from "./rawFormat";
+import { TokenQualityLLMOutput } from "./llmFormats";
+import { ImpermanentLossLLMOutput } from "./llmFormats";
+import { TokenPriceVolatilityLLMOutput } from "./llmFormats";
+import { TokenCorrelationLLMOutput } from "./llmFormats";
+import { PoolGrowthTrendLLMOutput } from "./llmFormats";
+import { APYVolatilityLLMOutput } from "./llmFormats";
 import { Pool } from "../subgraph";
 
 export interface PoolInfoWithMetrics {
-  pool: Pool;
-  token0: TokenQualityInfo;
-  token1: TokenQualityInfo;
-  impermanentLoss: ImpermanentLossResult;
-  tokensVolatility: {
-    token0: TokenVolatilityResult;
-    token1: TokenVolatilityResult;
+  pool: Pool & {
+    isStablecoinPool?: boolean;
   };
-  tokenCorrelation: TokenCorrelationResult;
-  poolGrowthTendency: PoolGrowthTrendResult;
+  tokenQuality: {
+    token0: TokenQualityLLMOutput | null;
+    token1: TokenQualityLLMOutput | null;
+  };
+  impermanentLoss: ImpermanentLossLLMOutput | null;
+  tokenCorrelation: TokenCorrelationLLMOutput | null;
+  tokensVolatility: {
+    token0: {
+      tokenPriceVolatility: TokenPriceVolatilityLLMOutput | null;
+    };
+    token1: {
+      tokenPriceVolatility: TokenPriceVolatilityLLMOutput | null;
+    };
+  };
+  poolGrowthTendency: PoolGrowthTrendLLMOutput | null;
+  apyVolatility: APYVolatilityLLMOutput | null;
 }

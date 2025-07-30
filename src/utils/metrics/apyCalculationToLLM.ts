@@ -1,5 +1,4 @@
 import { APYVolatilityLLMOutput } from "../../types/metrics/llmFormats";
-import { calculateAPYVolatility } from "../../libs/metrics/apyVolatility";
 
 /**
  * Calculate APY volatility stats with LLM-friendly output format
@@ -46,13 +45,11 @@ export async function calculateAPYVolatilityForLLM({
   }
 
   return {
-    apyVolatility: {
-      stdDev,
-      mean,
-      coefficientOfVariation,
-      stabilityScore,
-      riskLevel,
-      description,
-    },
+    stdDev,
+    mean,
+    coefficientOfVariation,
+    stabilityScore,
+    riskLevel,
+    description,
   };
 }

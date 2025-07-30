@@ -47,12 +47,13 @@ export async function calculatePoolGrowthTrend({
   poolId,
   initialTimestamp,
   currentTVL,
-}: PoolGrowthTrendParams): Promise<PoolGrowthTrendLLMOutput> {
+}: PoolGrowthTrendParams): Promise<PoolGrowthTrendLLMOutput | null> {
   const result = await calculatePoolGrowthTrendRaw({
     poolId,
     initialTimestamp,
     currentTVL,
   });
 
-  return poolGrowthTrendToLLM(result);
+  const llmResult = poolGrowthTrendToLLM(result);
+  return llmResult;
 }

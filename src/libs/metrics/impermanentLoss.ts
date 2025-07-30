@@ -99,7 +99,7 @@ export async function calculateImpermanentLoss({
   token1: string;
   sinceTimestamp: number;
   chainId: number;
-}): Promise<ImpermanentLossLLMOutput> {
+}): Promise<ImpermanentLossLLMOutput | null> {
   const result = await calculateImpermanentLossRaw({
     token0,
     token1,
@@ -114,7 +114,8 @@ export async function calculateImpermanentLoss({
     return null;
   }
 
-  return impermanentLossToLLM(result);
+  const llmResult = impermanentLossToLLM(result);
+  return llmResult;
 }
 
 // calculateImpermanentLoss({

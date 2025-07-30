@@ -1,4 +1,4 @@
-import { TOP_TICKS_PER_POOL, TOP_POOLS_PER_QUERY } from "../../config/subgraph";
+import { TOP_POOLS_PER_QUERY } from "../../config/subgraph";
 import { fetchStablecoins, type Stablecoin } from "../defillama";
 import { Pool, GraphQLResponse } from "../../types/subgraph";
 import { isStablecoinPool } from "../../utils/pools/isStablecoinPool";
@@ -41,18 +41,6 @@ export async function fetchPools(): Promise<Pool[]> {
     feeTier
     liquidity
     totalValueLockedUSD
-    ticks(
-      orderBy: tickIdx
-      
-      first: ${TOP_TICKS_PER_POOL}
-    ) {
-      id
-      tickIdx
-      liquidityGross
-      liquidityNet
-      price0
-      price1
-    }
   }
 }
   `;
@@ -75,7 +63,7 @@ export async function fetchPools(): Promise<Pool[]> {
     // console.log(result);
 
     if (result.data?.pools) {
-      // Filter pools based on adjusted liquidity and filter ticks
+      // Filter pools based on liquidity and spam token filtering
       const filteredPools = result.data.pools
         .map((pool) => {
           if (

@@ -25,7 +25,6 @@ Fetches historical daily data for specific pools, including TVL and fees over ti
   - Fee tier
   - Liquidity values
   - TVL in USD
-  - Tick data with liquidity information
   - Stablecoin pool detection
 
 ### Historical Data Fetching (`fetchPoolDayData.ts`)
@@ -81,7 +80,6 @@ interface Pool {
   feeTier: string;
   liquidity: string;
   totalValueLockedUSD: string;
-  ticks: Tick[];
   isStablecoinPool: boolean;
 }
 ```
@@ -119,7 +117,6 @@ The utilities use configuration from `src/config/subgraph.ts`:
 
 - `SUBGRAPH_URL`: The Graph API endpoint
 - `SUBGRAPH_KEY`: API key for authentication
-- `TOP_TICKS_PER_POOL`: Maximum number of ticks to fetch per pool
 - `TOP_POOLS_PER_QUERY`: Maximum number of pools to fetch per query
 
 ## Notes

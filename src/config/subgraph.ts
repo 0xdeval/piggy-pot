@@ -12,5 +12,4 @@ export const UNISWAP_V3_SUBGRAPH_ID = process.env.UNISWAP_V3_SUBGRAPH_ID;
 export const SUBGRAPH_KEY = process.env.SUBGRAPH_KEY;
 export const SUBGRAPH_URL = `https://gateway.thegraph.com/api/subgraphs/id/${UNISWAP_V3_SUBGRAPH_ID}`;
 
-export const TOP_TICKS_PER_POOL = 50;
 export const TOP_POOLS_PER_QUERY = 150;

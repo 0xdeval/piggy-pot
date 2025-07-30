@@ -78,14 +78,10 @@ export function tokenPriceVolatilityToLLM(
   }
 
   return {
-    tokenPriceVolatility: {
-      volatilityInPercentage,
-      isStableAsset,
-      impermanentLossRisk,
-      volatilityLevel,
-      stability,
-      assessment,
-      recommendation,
-    },
+    volatilityInPercentage,
+    volatilityLevel,
+    stability,
+    assessment,
+    recommendation,
   };
 }

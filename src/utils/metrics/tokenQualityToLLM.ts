@@ -104,15 +104,9 @@ export function tokenQualityToLLM(
   assessment += ` Specific factors: ${factorDetails.join(", ")}.`;
 
   return {
-    tokenQuality: {
-      hasInProviders,
-      hasInternalTags,
-      hasEip2612,
-      rating,
-      qualityScore,
-      trustworthiness,
-      assessment,
-      recommendation,
-    },
+    qualityScore,
+    trustworthiness,
+    assessment,
+    recommendation,
   };
 }

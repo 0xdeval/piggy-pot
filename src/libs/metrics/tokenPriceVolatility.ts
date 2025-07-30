@@ -83,14 +83,15 @@ export async function calculateTokenVolatility({
   chainId,
   tokenAddress,
   days = 30,
-}: TokenVolatilityParams): Promise<TokenPriceVolatilityLLMOutput> {
+}: TokenVolatilityParams): Promise<TokenPriceVolatilityLLMOutput | null> {
   const result = await calculateTokenVolatilityRaw({
     chainId,
     tokenAddress,
     days,
   });
 
-  return tokenPriceVolatilityToLLM(result);
+  const llmResult = tokenPriceVolatilityToLLM(result);
+  return llmResult;
 }
 
 // // Example usage

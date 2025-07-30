@@ -1,25 +1,25 @@
-import { TOP_POOLS_PER_QUERY, TOP_TICKS_PER_POOL } from "src/config/subgraph";
 import { fetchPools } from "./fetchPools";
 import { calculateImpermanentLoss } from "../metrics/impermanentLoss";
 import { evaluateTokenQuality } from "../metrics/evaluateTokenQuality";
 import { calculateTokenVolatility } from "../metrics/tokenPriceVolatility";
 import { calculateTokenCorrelation } from "../metrics/tokensCorrelation";
-import { PoolInfoWithMetrics } from "../../types/metrics/poolsWithMetrics";
 import fs from "fs";
 import { appConfig } from "src/config";
 import { calculatePoolGrowthTrend } from "../metrics/poolGrowthTrend";
 import { calculateAPYVolatility } from "../metrics/apyVolatility";
-import { waitFor } from "src/utils/waitFor";
+import { waitFor } from "../../utils/waitFor";
 
-async function main() {
-  console.log("Fetching Uniswap V3 pools...");
-
-  const pools = await fetchPools();
-
-  console.log(`Found ${pools.length} pools matching criteria:`);
-
-  const poolInfoWithMetrics = await Promise.all(
-    pools.slice(0, 5).map(async (pool) => {
+/**
+ * Process pools in batches to limit parallel execution
+ */
+async function processPoolBatch(
+  pools: any[],
+  startIndex: number,
+  batchSize: number
+) {
+  const batch = pools.slice(startIndex, startIndex + batchSize);
+  return Promise.all(
+    batch.map(async (pool) => {
       console.log("Pool", pool);
       if (!pool.token0 || !pool.token1) {
         console.log("Skipping pool with null tokens", pool);
@@ -83,25 +83,63 @@ async function main() {
       });
 
       return {
-        pool,
-        token0: tokenQualityInfo[pool.token0.id],
-        token1: tokenQualityInfo[pool.token1.id],
+        pool: pool,
+        tokenQuality: {
+          token0: tokenQualityInfo[pool.token0.id],
+          token1: tokenQualityInfo[pool.token1.id],
+        },
         impermanentLoss: poolImpermanentLoss,
         tokenCorrelation,
         tokensVolatility: {
-          token0: token0Volatility,
-          token1: token1Volatility,
+          token0: {
+            tokenPriceVolatility: token0Volatility,
+          },
+          token1: {
+            tokenPriceVolatility: token1Volatility,
+          },
         },
         poolGrowthTendency: poolGrowthTendencyInPercentage,
         apyVolatility,
       };
     })
   );
+}
+
+async function main() {
+  console.log("Fetching Uniswap V3 pools...");
+
+  const pools = await fetchPools();
+
+  console.log(`Found ${pools.length} pools matching criteria:`);
+
+  const maxPools = 20;
+  const maxParallelProcesses = 2;
+  const poolsToProcess = pools.slice(0, maxPools);
+
+  const allResults = [];
+
+  // Process pools in batches of maxParallelProcesses
+  for (let i = 0; i < poolsToProcess.length; i += maxParallelProcesses) {
+    console.log(
+      `Processing batch ${Math.floor(i / maxParallelProcesses) + 1}/${Math.ceil(poolsToProcess.length / maxParallelProcesses)}`
+    );
+
+    const batchResults = await processPoolBatch(
+      poolsToProcess,
+      i,
+      maxParallelProcesses
+    );
+    allResults.push(...batchResults);
+
+    // Add a small delay between batches to avoid overwhelming the APIs
+    if (i + maxParallelProcesses < poolsToProcess.length) {
+      console.log("Waiting 2 seconds before next batch...");
+      await waitFor(2000);
+    }
+  }
 
   // Filter out null values from pools that were skipped
-  const validPoolInfoWithMetrics = poolInfoWithMetrics.filter(
-    (item) => item !== null
-  );
+  const validPoolInfoWithMetrics = allResults.filter((item) => item !== null);
 
   fs.writeFileSync(
     "llmFriendlyPoolMetrics.json",

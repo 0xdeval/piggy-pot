@@ -62,15 +62,18 @@ export const evaluateTokenQualityRaw = async (
 export const evaluateTokenQuality = async (
   addresses: string[],
   chainId: number
-): Promise<{ [address: string]: TokenQualityLLMOutput }> => {
+): Promise<{ [address: string]: TokenQualityLLMOutput | null }> => {
   const rawResults = await evaluateTokenQualityRaw(addresses, chainId);
 
-  const llmResults: { [address: string]: TokenQualityLLMOutput } = {};
+  const llmResults: {
+    [address: string]: TokenQualityLLMOutput;
+  } = {};
 
   addresses.forEach((address) => {
     const tokenQuality = rawResults[address];
     if (tokenQuality) {
-      llmResults[address] = tokenQualityToLLM(tokenQuality);
+      const llmResult = tokenQualityToLLM(tokenQuality);
+      llmResults[address] = llmResult;
     }
   });
 

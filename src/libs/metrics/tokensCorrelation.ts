@@ -86,7 +86,7 @@ export async function calculateTokenCorrelation({
   token0Address,
   token1Address,
   days = 30,
-}: TokenCorrelationParams): Promise<TokenCorrelationLLMOutput> {
+}: TokenCorrelationParams): Promise<TokenCorrelationLLMOutput | null> {
   const result = await calculateTokenCorrelationRaw({
     chainId,
     token0Address,
@@ -94,7 +94,12 @@ export async function calculateTokenCorrelation({
     days,
   });
 
-  return tokenCorrelationToLLM(result);
+  if (!result) {
+    return null;
+  }
+
+  const llmResult = tokenCorrelationToLLM(result);
+  return llmResult;
 }
 
 // Example usage

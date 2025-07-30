@@ -11,7 +11,7 @@ export async function calculateAPYVolatility({
 }: {
   poolId: string;
   days?: number;
-}): Promise<APYVolatilityLLMOutput> {
+}): Promise<APYVolatilityLLMOutput | null> {
   const now = Math.floor(Date.now() / 1000);
   const from = now - days * 24 * 60 * 60;
 
@@ -47,5 +47,6 @@ export async function calculateAPYVolatility({
   const cv = mean !== 0 ? stdDev / mean : 0;
   const calculations = { stdDev, mean, coefficientOfVariation: cv };
 
-  return calculateAPYVolatilityForLLM(calculations);
+  const llmResult = await calculateAPYVolatilityForLLM(calculations);
+  return llmResult;
 }
