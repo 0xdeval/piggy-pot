@@ -1,6 +1,6 @@
-import { APYVolatilityLLMOutput } from "../../types/metrics/llmFormats";
-import { calculateAPYVolatilityForLLM } from "../../utils/metrics/apyCalculationToLLM";
-import { fetchPoolDayData } from "../subgraph/fetchPoolDayData";
+import { APYVolatilityLLMOutput } from "@/types/metrics/llmFormats";
+import { calculateAPYVolatilityForLLM } from "@/utils/metrics/apyCalculationToLLM";
+import { fetchPoolDayData } from "@/libs/subgraph/fetchPoolDayData";
 
 /**
  * Calculate APY volatility stats from Uniswap subgraph data

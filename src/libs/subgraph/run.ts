@@ -1,13 +1,13 @@
-import { fetchPools } from "./fetchPools";
-import { calculateImpermanentLoss } from "../metrics/impermanentLoss";
-import { evaluateTokenQuality } from "../metrics/evaluateTokenQuality";
-import { calculateTokenVolatility } from "../metrics/tokenPriceVolatility";
-import { calculateTokenCorrelation } from "../metrics/tokensCorrelation";
+import { fetchPools } from "@/libs/subgraph/fetchPools";
+import { calculateImpermanentLoss } from "@/libs/metrics/impermanentLoss";
+import { evaluateTokenQuality } from "@/libs/metrics/evaluateTokenQuality";
+import { calculateTokenVolatility } from "@/libs/metrics/tokenPriceVolatility";
+import { calculateTokenCorrelation } from "@/libs/metrics/tokensCorrelation";
 import fs from "fs";
-import { appConfig } from "src/config";
-import { calculatePoolGrowthTrend } from "../metrics/poolGrowthTrend";
-import { calculateAPYVolatility } from "../metrics/apyVolatility";
-import { waitFor } from "../../utils/waitFor";
+import { appConfig } from "@/config";
+import { calculatePoolGrowthTrend } from "@/libs/metrics/poolGrowthTrend";
+import { calculateAPYVolatility } from "@/libs/metrics/apyVolatility";
+import { waitFor } from "@/utils/waitFor";
 
 /**
  * Process pools in batches to limit parallel execution

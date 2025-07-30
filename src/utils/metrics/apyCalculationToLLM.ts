@@ -1,4 +1,4 @@
-import { APYVolatilityLLMOutput } from "../../types/metrics/llmFormats";
+import { APYVolatilityLLMOutput } from "@/types/metrics/llmFormats";
 
 /**
  * Calculate APY volatility stats with LLM-friendly output format

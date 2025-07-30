@@ -1,7 +1,7 @@
-import { fetchHistoricalTokenPrice } from "../1inch/fetchHistoricalTokenPrice";
-import { ImpermanentLossResult } from "../../types/metrics/rawFormat";
-import { ImpermanentLossLLMOutput } from "../../types/metrics/llmFormats";
-import { impermanentLossToLLM } from "../../utils/metrics/impermanentLossToLLM";
+import { fetchHistoricalTokenPrice } from "@/libs/1inch/fetchHistoricalTokenPrice";
+import { ImpermanentLossResult } from "@/types/metrics/rawFormat";
+import { ImpermanentLossLLMOutput } from "@/types/metrics/llmFormats";
+import { impermanentLossToLLM } from "@/utils/metrics/impermanentLossToLLM";
 
 /**
  * Calculate the impermanent loss of a pool (raw data format)
@@ -21,7 +21,7 @@ export async function calculateImpermanentLossRaw({
   token1: string;
   sinceTimestamp: number; // in seconds
   chainId: number;
-}): Promise<ImpermanentLossResult> {
+}): Promise<ImpermanentLossResult | null> {
   const [historicalPrices0, historicalPrices1] = await Promise.all([
     fetchHistoricalTokenPrice({
       tokenAddress: token0,

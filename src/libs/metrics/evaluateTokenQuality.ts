@@ -1,7 +1,7 @@
-import { fetchTokensDetails } from "../1inch/fetchTokensDetails";
-import { TokenQualityInfo } from "../../types/metrics/rawFormat";
-import { TokenQualityLLMOutput } from "../../types/metrics/llmFormats";
-import { tokenQualityToLLM } from "../../utils/metrics/tokenQualityToLLM";
+import { fetchTokensDetails } from "@/libs/1inch/fetchTokensDetails";
+import { TokenQualityInfo } from "@/types/metrics/rawFormat";
+import { TokenQualityLLMOutput } from "@/types/metrics/llmFormats";
+import { tokenQualityToLLM } from "@/utils/metrics/tokenQualityToLLM";
 
 /**
  * Evaluate the quality of a token by returning a list of parameters relates to a token (raw data format)

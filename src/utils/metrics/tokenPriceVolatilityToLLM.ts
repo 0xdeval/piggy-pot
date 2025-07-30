@@ -1,5 +1,5 @@
-import { TokenPriceVolatilityLLMOutput } from "../../types/metrics/llmFormats";
-import { TokenVolatilityResult } from "../../types/metrics/rawFormat";
+import { TokenPriceVolatilityLLMOutput } from "@/types/metrics/llmFormats";
+import { TokenVolatilityResult } from "@/types/metrics/rawFormat";
 
 /**
  * Convert token price volatility calculations to LLM-friendly output format

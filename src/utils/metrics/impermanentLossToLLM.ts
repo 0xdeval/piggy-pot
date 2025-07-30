@@ -1,5 +1,5 @@
-import { ImpermanentLossLLMOutput } from "../../types/metrics/llmFormats";
-import { ImpermanentLossResult } from "../../types/metrics/rawFormat";
+import { ImpermanentLossLLMOutput } from "@/types/metrics/llmFormats";
+import { ImpermanentLossResult } from "@/types/metrics/rawFormat";
 
 /**
  * Convert impermanent loss calculations to LLM-friendly output format

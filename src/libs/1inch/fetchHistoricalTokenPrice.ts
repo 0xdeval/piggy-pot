@@ -1,5 +1,5 @@
-import { ChartRangeResponse } from "../../types/1inch/tokenPrice";
-import { appConfig } from "../../config";
+import { ChartRangeResponse } from "@/types/1inch/tokenPrice";
+import { appConfig } from "@/config";
 
 interface HistoricalTokenPriceParams {
   tokenAddress: string;

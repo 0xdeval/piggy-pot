@@ -1,5 +1,5 @@
-import { TokenCorrelationLLMOutput } from "../../types/metrics/llmFormats";
-import { TokenCorrelationResult } from "../../types/metrics/rawFormat";
+import { TokenCorrelationLLMOutput } from "@/types/metrics/llmFormats";
+import { TokenCorrelationResult } from "@/types/metrics/rawFormat";
 
 /**
  * Convert token correlation calculations to LLM-friendly output format

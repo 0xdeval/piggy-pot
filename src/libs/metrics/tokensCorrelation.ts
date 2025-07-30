@@ -1,8 +1,8 @@
-import { fetchHistoricalTokenPrice } from "../1inch/fetchHistoricalTokenPrice";
+import { fetchHistoricalTokenPrice } from "@/libs/1inch/fetchHistoricalTokenPrice";
 import { logger } from "@elizaos/core";
-import { TokenCorrelationResult } from "../../types/metrics/rawFormat";
-import { TokenCorrelationLLMOutput } from "../../types/metrics/llmFormats";
-import { tokenCorrelationToLLM } from "../../utils/metrics/tokenCorrelationToLLM";
+import { TokenCorrelationResult } from "@/types/metrics/rawFormat";
+import { TokenCorrelationLLMOutput } from "@/types/metrics/llmFormats";
+import { tokenCorrelationToLLM } from "@/utils/metrics/tokenCorrelationToLLM";
 
 interface TokenCorrelationParams {
   chainId: number;
@@ -19,7 +19,7 @@ export async function calculateTokenCorrelationRaw({
   token0Address,
   token1Address,
   days = 30,
-}: TokenCorrelationParams): Promise<TokenCorrelationResult> {
+}: TokenCorrelationParams): Promise<TokenCorrelationResult | null> {
   const now = Math.floor(Date.now() / 1000);
   const from = now - days * 86400;
 

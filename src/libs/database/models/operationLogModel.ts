@@ -1,12 +1,12 @@
 import { v4 as uuidv4 } from "uuid";
-import db from "../connection";
+import db from "@/libs/database/connection";
 import {
   OperationLog,
   CreateOperationLog,
   UpdateOperationLog,
   OperationLogQueryResult,
   OperationLogsQueryResult,
-} from "../../../types/operationLog";
+} from "@/types/operationLog";
 import { logger } from "@elizaos/core";
 
 export class OperationLogModel {
@@ -73,7 +73,7 @@ export class OperationLogModel {
 
       return {
         success: true,
-        data: result.rows.map((row) => this.mapDbToOperationLog(row)),
+        data: result.rows.map((row: any) => this.mapDbToOperationLog(row)),
       };
     } catch (error) {
       logger.error("Error finding operation logs by operationId:", error);
@@ -99,7 +99,7 @@ export class OperationLogModel {
 
       return {
         success: true,
-        data: result.rows.map((row) => this.mapDbToOperationLog(row)),
+        data: result.rows.map((row: any) => this.mapDbToOperationLog(row)),
       };
     } catch (error) {
       logger.error("Error finding operation logs by userIdRaw:", error);
@@ -132,7 +132,7 @@ export class OperationLogModel {
 
       return {
         success: true,
-        data: result.rows.map((row) => this.mapDbToOperationLog(row)),
+        data: result.rows.map((row: any) => this.mapDbToOperationLog(row)),
       };
     } catch (error) {
       logger.error("Error finding all operation logs:", error);

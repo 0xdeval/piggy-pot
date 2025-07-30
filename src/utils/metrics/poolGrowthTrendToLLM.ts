@@ -1,5 +1,5 @@
-import { PoolGrowthTrendLLMOutput } from "../../types/metrics/llmFormats";
-import { PoolGrowthTrendResult } from "../../types/metrics/rawFormat";
+import { PoolGrowthTrendLLMOutput } from "@/types/metrics/llmFormats";
+import { PoolGrowthTrendResult } from "@/types/metrics/rawFormat";
 
 /**
  * Convert pool growth trend calculations to LLM-friendly output format

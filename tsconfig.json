@@ -1,30 +1,61 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
-    "rootDir": "src",
-    "lib": ["ESNext"],
-    "target": "ESNext",
-    "module": "Preserve",
-    "moduleResolution": "Bundler",
-    "strict": false,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": false,
-    "allowImportingTsExtensions": true,
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "resolveJsonModule": true,
-    "noImplicitAny": false,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
-    "checkJs": false,
-    "noEmitOnError": false,
-    "moduleDetection": "force",
-    "allowArbitraryExtensions": true,
-    "baseUrl": ".",
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "paths": {
-      "@elizaos/core": ["../../core/src"],
-      "@elizaos/core/*": ["../../core/src/*"]
-    }
+      "@/*": [
+        "./src/*"
+      ],
+      "@/icons/*": [
+        "./public/icons/*"
+      ],
+      "@/types/*": [
+        "./src/types/*"
+      ],
+      "@/hooks/*": [
+        "./src/hooks/*"
+      ],
+      "@/components/*": [
+        "./src/components/*"
+      ],
+      "@/config/*": [
+        "./src/config/*"
+      ],
+      "@/utils/*": [
+        "./src/utils/*"
+      ],
+      "@/libs/*": [
+        "./src/libs/*"
+      ]
+    },
+    "target": "ES2017"
   },
-  "include": ["src/**/*.ts"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

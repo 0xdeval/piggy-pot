@@ -1,9 +1,9 @@
-import { TOP_POOLS_PER_QUERY } from "../../config/subgraph";
-import { fetchStablecoins, type Stablecoin } from "../defillama";
-import { Pool, GraphQLResponse } from "../../types/subgraph";
-import { isStablecoinPool } from "../../utils/pools/isStablecoinPool";
-import { isSpamTokens } from "../../utils/pools/filterSpamTokens";
-import { appConfig } from "../../config";
+import { TOP_POOLS_PER_QUERY } from "@/config/subgraph";
+import { fetchStablecoins, type Stablecoin } from "@/libs/defillama";
+import { Pool, GraphQLResponse } from "@/types/subgraph";
+import { isStablecoinPool } from "@/utils/pools/isStablecoinPool";
+import { isSpamTokens } from "@/utils/pools/filterSpamTokens";
+import { appConfig } from "@/config";
 
 export async function fetchPools(): Promise<Pool[]> {
   let stablecoins: Stablecoin[] = [];

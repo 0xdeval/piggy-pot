@@ -1,0 +1,24 @@
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+exports.id = "vendor-chunks/evp_bytestokey";
+exports.ids = ["vendor-chunks/evp_bytestokey"];
+exports.modules = {
+
+/***/ "(rsc)/./node_modules/evp_bytestokey/index.js":
+/*!**********************************************!*\
+  !*** ./node_modules/evp_bytestokey/index.js ***!
+  \**********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("var Buffer = (__webpack_require__(/*! safe-buffer */ \"(rsc)/./node_modules/safe-buffer/index.js\").Buffer)\nvar MD5 = __webpack_require__(/*! md5.js */ \"(rsc)/./node_modules/md5.js/index.js\")\n\n/* eslint-disable camelcase */\nfunction EVP_BytesToKey (password, salt, keyBits, ivLen) {\n  if (!Buffer.isBuffer(password)) password = Buffer.from(password, 'binary')\n  if (salt) {\n    if (!Buffer.isBuffer(salt)) salt = Buffer.from(salt, 'binary')\n    if (salt.length !== 8) throw new RangeError('salt should be Buffer with 8 byte length')\n  }\n\n  var keyLen = keyBits / 8\n  var key = Buffer.alloc(keyLen)\n  var iv = Buffer.alloc(ivLen || 0)\n  var tmp = Buffer.alloc(0)\n\n  while (keyLen > 0 || ivLen > 0) {\n    var hash = new MD5()\n    hash.update(tmp)\n    hash.update(password)\n    if (salt) hash.update(salt)\n    tmp = hash.digest()\n\n    var used = 0\n\n    if (keyLen > 0) {\n      var keyStart = key.length - keyLen\n      used = Math.min(keyLen, tmp.length)\n      tmp.copy(key, keyStart, 0, used)\n      keyLen -= used\n    }\n\n    if (used < tmp.length && ivLen > 0) {\n      var ivStart = iv.length - ivLen\n      var length = Math.min(ivLen, tmp.length - used)\n      tmp.copy(iv, ivStart, used, used + length)\n      ivLen -= length\n    }\n  }\n\n  tmp.fill(0)\n  return { key: key, iv: iv }\n}\n\nmodule.exports = EVP_BytesToKey\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9ub2RlX21vZHVsZXMvZXZwX2J5dGVzdG9rZXkvaW5kZXguanMiLCJtYXBwaW5ncyI6IkFBQUEsYUFBYSw0RkFBNkI7QUFDMUMsVUFBVSxtQkFBTyxDQUFDLG9EQUFROztBQUUxQjtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTs7QUFFQTtBQUNBO0FBQ0E7QUFDQTs7QUFFQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7O0FBRUE7O0FBRUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVBO0FBQ0EsV0FBVztBQUNYOztBQUVBIiwic291cmNlcyI6WyIvVXNlcnMvYWRtaW4vRG9jdW1lbnRzL3Byb2plY3RzL3BpZ2d5LXBvdC9ub2RlX21vZHVsZXMvZXZwX2J5dGVzdG9rZXkvaW5kZXguanMiXSwic291cmNlc0NvbnRlbnQiOlsidmFyIEJ1ZmZlciA9IHJlcXVpcmUoJ3NhZmUtYnVmZmVyJykuQnVmZmVyXG52YXIgTUQ1ID0gcmVxdWlyZSgnbWQ1LmpzJylcblxuLyogZXNsaW50LWRpc2FibGUgY2FtZWxjYXNlICovXG5mdW5jdGlvbiBFVlBfQnl0ZXNUb0tleSAocGFzc3dvcmQsIHNhbHQsIGtleUJpdHMsIGl2TGVuKSB7XG4gIGlmICghQnVmZmVyLmlzQnVmZmVyKHBhc3N3b3JkKSkgcGFzc3dvcmQgPSBCdWZmZXIuZnJvbShwYXNzd29yZCwgJ2JpbmFyeScpXG4gIGlmIChzYWx0KSB7XG4gICAgaWYgKCFCdWZmZXIuaXNCdWZmZXIoc2FsdCkpIHNhbHQgPSBCdWZmZXIuZnJvbShzYWx0LCAnYmluYXJ5JylcbiAgICBpZiAoc2FsdC5sZW5ndGggIT09IDgpIHRocm93IG5ldyBSYW5nZUVycm9yKCdzYWx0IHNob3VsZCBiZSBCdWZmZXIgd2l0aCA4IGJ5dGUgbGVuZ3RoJylcbiAgfVxuXG4gIHZhciBrZXlMZW4gPSBrZXlCaXRzIC8gOFxuICB2YXIga2V5ID0gQnVmZmVyLmFsbG9jKGtleUxlbilcbiAgdmFyIGl2ID0gQnVmZmVyLmFsbG9jKGl2TGVuIHx8IDApXG4gIHZhciB0bXAgPSBCdWZmZXIuYWxsb2MoMClcblxuICB3aGlsZSAoa2V5TGVuID4gMCB8fCBpdkxlbiA+IDApIHtcbiAgICB2YXIgaGFzaCA9IG5ldyBNRDUoKVxuICAgIGhhc2gudXBkYXRlKHRtcClcbiAgICBoYXNoLnVwZGF0ZShwYXNzd29yZClcbiAgICBpZiAoc2FsdCkgaGFzaC51cGRhdGUoc2FsdClcbiAgICB0bXAgPSBoYXNoLmRpZ2VzdCgpXG5cbiAgICB2YXIgdXNlZCA9IDBcblxuICAgIGlmIChrZXlMZW4gPiAwKSB7XG4gICAgICB2YXIga2V5U3RhcnQgPSBrZXkubGVuZ3RoIC0ga2V5TGVuXG4gICAgICB1c2VkID0gTWF0aC5taW4oa2V5TGVuLCB0bXAubGVuZ3RoKVxuICAgICAgdG1wLmNvcHkoa2V5LCBrZXlTdGFydCwgMCwgdXNlZClcbiAgICAgIGtleUxlbiAtPSB1c2VkXG4gICAgfVxuXG4gICAgaWYgKHVzZWQgPCB0bXAubGVuZ3RoICYmIGl2TGVuID4gMCkge1xuICAgICAgdmFyIGl2U3RhcnQgPSBpdi5sZW5ndGggLSBpdkxlblxuICAgICAgdmFyIGxlbmd0aCA9IE1hdGgubWluKGl2TGVuLCB0bXAubGVuZ3RoIC0gdXNlZClcbiAgICAgIHRtcC5jb3B5KGl2LCBpdlN0YXJ0LCB1c2VkLCB1c2VkICsgbGVuZ3RoKVxuICAgICAgaXZMZW4gLT0gbGVuZ3RoXG4gICAgfVxuICB9XG5cbiAgdG1wLmZpbGwoMClcbiAgcmV0dXJuIHsga2V5OiBrZXksIGl2OiBpdiB9XG59XG5cbm1vZHVsZS5leHBvcnRzID0gRVZQX0J5dGVzVG9LZXlcbiJdLCJuYW1lcyI6W10sImlnbm9yZUxpc3QiOlswXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(rsc)/./node_modules/evp_bytestokey/index.js\n");
+
+/***/ })
+
+};
+;

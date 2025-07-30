@@ -1,8 +1,8 @@
 import { fetchHistoricalTokenPrice } from "../1inch/fetchHistoricalTokenPrice";
 import { logger } from "@elizaos/core";
-import { TokenVolatilityResult } from "../../types/metrics/rawFormat";
-import { TokenPriceVolatilityLLMOutput } from "../../types/metrics/llmFormats";
-import { tokenPriceVolatilityToLLM } from "../../utils/metrics/tokenPriceVolatilityToLLM";
+import { TokenVolatilityResult } from "@/types/metrics/rawFormat";
+import { TokenPriceVolatilityLLMOutput } from "@/types/metrics/llmFormats";
+import { tokenPriceVolatilityToLLM } from "@/utils/metrics/tokenPriceVolatilityToLLM";
 
 interface TokenVolatilityParams {
   chainId: number;

@@ -1,4 +1,4 @@
-import { appConfig } from "src/config";
+import { appConfig } from "@/config";
 
 interface TokenDetails {
   address: string;

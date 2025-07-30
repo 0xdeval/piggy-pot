@@ -1,5 +1,5 @@
-import { appConfig } from "src/config";
-import { CurrentPriceResponse } from "../../types/1inch/tokenPrice";
+import { appConfig } from "@/config";
+import { CurrentPriceResponse } from "@/types/1inch/tokenPrice";
 
 interface CurrentTokenPriceParams {
   tokenAddresses: string[];

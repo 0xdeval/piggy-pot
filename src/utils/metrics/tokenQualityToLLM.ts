@@ -1,5 +1,5 @@
-import { TokenQualityLLMOutput } from "../../types/metrics/llmFormats";
-import { TokenQualityInfo } from "../../types/metrics/rawFormat";
+import { TokenQualityLLMOutput } from "@/types/metrics/llmFormats";
+import { TokenQualityInfo } from "@/types/metrics/rawFormat";
 
 /**
  * Convert token quality evaluation to LLM-friendly output format

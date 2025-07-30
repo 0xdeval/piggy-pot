@@ -1,4 +1,4 @@
-import db from "./connection";
+import db from "@/libs/database/connection";
 import { logger } from "@elizaos/core";
 
 export async function initDatabase(): Promise<void> {

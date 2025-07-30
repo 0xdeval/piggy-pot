@@ -1,7 +1,7 @@
-import { fetchPoolDayData } from "../subgraph/fetchPoolDayData";
-import { PoolGrowthTrendResult } from "../../types/metrics/rawFormat";
-import { PoolGrowthTrendLLMOutput } from "../../types/metrics/llmFormats";
-import { poolGrowthTrendToLLM } from "../../utils/metrics/poolGrowthTrendToLLM";
+import { fetchPoolDayData } from "@/libs/subgraph/fetchPoolDayData";
+import { PoolGrowthTrendResult } from "@/types/metrics/rawFormat";
+import { PoolGrowthTrendLLMOutput } from "@/types/metrics/llmFormats";
+import { poolGrowthTrendToLLM } from "@/utils/metrics/poolGrowthTrendToLLM";
 
 interface PoolGrowthTrendParams {
   poolId: string;
@@ -16,15 +16,12 @@ export async function calculatePoolGrowthTrendRaw({
   poolId,
   initialTimestamp,
   currentTVL,
-}: PoolGrowthTrendParams): Promise<PoolGrowthTrendResult> {
+}: PoolGrowthTrendParams): Promise<PoolGrowthTrendResult | null> {
   const history = await fetchPoolDayData(poolId, initialTimestamp);
 
   if (!history.length) {
     console.error("No historical data found for pool", poolId);
-    return {
-      poolGrowthTrendInPercentage: null,
-      trend: null,
-    };
+    return null;
   }
 
   const initial = history[0];
@@ -53,6 +50,10 @@ export async function calculatePoolGrowthTrend({
     initialTimestamp,
     currentTVL,
   });
+
+  if (!result) {
+    return null;
+  }
 
   const llmResult = poolGrowthTrendToLLM(result);
   return llmResult;

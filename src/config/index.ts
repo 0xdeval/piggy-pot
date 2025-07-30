@@ -14,6 +14,9 @@ export const appConfig = {
   oneInch: {
     apiKey: ONE_INCH_API_KEY,
   },
+  openai: {
+    apiKey: process.env.OPENAI_API_KEY,
+  },
   database: {
     url: getDatabaseUrl(),
   },

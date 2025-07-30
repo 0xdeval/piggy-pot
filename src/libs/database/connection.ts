@@ -1,5 +1,5 @@
 import { Pool, PoolClient } from "pg";
-import { appConfig } from "../../config";
+import { appConfig } from "@/config";
 import { logger } from "@elizaos/core";
 
 class DatabaseConnection {

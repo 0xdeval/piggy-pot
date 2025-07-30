@@ -1,10 +1,10 @@
-import { TokenQualityLLMOutput } from "./llmFormats";
-import { ImpermanentLossLLMOutput } from "./llmFormats";
-import { TokenPriceVolatilityLLMOutput } from "./llmFormats";
-import { TokenCorrelationLLMOutput } from "./llmFormats";
-import { PoolGrowthTrendLLMOutput } from "./llmFormats";
-import { APYVolatilityLLMOutput } from "./llmFormats";
-import { Pool } from "../subgraph";
+import { TokenQualityLLMOutput } from "@/types/metrics/llmFormats";
+import { ImpermanentLossLLMOutput } from "@/types/metrics/llmFormats";
+import { TokenPriceVolatilityLLMOutput } from "@/types/metrics/llmFormats";
+import { TokenCorrelationLLMOutput } from "@/types/metrics/llmFormats";
+import { PoolGrowthTrendLLMOutput } from "@/types/metrics/llmFormats";
+import { APYVolatilityLLMOutput } from "@/types/metrics/llmFormats";
+import { Pool } from "@/types/subgraph";
 
 export interface PoolInfoWithMetrics {
   pool: Pool & {

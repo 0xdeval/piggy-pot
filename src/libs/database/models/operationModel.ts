@@ -1,12 +1,12 @@
 import { v4 as uuidv4 } from "uuid";
-import db from "../connection";
+import db from "@/libs/database/connection";
 import {
   Operation,
   CreateOperation,
   UpdateOperation,
   OperationQueryResult,
   OperationsQueryResult,
-} from "../../../types/operation";
+} from "@/types/operation";
 import { logger } from "@elizaos/core";
 
 export class OperationModel {
@@ -84,7 +84,7 @@ export class OperationModel {
 
       return {
         success: true,
-        data: result.rows.map((row) => this.mapDbToOperation(row)),
+        data: result.rows.map((row: any) => this.mapDbToOperation(row)),
       };
     } catch (error) {
       logger.error("Error finding operations by userId:", error);
@@ -109,10 +109,41 @@ export class OperationModel {
 
       return {
         success: true,
-        data: result.rows.map((row) => this.mapDbToOperation(row)),
+        data: result.rows.map((row: any) => this.mapDbToOperation(row)),
       };
     } catch (error) {
       logger.error("Error finding operations by userIdRaw:", error);
+      return {
+        success: false,
+        error: error instanceof Error ? error.message : "Unknown error",
+      };
+    }
+  }
+
+  static async findLastByUserIdRawAndStatus(
+    userIdRaw: string,
+    status: string
+  ): Promise<OperationQueryResult> {
+    try {
+      const query = `
+        SELECT o.* FROM operations o
+        JOIN users u ON o.user_id = u.user_id
+        WHERE u.user_id_raw = $1 AND o.status = $2
+        ORDER BY o.operation_date DESC
+        LIMIT 1
+      `;
+      const result = await db.query(query, [userIdRaw, status]);
+
+      if (result.rows.length === 0) {
+        return { success: false, error: "Operation not found" };
+      }
+
+      return { success: true, data: this.mapDbToOperation(result.rows[0]) };
+    } catch (error) {
+      logger.error(
+        "Error finding last operation by userIdRaw and status:",
+        error
+      );
       return {
         success: false,
         error: error instanceof Error ? error.message : "Unknown error",
@@ -127,7 +158,7 @@ export class OperationModel {
 
       return {
         success: true,
-        data: result.rows.map((row) => this.mapDbToOperation(row)),
+        data: result.rows.map((row: any) => this.mapDbToOperation(row)),
       };
     } catch (error) {
       logger.error("Error finding all operations:", error);

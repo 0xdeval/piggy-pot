@@ -1,5 +1,5 @@
-import { appConfig } from "../../config";
-import { PoolDayData, PoolHistoryResponse } from "../../types/subgraph";
+import { appConfig } from "@/config";
+import { PoolDayData, PoolHistoryResponse } from "@/types/subgraph";
 
 export async function fetchPoolDayData(
   poolId: string,

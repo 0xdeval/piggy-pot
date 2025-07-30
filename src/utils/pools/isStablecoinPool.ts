@@ -1,5 +1,5 @@
-import { Token } from "../../types/subgraph";
-import { Stablecoin } from "../../libs/defillama";
+import { Token } from "@/types/subgraph";
+import { Stablecoin } from "@/libs/defillama";
 
 export function isStablecoinPool(
   token0: Token,

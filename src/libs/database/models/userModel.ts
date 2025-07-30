@@ -1,12 +1,12 @@
 import { v4 as uuidv4 } from "uuid";
-import db from "../connection";
+import db from "@/libs/database/connection";
 import {
   User,
   CreateUser,
   UpdateUser,
   UserQueryResult,
   UsersQueryResult,
-} from "../../../types/user";
+} from "@/types/user";
 import { logger } from "@elizaos/core";
 
 export class UserModel {
@@ -88,7 +88,7 @@ export class UserModel {
 
       return {
         success: true,
-        data: result.rows.map((row) => this.mapDbToUser(row)),
+        data: result.rows.map((row: any) => this.mapDbToUser(row)),
       };
     } catch (error) {
       logger.error("Error finding all users:", error);
