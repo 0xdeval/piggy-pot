@@ -30,8 +30,9 @@
   },
   "scripts": {
     "cron:pools": "bun run scripts/updatePools.ts",
-    "dev": "bun scripts/initServices.ts && next dev",
-    "start": "bun scripts/initServices.ts && next start",
+    "startServer": "bun run src/server.ts",
+    "dev": "bun scripts/initServices.ts && bun run startServer",
+    "start": "bun scripts/initServices.ts && NODE_ENV=production bun run startServer",
     "build": "bun scripts/initServices.ts && next build",
     "lint": "prettier --write ./src"
   }
