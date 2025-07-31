@@ -6,7 +6,7 @@ import {
   UpdateOperationLog,
   OperationLogQueryResult,
   OperationLogsQueryResult,
-} from "@/types/operationLog";
+} from "@/types/database/operationLog";
 import { logger } from "@/utils/logger";
 
 export class OperationLogModel {

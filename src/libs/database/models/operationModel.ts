@@ -7,7 +7,7 @@ import {
   UpdateOperation,
   OperationQueryResult,
   OperationsQueryResult,
-} from "@/types/operation";
+} from "@/types/database/operation";
 
 export class OperationModel {
   static async create(
@@ -34,7 +34,7 @@ export class OperationModel {
         operationData.investedAmount,
         operationData.riskyInvestment,
         operationData.nonRiskyInvestment,
-        operationData.status || "RECOMMENDATION_INIT",
+        operationData.status || null,
         operationData.recommendedPools
           ? JSON.stringify(operationData.recommendedPools)
           : null,

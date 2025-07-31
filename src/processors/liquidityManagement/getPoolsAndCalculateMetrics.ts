@@ -112,7 +112,7 @@ export async function getPoolsAndCalculateMetrics() {
 
   console.log(`Found ${pools.length} pools matching criteria:`);
 
-  const maxPools = 20;
+  const maxPools = 100;
   const maxParallelProcesses = 2;
   const poolsToProcess = pools.slice(0, maxPools);
 

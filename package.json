@@ -29,6 +29,7 @@
     "vitest": "3.1.4"
   },
   "scripts": {
+    "cron:pools": "bun run scripts/updatePools.ts",
     "dev": "bun scripts/initServices.ts && next dev",
     "start": "bun scripts/initServices.ts && next start",
     "build": "bun scripts/initServices.ts && next build",

@@ -6,7 +6,7 @@ import {
   UpdateUser,
   UserQueryResult,
   UsersQueryResult,
-} from "@/types/user";
+} from "@/types/database/user";
 import { logger } from "@/utils/logger";
 
 export class UserModel {

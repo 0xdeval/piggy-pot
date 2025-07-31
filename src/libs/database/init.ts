@@ -184,6 +184,60 @@ export async function initDatabase(): Promise<void> {
       logger.info("✅ Operations logs table already exists.");
     }
 
+    const poolsTableExists = await db.query(`
+      SELECT EXISTS (
+        SELECT FROM information_schema.tables 
+        WHERE table_schema = 'public' 
+        AND table_name = 'pools'
+      );
+    `);
+
+    if (!poolsTableExists.rows[0].exists) {
+      logger.info("Pools table does not exist. Creating pools table...");
+
+      await db.query(`
+        CREATE TABLE IF NOT EXISTS pools (
+            pool_id VARCHAR(255) PRIMARY KEY,
+            pool_info JSONB NOT NULL,
+            token_quality JSONB NOT NULL,
+            impermanent_loss JSONB,
+            token_correlation JSONB,
+            tokens_volatility JSONB,
+            pool_growth_tendency JSONB,
+            apy_volatility JSONB,
+            created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+            updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+        );
+      `);
+
+      await db.query(
+        "CREATE INDEX IF NOT EXISTS idx_pools_pool_id ON pools(pool_id);"
+      );
+      await db.query(
+        "CREATE INDEX IF NOT EXISTS idx_pools_created_at ON pools(created_at);"
+      );
+      await db.query(
+        "CREATE INDEX IF NOT EXISTS idx_pools_updated_at ON pools(updated_at);"
+      );
+      await db.query(
+        "CREATE INDEX IF NOT EXISTS idx_pools_pool_info ON pools USING GIN (pool_info);"
+      );
+      await db.query(
+        "CREATE INDEX IF NOT EXISTS idx_pools_token_quality ON pools USING GIN (token_quality);"
+      );
+
+      await db.query(`
+        CREATE TRIGGER update_pools_updated_at 
+            BEFORE UPDATE ON pools 
+            FOR EACH ROW 
+            EXECUTE FUNCTION update_updated_at_column();
+      `);
+
+      logger.info("✅ Pools table and indexes created successfully!");
+    } else {
+      logger.info("✅ Pools table already exists.");
+    }
+
     const tableInfo = await db.query(`
       SELECT column_name, data_type, is_nullable, column_default
       FROM information_schema.columns
@@ -226,6 +280,20 @@ export async function initDatabase(): Promise<void> {
       );
     });
 
+    const poolsTableInfo = await db.query(`
+      SELECT column_name, data_type, is_nullable, column_default
+      FROM information_schema.columns
+      WHERE table_name = 'pools'
+      ORDER BY ordinal_position;
+    `);
+
+    logger.info("\nPools table structure:");
+    poolsTableInfo.rows.forEach((row: any) => {
+      logger.info(
+        `  ${row.column_name}: ${row.data_type} (nullable: ${row.is_nullable})`
+      );
+    });
+
     const usersCountResult = await db.query("SELECT COUNT(*) FROM users");
     const operationsCountResult = await db.query(
       "SELECT COUNT(*) FROM operations"
@@ -233,6 +301,7 @@ export async function initDatabase(): Promise<void> {
     const logsCountResult = await db.query(
       "SELECT COUNT(*) FROM operations_logs"
     );
+    const poolsCountResult = await db.query("SELECT COUNT(*) FROM pools");
 
     logger.info(`\nTotal users in database: ${usersCountResult.rows[0].count}`);
     logger.info(
@@ -241,6 +310,7 @@ export async function initDatabase(): Promise<void> {
     logger.info(
       `Total operation logs in database: ${logsCountResult.rows[0].count}`
     );
+    logger.info(`Total pools in database: ${poolsCountResult.rows[0].count}`);
 
     logger.info("\n✅ Database initialization completed successfully!");
   } catch (error) {
