@@ -3,13 +3,15 @@ import { PoolGrowthTrendResult } from "@/types/metrics/rawFormat";
 
 /**
  * Convert pool growth trend calculations to LLM-friendly output format
+ *
+ * @param result - The pool growth trend result
+ * @returns The pool growth trend in LLM-friendly format
  */
 export function poolGrowthTrendToLLM(
   result: PoolGrowthTrendResult
 ): PoolGrowthTrendLLMOutput {
   const { poolGrowthTrendInPercentage, trend } = result;
 
-  // Handle null case
   if (poolGrowthTrendInPercentage === null || trend === null) {
     return {
       poolGrowthTrendInPercentage: 0,
@@ -21,7 +23,6 @@ export function poolGrowthTrendToLLM(
     };
   }
 
-  // Determine performance description
   let performance: string;
   let assessment: string;
   let recommendation: string;
@@ -53,7 +54,6 @@ export function poolGrowthTrendToLLM(
         "This pool shows minimal growth. Consider monitoring closely or exploring alternatives.";
     }
   } else {
-    // Negative trend
     if (poolGrowthTrendInPercentage < -50) {
       performance = "Severe decline";
       assessment =

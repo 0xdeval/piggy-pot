@@ -3,13 +3,15 @@ import { ImpermanentLossResult } from "@/types/metrics/rawFormat";
 
 /**
  * Convert impermanent loss calculations to LLM-friendly output format
+ *
+ * @param result - The impermanent loss result
+ * @returns The impermanent loss in LLM-friendly format
  */
 export function impermanentLossToLLM(
   result: ImpermanentLossResult
 ): ImpermanentLossLLMOutput {
   const { impermanent_loss_percentage } = result;
 
-  // Determine severity and risk level based on impermanent loss percentage
   let impact: string;
   let recommendation: string;
 
@@ -35,7 +37,6 @@ export function impermanentLossToLLM(
       "Very high impermanent loss risk. Consider exiting position or significant rebalancing.";
   }
 
-  // Determine token movement descriptions
   const token0Movement = getMovementDescription(
     result.price_movement.token0.change_percentage
   );
@@ -43,7 +44,6 @@ export function impermanentLossToLLM(
     result.price_movement.token1.change_percentage
   );
 
-  // Determine LP vs HODL performance
   const performance =
     result.hodl_vs_lp_comparison.difference > 0
       ? "LP position outperforming HODL strategy"
@@ -75,6 +75,9 @@ export function impermanentLossToLLM(
 
 /**
  * Helper function to describe price movement
+ *
+ * @param changePercentage - The change percentage
+ * @returns The movement description
  */
 function getMovementDescription(changePercentage: number): string {
   if (changePercentage > 50) {

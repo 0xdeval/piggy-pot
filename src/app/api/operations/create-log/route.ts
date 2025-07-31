@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { logger } from "@/utils/logger";
 import { OperationLogModel } from "@/libs/database/models/operationLogModel";
 import { OperationModel } from "@/libs/database/models/operationModel";
-import { CreateOperationLogSchema } from "@/types/operationLog";
+import { CreateOperationLogSchema } from "@/types/database/operationLog";
 import { broadcastEvent } from "@/libs/socket/init";
 
 export async function POST(request: NextRequest) {

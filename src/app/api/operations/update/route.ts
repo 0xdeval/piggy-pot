@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { logger } from "@/utils/logger";
 import { OperationModel } from "@/libs/database/models/operationModel";
-import { UpdateOperationSchema } from "@/types/operation";
+import { UpdateOperationSchema } from "@/types/database/operation";
 
 export async function PUT(request: NextRequest) {
   logger.info("PUT /api/operations/update called");

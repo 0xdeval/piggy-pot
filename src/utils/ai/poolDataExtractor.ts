@@ -2,7 +2,9 @@ import { PoolInfoWithMetrics } from "@/types/metrics/poolsWithMetrics";
 
 /**
  * Extracts only the relevant fields for LLM decision-making
- * This reduces token usage and focuses the LLM on key decision metrics
+ *
+ * @param pools - The pools to extract data from
+ * @returns The extracted data
  */
 export function extractRelevantPoolData(pools: PoolInfoWithMetrics[]) {
   return pools.map((pool) => ({
@@ -13,7 +15,6 @@ export function extractRelevantPoolData(pools: PoolInfoWithMetrics[]) {
     isStablecoinPool: pool.pool.isStablecoinPool,
     totalValueLockedUSD: pool.pool.totalValueLockedUSD,
     liquidity: pool.pool.liquidity,
-    // Key metrics for decision making
     impermanentLoss: pool.impermanentLoss
       ? {
           impermanent_loss_percentage:

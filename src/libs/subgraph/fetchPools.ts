@@ -4,7 +4,13 @@ import { Pool, GraphQLResponse } from "@/types/subgraph";
 import { isStablecoinPool } from "@/utils/pools/isStablecoinPool";
 import { isSpamTokens } from "@/utils/pools/filterSpamTokens";
 import { appConfig } from "@/config";
+import { logger } from "@/utils/logger";
 
+/**
+ * Fetch pools from the Uniswap V3 subgraph
+ *
+ * @returns The pools
+ */
 export async function fetchPools(): Promise<Pool[]> {
   let stablecoins: Stablecoin[] = [];
   try {
@@ -60,10 +66,8 @@ export async function fetchPools(): Promise<Pool[]> {
     }
 
     const result = (await response.json()) as GraphQLResponse;
-    // console.log(result);
 
     if (result.data?.pools) {
-      // Filter pools based on liquidity and spam token filtering
       const filteredPools = result.data.pools
         .map((pool) => {
           if (
@@ -89,7 +93,7 @@ export async function fetchPools(): Promise<Pool[]> {
 
     return [];
   } catch (error) {
-    console.error("Error fetching pools:", error);
+    logger.error("Error fetching pools:", error);
     return [];
   }
 }

@@ -3,11 +3,11 @@ import { calculateImpermanentLoss } from "@/libs/metrics/impermanentLoss";
 import { evaluateTokenQuality } from "@/libs/metrics/evaluateTokenQuality";
 import { calculateTokenVolatility } from "@/libs/metrics/tokenPriceVolatility";
 import { calculateTokenCorrelation } from "@/libs/metrics/tokensCorrelation";
-import fs from "fs";
 import { appConfig } from "@/config";
 import { calculatePoolGrowthTrend } from "@/libs/metrics/poolGrowthTrend";
 import { calculateAPYVolatility } from "@/libs/metrics/apyVolatility";
 import { waitFor } from "@/utils/waitFor";
+import { logger } from "@/utils/logger";
 
 /**
  * Process pools in batches to limit parallel execution
@@ -20,9 +20,9 @@ async function processPoolBatch(
   const batch = pools.slice(startIndex, startIndex + batchSize);
   return Promise.all(
     batch.map(async (pool) => {
-      console.log("Pool", pool);
+      logger.info("Pool", pool);
       if (!pool.token0 || !pool.token1) {
-        console.log("Skipping pool with null tokens", pool);
+        logger.info("Skipping pool with null tokens", pool);
         return null;
       }
 
@@ -106,11 +106,9 @@ async function processPoolBatch(
 }
 
 export async function getPoolsAndCalculateMetrics() {
-  console.log("Fetching Uniswap V3 pools...");
+  logger.info("Fetching Uniswap V3 pools...");
 
   const pools = await fetchPools();
-
-  console.log(`Found ${pools.length} pools matching criteria:`);
 
   const maxPools = 100;
   const maxParallelProcesses = 2;
@@ -118,7 +116,6 @@ export async function getPoolsAndCalculateMetrics() {
 
   const allResults = [];
 
-  // Process pools in batches of maxParallelProcesses
   for (let i = 0; i < poolsToProcess.length; i += maxParallelProcesses) {
     console.log(
       `Processing batch ${Math.floor(i / maxParallelProcesses) + 1}/${Math.ceil(poolsToProcess.length / maxParallelProcesses)}`
@@ -131,14 +128,12 @@ export async function getPoolsAndCalculateMetrics() {
     );
     allResults.push(...batchResults);
 
-    // Add a small delay between batches to avoid overwhelming the APIs
     if (i + maxParallelProcesses < poolsToProcess.length) {
       console.log("Waiting 2 seconds before next batch...");
       await waitFor(2000);
     }
   }
 
-  // Filter out null values from pools that were skipped
   const validPoolInfoWithMetrics = allResults.filter((item) => item !== null);
 
   return validPoolInfoWithMetrics;

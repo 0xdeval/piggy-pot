@@ -2,12 +2,14 @@ import { fetchHistoricalTokenPrice } from "@/libs/1inch/fetchHistoricalTokenPric
 import { ImpermanentLossResult } from "@/types/metrics/rawFormat";
 import { ImpermanentLossLLMOutput } from "@/types/metrics/llmFormats";
 import { impermanentLossToLLM } from "@/utils/metrics/impermanentLossToLLM";
+import { logger } from "@/utils/logger";
 
 /**
  * Calculate the impermanent loss of a pool (raw data format)
+ *
  * @param token0 - the address of the first token
  * @param token1 - the address of the second token
- * @param initialTimestamp - the timestamp of the initial price
+ * @param sinceTimestamp - the timestamp of the initial price (in seconds)
  * @param chainId - the chain id
  * @returns impermanent loss in percentage
  */
@@ -38,7 +40,6 @@ export async function calculateImpermanentLossRaw({
   const prices0 = historicalPrices0.sort((a, b) => b.t - a.t);
   const prices1 = historicalPrices1.sort((a, b) => b.t - a.t);
 
-  //   if no price data, return null
   if (prices0.length === 0 || prices1.length === 0) {
     return null;
   }
@@ -108,7 +109,7 @@ export async function calculateImpermanentLoss({
   });
 
   if (!result) {
-    console.error(
+    logger.error(
       "Unable to calculate impermanent loss - insufficient price data"
     );
     return null;
@@ -117,12 +118,3 @@ export async function calculateImpermanentLoss({
   const llmResult = impermanentLossToLLM(result);
   return llmResult;
 }
-
-// calculateImpermanentLoss({
-//   token0: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
-//   token1: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-//   sinceTimestamp: 1745863226, // e.g., June 1, 2024
-//   chainId: 1, // Ethereum
-// }).then((res) => {
-//   console.log(res);
-// });

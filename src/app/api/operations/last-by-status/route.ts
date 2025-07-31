@@ -21,7 +21,7 @@ export async function GET(request: NextRequest) {
 
     const result = await OperationModel.findLastByUserIdRawAndStatus(
       userIdRaw,
-      status || "RECOMMENDATION_INIT"
+      status || "RECOMMENDATION_IN  IT"
     );
 
     if (!result.success) {

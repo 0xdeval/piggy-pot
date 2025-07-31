@@ -1,7 +1,7 @@
 /**
  * Extracts and parses a JSON structure from a Markdown-style ```json code block.
  *
- * @param input The full text that may contain a ```json code block
+ * @param input - The full text that may contain a ```json code block
  * @returns Parsed JSON object or null if parsing fails
  */
 export function extractJsonFromMarkdownBlock(input: string): any | null {

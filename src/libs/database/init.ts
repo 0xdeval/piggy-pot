@@ -35,7 +35,6 @@ export async function initDatabase(): Promise<void> {
         );
       `);
 
-      // Create indexes
       await db.query(
         "CREATE INDEX IF NOT EXISTS idx_users_user_id_raw ON users(user_id_raw);"
       );

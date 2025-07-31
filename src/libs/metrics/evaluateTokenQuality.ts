@@ -24,7 +24,6 @@ export const evaluateTokenQualityRaw = async (
       return;
     }
 
-    // Initialize the token quality info object for this address
     tokenQualityInfo[address] = {
       hasInProviders: false,
       hasInternalTags: false,

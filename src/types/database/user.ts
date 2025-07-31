@@ -3,18 +3,16 @@ import { z } from "zod";
 export const UserSchema = z.object({
   userIdRaw: z.string().min(1, "userIdRaw is required"),
   userId: z.string().uuid("userId must be a valid UUID"),
-  delegatedWalletHash: z.string().min(1, "delegatedWalletHash is required"),
+  delegatedWalletHash: z.string().optional(),
   createdAt: z.date().optional(),
   updatedAt: z.date().optional(),
 });
 
-// Schema for creating a user - requires all fields
 export const CreateUserSchema = UserSchema.omit({
   createdAt: true,
   updatedAt: true,
 });
 
-// Schema for the complete user data after generation
 export const GeneratedUserSchema = UserSchema.omit({
   createdAt: true,
   updatedAt: true,

@@ -1,9 +1,14 @@
 import { APYVolatilityLLMOutput } from "@/types/metrics/llmFormats";
 import { calculateAPYVolatilityForLLM } from "@/utils/metrics/apyCalculationToLLM";
 import { fetchPoolDayData } from "@/libs/subgraph/fetchPoolDayData";
+import { logger } from "@/utils/logger";
 
 /**
  * Calculate APY volatility stats from Uniswap subgraph data
+ *
+ * @param poolId - The ID of the pool to calculate APY volatility for
+ * @param days - The number of days to calculate APY volatility for (default: 30)
+ * @returns The APY volatility stats in LLM-friendly format
  */
 export async function calculateAPYVolatility({
   poolId,
@@ -18,15 +23,12 @@ export async function calculateAPYVolatility({
   const poolDayData = await fetchPoolDayData(poolId, from);
 
   if (poolDayData.length < 2) {
-    console.error("Not enough data for APY volatility calculation");
+    logger.error("Not enough data for APY volatility calculation");
     return null;
   }
 
   const feesUSD: number[] = poolDayData.map((d) => d.feesUSD);
   const tvlUSD: number[] = poolDayData.map((d) => d.tvlUSD);
-
-  //   console.log("feesUSD", feesUSD);
-  //   console.log("tvlUSD", tvlUSD);
 
   if (tvlUSD.length === 0) {
     console.error("No TVL or fees data found");

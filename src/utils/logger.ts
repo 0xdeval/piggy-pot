@@ -76,51 +76,41 @@ class CustomLogger {
     }
   }
 
-  // Convenience method for pool-related logging
   pool(message: string, context?: LogContext): void {
     this.info(`[POOL] ${message}`, context);
   }
 
-  // Convenience method for recommendation-related logging
   recommendation(message: string, context?: LogContext): void {
     this.info(`[RECOMMENDATION] ${message}`, context);
   }
 
-  // Convenience method for operation-related logging
   operation(message: string, context?: LogContext): void {
     this.info(`[OPERATION] ${message}`, context);
   }
 
-  // Convenience method for user-related logging
   user(message: string, context?: LogContext): void {
     this.info(`[USER] ${message}`, context);
   }
 
-  // Convenience method for LLM-related logging
   llm(message: string, context?: LogContext): void {
     this.info(`[LLM] ${message}`, context);
   }
 
-  // Method to set log level dynamically
   setLogLevel(level: LogLevel): void {
     this.logLevel = level;
   }
 
-  // Method to get current log level
   getLogLevel(): LogLevel {
     return this.logLevel;
   }
 }
 
-// Create default logger instance
 const defaultLogger = new CustomLogger(
   process.env.LOG_LEVEL === "DEBUG" ? LogLevel.DEBUG : LogLevel.INFO
 );
 
-// Export the logger instance and LogLevel enum
 export const logger = defaultLogger;
 
-// Export a function to create a new logger instance
 export const createLogger = (logLevel?: LogLevel): CustomLogger => {
   return new CustomLogger(logLevel);
 };

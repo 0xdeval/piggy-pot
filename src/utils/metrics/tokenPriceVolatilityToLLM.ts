@@ -3,13 +3,15 @@ import { TokenVolatilityResult } from "@/types/metrics/rawFormat";
 
 /**
  * Convert token price volatility calculations to LLM-friendly output format
+ *
+ * @param result - The token price volatility result
+ * @returns The token price volatility in LLM-friendly format
  */
 export function tokenPriceVolatilityToLLM(
   result: TokenVolatilityResult
 ): TokenPriceVolatilityLLMOutput {
   const { volatilityInPercentage, isStableAsset, impermanentLossRisk } = result;
 
-  // Determine volatility level and stability description
   let volatilityLevel: string;
   let stability: string;
   let assessment: string;
@@ -59,10 +61,8 @@ export function tokenPriceVolatilityToLLM(
       "This token has extreme volatility risk. Strongly recommend avoiding LP positions due to very high impermanent loss risk.";
   }
 
-  // Enhance assessment with specific volatility details
   assessment += ` The annualized volatility is ${volatilityInPercentage.toFixed(2)}%, which is ${volatilityLevel.toLowerCase()} compared to typical assets.`;
 
-  // Add impermanent loss risk context
   if (impermanentLossRisk === "very low") {
     assessment +=
       " This makes it very suitable for liquidity provision with minimal impermanent loss concerns.";

@@ -103,7 +103,6 @@ export class PoolModel {
         `PoolModel.update called for poolId: ${poolId} with data: ${JSON.stringify(updateData)}`
       );
 
-      // Build dynamic query based on provided fields
       const updateFields: string[] = [];
       const values: any[] = [];
       let paramIndex = 1;
@@ -150,11 +149,9 @@ export class PoolModel {
         paramIndex++;
       }
 
-      // Always update the updated_at timestamp
       updateFields.push(`updated_at = NOW()`);
 
       if (updateFields.length === 1) {
-        // Only updated_at was added, no actual data to update
         return { success: false, error: "No valid fields to update" };
       }
 

@@ -2,6 +2,13 @@ import { appConfig } from "@/config";
 import { PoolDayData, PoolHistoryResponse } from "@/types/subgraph";
 import { logger } from "@/utils/logger";
 
+/**
+ * Fetch pool day data from the Uniswap V3 subgraph
+ *
+ * @param poolId - The ID of the pool to fetch data for
+ * @param from - The timestamp to start fetching data from (in seconds)
+ * @returns The pool day data
+ */
 export async function fetchPoolDayData(
   poolId: string,
   from: number
@@ -35,7 +42,6 @@ export async function fetchPoolDayData(
 
   const json = (await res.json()) as PoolHistoryResponse;
 
-  // Debug: print errors or empty state
   if ((json as any).errors) {
     logger.error("GraphQL Error:", (json as any).errors);
     throw new Error("Subgraph query failed");

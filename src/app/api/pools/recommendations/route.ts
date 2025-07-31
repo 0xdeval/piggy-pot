@@ -1,16 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
-import { broadcastEvent } from "@/libs/socket/init";
 import { OperationModel } from "@/libs/database/models/operationModel";
-import { OperationLogModel } from "@/libs/database/models/operationLogModel";
 import { UserModel } from "@/libs/database/models/userModel";
 import { recommendLiquidityPools } from "@/processors/liquidityManagement/recommendLiquidityPools";
 import { logger } from "@/utils/logger";
+import { createOperation, createOperationLog } from "@/libs/database/utils";
+import { CreateOperationLog } from "@/types/database/operationLog";
+import { Operation } from "@/types/database/operation";
 
 export async function POST(request: NextRequest) {
   logger.info("POST /api/pools/recommendations called");
   try {
     const { userIdRaw, investedAmount, riskyInvestment, nonRiskyInvestment } =
       await request.json();
+
+    // Determine if user wants volatile pools based on investment preferences
+    const isLookingForVolatilePool = riskyInvestment > 0;
 
     if (!userIdRaw) {
       return NextResponse.json(
@@ -56,7 +60,7 @@ export async function POST(request: NextRequest) {
       riskyInvestment: parseFloat(riskyInvestment),
       nonRiskyInvestment: parseFloat(nonRiskyInvestment),
       status: "RECOMMENDATION_INIT" as const,
-    };
+    } as Operation;
 
     logger.info(
       `Creating operation with data: ${JSON.stringify(operationData)}`
@@ -64,101 +68,89 @@ export async function POST(request: NextRequest) {
     logger.info(`Operation userId: ${operationData.userId}`);
     logger.info(`Operation userId type: ${typeof operationData.userId}`);
 
-    const operationResult = await OperationModel.create(operationData);
-    if (!operationResult.success) {
-      logger.error(`Failed to create operation: ${operationResult.error}`);
+    const {
+      isCreated: isOperationCreated,
+      data: operation,
+      error: operationError,
+    } = await createOperation(operationData);
+
+    if (!isOperationCreated) {
+      logger.error(`Failed to create operation`);
       return NextResponse.json(
         {
           success: false,
-          error: `Failed to create operation: ${operationResult.error}`,
+          error: `Failed to create operation: ${operationError}`,
         },
         { status: 500 }
       );
     }
 
-    const operation = operationResult.data!;
-
-    const logResult = await OperationLogModel.create({
-      operationId: operation.operationId,
+    const logRecord = {
       description: "Pool recommendation request initiated",
       stepNumber: 1,
-    });
-
-    if (logResult.success) {
-      await OperationModel.update(operation.operationId, {
-        logId: logResult.data!.logId,
-      });
-
-      broadcastEvent("OPERATION_LOG_CREATED", {
-        operationId: operation.operationId,
-        log: logResult.data,
-        userIdRaw,
-      });
-    }
-
-    broadcastEvent("OPERATION_CREATED", {
-      operation,
-      userIdRaw,
-    });
-
-    broadcastEvent("LOG_MESSAGE", {
-      message: "Pool recommendation operation created successfully",
-      operationId: operation.operationId,
-    });
-
-    // Determine if user wants volatile pools based on investment preferences
-    const isLookingForVolatilePool = riskyInvestment > 0;
+    } as CreateOperationLog;
+    createOperationLog(operation!.operationId, logRecord);
 
     logger.info(
       `Starting pool recommendations for user ${userResult.data!.userId}, volatile: ${isLookingForVolatilePool}`
     );
 
     try {
-      // Get pool recommendations
       const recommendations = await recommendLiquidityPools({
         userId: userResult.data!.userId,
         isLookingForVolatilePool,
       });
 
+      if (recommendations.length === 0) {
+        logger.error(
+          "No pool recommendations generated - no data available in database"
+        );
+
+        await createOperationLog(operation!.operationId, {
+          operationId: operation!.operationId,
+          description:
+            "No pool recommendations generated - no data available in database",
+          stepNumber: 2,
+        } as CreateOperationLog);
+
+        // Update the existing operation status to failed
+        await OperationModel.update(operation!.operationId, {
+          status: "RECOMMENDATION_FAILED",
+        });
+
+        return NextResponse.json(
+          {
+            success: false,
+            error:
+              "No pool data available in database. Please try again later or contact support.",
+            data: {
+              operation,
+            },
+          },
+          { status: 503 }
+        );
+      }
+
       logger.info(
         `Pool recommendations generated: ${JSON.stringify(recommendations)}`
       );
 
-      // Log the recommendations
-      const recommendationsLogResult = await OperationLogModel.create({
-        operationId: operation.operationId,
+      await createOperationLog(operation!.operationId, {
+        operationId: operation!.operationId,
         description: `Pool recommendations generated: ${JSON.stringify(recommendations)}`,
         stepNumber: 2,
-      });
+      } as CreateOperationLog);
 
-      if (recommendationsLogResult.success) {
-        await OperationModel.update(operation.operationId, {
-          logId: recommendationsLogResult.data!.logId,
-        });
-
-        broadcastEvent("OPERATION_LOG_CREATED", {
-          operationId: operation.operationId,
-          log: recommendationsLogResult.data,
-          userIdRaw,
-        });
-      }
-
-      // Update the existing operation with recommendations and completed status
-      await OperationModel.update(operation.operationId, {
+      await OperationModel.update(operation!.operationId, {
         status: "RECOMMENDATION_FINISHED",
         recommendedPools: JSON.stringify(recommendations),
-        profit: 0, // Initialize profit to 0, will be updated by future LLM recommendations
-      });
-
-      broadcastEvent("LOG_MESSAGE", {
-        message: "Pool recommendations completed successfully",
-        operationId: operation.operationId,
+        profit: 0,
       });
 
       return NextResponse.json({
         success: true,
         data: {
-          operationId: operation.operationId,
+          operationId: operation!.operationId,
           recommendations,
           message: "Pool recommendations completed successfully",
         },
@@ -169,33 +161,14 @@ export async function POST(request: NextRequest) {
         recommendationError
       );
 
-      // Log the error
-      const errorLogResult = await OperationLogModel.create({
-        operationId: operation.operationId,
+      await createOperationLog(operation!.operationId, {
+        operationId: operation!.operationId,
         description: `Error generating pool recommendations: ${recommendationError instanceof Error ? recommendationError.message : "Unknown error"}`,
         stepNumber: 2,
-      });
+      } as CreateOperationLog);
 
-      if (errorLogResult.success) {
-        await OperationModel.update(operation.operationId, {
-          logId: errorLogResult.data!.logId,
-        });
-
-        broadcastEvent("OPERATION_LOG_CREATED", {
-          operationId: operation.operationId,
-          log: errorLogResult.data,
-          userIdRaw,
-        });
-      }
-
-      // Update the existing operation status to failed
-      await OperationModel.update(operation.operationId, {
+      await OperationModel.update(operation!.operationId, {
         status: "RECOMMENDATION_FAILED",
-      });
-
-      broadcastEvent("LOG_MESSAGE", {
-        message: "Pool recommendations failed",
-        operationId: operation.operationId,
       });
 
       return NextResponse.json({

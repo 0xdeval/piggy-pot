@@ -6,7 +6,7 @@ import { testDatabaseConnection } from "@/libs/database/testConnection";
   await initDatabase();
   await testDatabaseConnection();
 
-  console.log("✅ Services initialized, WebSocket detached");
+  console.log("✅ Services initialized!");
   process.exit(0);
 })().catch((err) => {
   console.error("⚠️ Initialization of services failed:", err);

@@ -13,6 +13,12 @@ interface TokenCorrelationParams {
 
 /**
  * Calculate correlation between two tokens and impermanent loss risk (raw data format)
+ *
+ * @param chainId - The chain ID of the tokens
+ * @param token0Address - The address of the first token
+ * @param token1Address - The address of the second token
+ * @param days - The number of days to calculate correlation for (default: 30)
+ * @returns The correlation between the two tokens and impermanent loss risk
  */
 export async function calculateTokenCorrelationRaw({
   chainId,
@@ -43,11 +49,9 @@ export async function calculateTokenCorrelationRaw({
     return null;
   }
 
-  // Sort by timestamp and align data points
   const sortedPrices0 = prices0.sort((a, b) => a.t - b.t);
   const sortedPrices1 = prices1.sort((a, b) => a.t - b.t);
 
-  // Calculate log returns for both tokens
   const returns0: number[] = [];
   const returns1: number[] = [];
 
@@ -58,7 +62,6 @@ export async function calculateTokenCorrelationRaw({
     returns1.push(ret1);
   }
 
-  // Calculate correlation coefficient
   const n = returns0.length;
   const sum0 = returns0.reduce((sum, r) => sum + r, 0);
   const sum1 = returns1.reduce((sum, r) => sum + r, 0);
@@ -74,12 +77,18 @@ export async function calculateTokenCorrelationRaw({
   const correlation = denominator !== 0 ? numerator / denominator : 0;
 
   return {
-    correlation: Math.round(correlation * 100) / 100, // Round to 2 decimal places
+    correlation: Math.round(correlation * 100) / 100,
   };
 }
 
 /**
  * Calculate correlation between two tokens with LLM-friendly output format (default)
+ *
+ * @param chainId - The chain ID of the tokens
+ * @param token0Address - The address of the first token
+ * @param token1Address - The address of the second token
+ * @param days - The number of days to calculate correlation for (default: 30)
+ * @returns The correlation between the two tokens in LLM-friendly format
  */
 export async function calculateTokenCorrelation({
   chainId,
@@ -101,13 +110,3 @@ export async function calculateTokenCorrelation({
   const llmResult = tokenCorrelationToLLM(result);
   return llmResult;
 }
-
-// Example usage
-// const result = await calculateTokenCorrelation({
-//   chainId: 1,
-//   token0Address: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599", // WBTC
-//   token1Address: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", // WETH
-// });
-
-// console.log(`Result:`, result);
-// // Output: { correlation: 0.91, stable_pair: true, impermanent_loss_risk: "low" }

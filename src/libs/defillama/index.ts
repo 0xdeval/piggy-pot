@@ -1,3 +1,5 @@
+import { logger } from "@/utils/logger";
+
 export interface Stablecoin {
   id: string;
   name: string;
@@ -20,9 +22,8 @@ export async function fetchStablecoins(): Promise<Stablecoin[]> {
     }
     const data = (await response.json()) as StablecoinsResponse;
 
-    // Check if the response has the expected structure
     if (!data || !data.peggedAssets || !Array.isArray(data.peggedAssets)) {
-      console.error("Error fetching stablecoins: Invalid response structure");
+      logger.error("Error fetching stablecoins: Invalid response structure");
       return [];
     }
 

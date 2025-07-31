@@ -12,14 +12,12 @@ export const OperationLogSchema = z.object({
   createdAt: z.date().optional(),
 });
 
-// Schema for creating a log - requires all fields except auto-generated ones
 export const CreateOperationLogSchema = OperationLogSchema.omit({
   logId: true,
   createDate: true,
   createdAt: true,
 });
 
-// Schema for updating a log
 export const UpdateOperationLogSchema = OperationLogSchema.partial().omit({
   logId: true,
   operationId: true,

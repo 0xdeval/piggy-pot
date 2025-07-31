@@ -26,7 +26,6 @@ export async function fetchTokensDetails(
   tokenAddresses.forEach((address) => params.append("addresses", address));
 
   const url = `https://api.1inch.dev/token/v1.3/${chainId}/custom?${params}`;
-  //   console.log("current token details url: ", url);
   const res = await fetch(url, {
     headers: {
       Authorization: `Bearer ${appConfig.oneInch.apiKey}`,

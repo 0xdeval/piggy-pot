@@ -12,6 +12,11 @@ interface TokenVolatilityParams {
 
 /**
  * Calculate annualized volatility and impermanent loss risk (raw data format)
+ *
+ * @param chainId - The chain ID of the token
+ * @param tokenAddress - The address of the token
+ * @param days - The number of days to calculate volatility for (default: 30)
+ * @returns The volatility and impermanent loss risk
  */
 export async function calculateTokenVolatilityRaw({
   chainId,
@@ -51,7 +56,6 @@ export async function calculateTokenVolatilityRaw({
   const dailyStd = Math.sqrt(variance);
   const annualizedVol = dailyStd * Math.sqrt(365) * 100;
 
-  // Determine impermanent loss risk based on volatility
   let impermanentLossRisk: "very low" | "moderate" | "high" | "very volatile";
   let isStableAsset: boolean;
 
@@ -78,6 +82,11 @@ export async function calculateTokenVolatilityRaw({
 
 /**
  * Calculate annualized volatility and impermanent loss risk with LLM-friendly output format (default)
+ *
+ * @param chainId - The chain ID of the token
+ * @param tokenAddress - The address of the token
+ * @param days - The number of days to calculate volatility for (default: 30)
+ * @returns The volatility and impermanent loss risk in LLM-friendly format
  */
 export async function calculateTokenVolatility({
   chainId,
@@ -93,12 +102,3 @@ export async function calculateTokenVolatility({
   const llmResult = tokenPriceVolatilityToLLM(result);
   return llmResult;
 }
-
-// // Example usage
-// const result = await calculateTokenVolatility({
-//   chainId: 1,
-//   tokenAddress: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
-// });
-
-// console.log(`Result:`, result);
-// // Output: { volatility: 34.2, isStableAsset: false, impermanentLossRisk: "high" }

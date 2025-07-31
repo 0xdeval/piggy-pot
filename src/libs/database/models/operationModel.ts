@@ -276,7 +276,6 @@ export class OperationModel {
               "dbRaw from Operation model:",
               dbRow.recommended_pools
             );
-            // If it's already an object (PostgreSQL JSONB parsed it), return it directly
             if (
               typeof dbRow.recommended_pools === "object" &&
               dbRow.recommended_pools !== null
@@ -284,10 +283,8 @@ export class OperationModel {
               return dbRow.recommended_pools;
             }
 
-            // If it's a string, try to parse it
             if (typeof dbRow.recommended_pools === "string") {
               try {
-                // Check if it's already a malformed string like "[object Obj"
                 if (dbRow.recommended_pools.startsWith("[object ")) {
                   logger.warn(
                     "Found malformed recommendedPools data, returning null",
@@ -306,7 +303,6 @@ export class OperationModel {
               }
             }
 
-            // If it's neither object nor string, log and return null
             logger.warn("Unexpected recommendedPools data type", {
               type: typeof dbRow.recommended_pools,
               value: String(dbRow.recommended_pools).substring(0, 50),

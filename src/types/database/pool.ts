@@ -1,6 +1,5 @@
 import { z } from "zod";
 
-// Schema for pool information
 export const PoolInfoSchema = z.object({
   feeTier: z.string(),
   id: z.string(),
@@ -21,7 +20,6 @@ export const PoolInfoSchema = z.object({
   isStablecoinPool: z.boolean(),
 });
 
-// Schema for token quality
 export const TokenQualitySchema = z.object({
   qualityScore: z.string(),
   trustworthiness: z.string(),
@@ -34,7 +32,6 @@ export const TokenQualityInfoSchema = z.object({
   token1: TokenQualitySchema.nullable(),
 });
 
-// Schema for impermanent loss
 export const PriceMovementSchema = z.object({
   change_percentage: z.number(),
   movement: z.string(),
@@ -57,14 +54,12 @@ export const ImpermanentLossSchema = z.object({
   hodl_vs_lp_comparison: HodlVsLpComparisonSchema,
 });
 
-// Schema for token correlation
 export const TokenCorrelationSchema = z.object({
   relationship: z.string(),
   assessment: z.string(),
   recommendation: z.string(),
 });
 
-// Schema for token volatility
 export const TokenPriceVolatilitySchema = z.object({
   volatilityInPercentage: z.number(),
   volatilityLevel: z.string(),
@@ -82,7 +77,6 @@ export const TokensVolatilitySchema = z.object({
   }),
 });
 
-// Schema for pool growth tendency
 export const PoolGrowthTendencySchema = z.object({
   poolGrowthTrendInPercentage: z.number(),
   trend: z.string(),
@@ -91,7 +85,6 @@ export const PoolGrowthTendencySchema = z.object({
   recommendation: z.string(),
 });
 
-// Schema for APY volatility
 export const ApyVolatilitySchema = z.object({
   stdDev: z.number(),
   mean: z.number(),
@@ -101,7 +94,6 @@ export const ApyVolatilitySchema = z.object({
   description: z.string(),
 });
 
-// Main pool schema
 export const PoolSchema = z.object({
   poolId: z.string(),
   poolInfo: PoolInfoSchema,
@@ -114,12 +106,10 @@ export const PoolSchema = z.object({
   updatedAt: z.date(),
 });
 
-// Schema for creating a pool - requires all fields except auto-generated ones
 export const CreatePoolSchema = PoolSchema.omit({
   updatedAt: true,
 });
 
-// Schema for updating a pool
 export const UpdatePoolSchema = PoolSchema.partial().omit({
   poolId: true,
   updatedAt: true,

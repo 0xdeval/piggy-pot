@@ -1,4 +1,4 @@
-import { getPoolsAndCalculateMetrics } from "@/processors/liquidityManagement/getPoolsAndCalculateMetrics";
+import { getPoolsAndCalculateMetrics } from "@/cron/getPoolsAndCalculateMetrics";
 import { PoolModel } from "@/libs/database/models/poolModel";
 import { CreatePool } from "@/types/database/pool";
 import { logger } from "@/utils/logger";
@@ -11,7 +11,6 @@ export async function fetchAndUpdatePoolsInDatabase() {
   try {
     logger.info("Starting pool fetch and database update process...");
 
-    // Fetch pools and calculate metrics
     const poolsWithMetrics = await getPoolsAndCalculateMetrics();
 
     if (!poolsWithMetrics || poolsWithMetrics.length === 0) {
@@ -31,10 +30,8 @@ export async function fetchAndUpdatePoolsInDatabase() {
     let errorCount = 0;
     const errors: string[] = [];
 
-    // Process each pool and upsert to database
     for (const poolData of poolsWithMetrics) {
       try {
-        // Transform the data to match the CreatePool type with null checks
         const createPoolData: CreatePool = {
           poolId: poolData.pool.id,
           poolInfo: poolData.pool,
@@ -49,7 +46,6 @@ export async function fetchAndUpdatePoolsInDatabase() {
           apyVolatility: poolData.apyVolatility,
         };
 
-        // Upsert the pool data to database
         const result = await PoolModel.upsert(createPoolData);
 
         if (result.success) {
@@ -64,7 +60,6 @@ export async function fetchAndUpdatePoolsInDatabase() {
           logger.error(errorMsg);
         }
 
-        // Add a small delay between database operations to avoid overwhelming the database
         await waitFor(100);
       } catch (error) {
         errorCount++;

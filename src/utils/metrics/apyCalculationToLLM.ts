@@ -2,6 +2,11 @@ import { APYVolatilityLLMOutput } from "@/types/metrics/llmFormats";
 
 /**
  * Calculate APY volatility stats with LLM-friendly output format
+ *
+ * @param stdDev - The standard deviation of the APY
+ * @param mean - The mean of the APY
+ * @param coefficientOfVariation - The coefficient of variation of the APY
+ * @returns The APY volatility stats in LLM-friendly format
  */
 export async function calculateAPYVolatilityForLLM({
   stdDev,
@@ -12,7 +17,6 @@ export async function calculateAPYVolatilityForLLM({
   mean: number;
   coefficientOfVariation: number;
 }): Promise<APYVolatilityLLMOutput> {
-  // Determine stability score and risk level
   let stabilityScore: string;
   let riskLevel: string;
   let description: string;

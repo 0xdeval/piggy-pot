@@ -27,13 +27,12 @@ export const OperationSchema = z.object({
       }),
     }
   ),
-  recommendedPools: z.any().optional(), // JSONB field for storing pool recommendations
-  profit: z.number().optional(), // Decimal field for storing profit/loss
+  recommendedPools: z.any().optional(),
+  profit: z.number().optional(),
   createdAt: z.date().optional(),
   updatedAt: z.date().optional(),
 });
 
-// Schema for creating an operation - requires all fields except auto-generated ones
 export const CreateOperationSchema = OperationSchema.omit({
   operationId: true,
   operationDate: true,
@@ -41,7 +40,6 @@ export const CreateOperationSchema = OperationSchema.omit({
   updatedAt: true,
 });
 
-// Schema for updating an operation
 export const UpdateOperationSchema = OperationSchema.partial().omit({
   operationId: true,
   userId: true,

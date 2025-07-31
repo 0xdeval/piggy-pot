@@ -1,5 +1,11 @@
 import { logger } from "@/utils/logger";
 
+/**
+ * Checks if a token is spam based on various patterns
+ *
+ * @param token - The token to check
+ * @returns True if the token is spam, false otherwise
+ */
 export function isSpamTokens(token: string): boolean {
   const spamPatterns = [
     /https?:\/\//i,

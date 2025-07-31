@@ -3,13 +3,15 @@ import { TokenCorrelationResult } from "@/types/metrics/rawFormat";
 
 /**
  * Convert token correlation calculations to LLM-friendly output format
+ *
+ * @param result - The token correlation result
+ * @returns The token correlation in LLM-friendly format
  */
 export function tokenCorrelationToLLM(
   result: TokenCorrelationResult
 ): TokenCorrelationLLMOutput {
   const { correlation } = result;
 
-  // Determine correlation strength description
   let relationship: string;
   let assessment: string;
   let recommendation: string;

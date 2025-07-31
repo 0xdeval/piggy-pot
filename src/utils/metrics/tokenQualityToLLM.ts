@@ -3,19 +3,20 @@ import { TokenQualityInfo } from "@/types/metrics/rawFormat";
 
 /**
  * Convert token quality evaluation to LLM-friendly output format
+ *
+ * @param tokenQuality - The token quality result
+ * @returns The token quality in LLM-friendly format
  */
 export function tokenQualityToLLM(
   tokenQuality: TokenQualityInfo[string]
 ): TokenQualityLLMOutput {
   const { hasInProviders, hasInternalTags, hasEip2612, rating } = tokenQuality;
 
-  // Calculate quality score based on all factors
   let qualityScore: string;
   let trustworthiness: string;
   let assessment: string;
   let recommendation: string;
 
-  // Calculate a composite score (0-10 scale)
   let compositeScore = 0;
   let factors = 0;
 
@@ -36,10 +37,8 @@ export function tokenQualityToLLM(
     factors++;
   }
 
-  // Normalize score to 0-10 scale
   const normalizedScore = factors > 0 ? (compositeScore / factors) * 2.5 : 0;
 
-  // Determine quality score and trustworthiness
   if (normalizedScore >= 8) {
     qualityScore = "Excellent";
     trustworthiness = "Very High";
@@ -77,7 +76,6 @@ export function tokenQualityToLLM(
       "This token shows very poor quality metrics. Strongly recommend avoiding this token for LP positions.";
   }
 
-  // Add specific details about individual factors
   const factorDetails = [];
   if (hasInProviders) {
     factorDetails.push("listed in major providers");
@@ -100,7 +98,6 @@ export function tokenQualityToLLM(
     factorDetails.push("no rating available");
   }
 
-  // Enhance assessment with specific details
   assessment += ` Specific factors: ${factorDetails.join(", ")}.`;
 
   return {

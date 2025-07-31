@@ -2,6 +2,7 @@ import { fetchPoolDayData } from "@/libs/subgraph/fetchPoolDayData";
 import { PoolGrowthTrendResult } from "@/types/metrics/rawFormat";
 import { PoolGrowthTrendLLMOutput } from "@/types/metrics/llmFormats";
 import { poolGrowthTrendToLLM } from "@/utils/metrics/poolGrowthTrendToLLM";
+import { logger } from "@/utils/logger";
 
 interface PoolGrowthTrendParams {
   poolId: string;
@@ -11,6 +12,11 @@ interface PoolGrowthTrendParams {
 
 /**
  * Calculate pool growth trend (raw data format)
+ *
+ * @param poolId - The ID of the pool to calculate pool growth trend for
+ * @param initialTimestamp - The timestamp of the initial price (in seconds)
+ * @param currentTVL - The current TVL of the pool
+ * @returns The pool growth trend in percentage
  */
 export async function calculatePoolGrowthTrendRaw({
   poolId,
@@ -20,7 +26,7 @@ export async function calculatePoolGrowthTrendRaw({
   const history = await fetchPoolDayData(poolId, initialTimestamp);
 
   if (!history.length) {
-    console.error("No historical data found for pool", poolId);
+    logger.error("No historical data found for pool", poolId);
     return null;
   }
 
