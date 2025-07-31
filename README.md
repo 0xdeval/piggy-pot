@@ -13,6 +13,14 @@ A comprehensive DeFi liquidity management and pool analysis platform that provid
 - **Automated Updates**: Daily cron jobs for pool data updates
 - **REST API**: Comprehensive API endpoints for data retrieval
 
+## 🏗️ System Architecture
+
+The application follows a modern architecture with real-time communication between components:
+
+![UI Backend Communication](docs/UI_BACKEND_COMMUNICATION.png)
+
+_System communication flow showing the interaction between UI, API, Database, and WebSocket components for real-time updates and recommendations._
+
 ## 📋 Table of Contents
 
 - [Getting Started](#getting-started)
@@ -37,7 +45,7 @@ A comprehensive DeFi liquidity management and pool analysis platform that provid
 1. **Clone the repository**
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/0xdeval/piggy-pot.git
    cd piggy-pot
    ```
 
