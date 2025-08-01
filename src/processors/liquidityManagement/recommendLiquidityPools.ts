@@ -9,6 +9,7 @@ import {
   RecommendLiquidityPoolsParams,
 } from "@/types/ai/pools";
 import { createRecommendationPrompt } from "@/utils/ai/prompts/recommendationPrompt";
+import { fetchTokenInfoForPools } from "@/utils/pools/getTokensByPoolId";
 
 /**
  * Processes pools in batches and gets LLM recommendations
@@ -128,11 +129,15 @@ export async function recommendLiquidityPools({
 
   const finalResults = currentRecommendations.slice(0, maxRecommendations);
 
+  // Fetch token information for the final recommendations
+  const poolIds = finalResults.map((rec: any) => rec.poolId);
+  const recommendationsWithTokenInfo = await fetchTokenInfoForPools(poolIds);
+
   logger.recommendation(`Final recommendations generated`, {
     userId,
-    recommendations: finalResults,
+    recommendations: recommendationsWithTokenInfo,
     totalPoolsEvaluated: filteredPools.length,
   });
 
-  return finalResults;
+  return recommendationsWithTokenInfo;
 }

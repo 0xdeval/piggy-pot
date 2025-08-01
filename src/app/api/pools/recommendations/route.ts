@@ -89,7 +89,7 @@ export async function POST(request: NextRequest) {
       description: "Pool recommendation request initiated",
       stepNumber: 1,
     } as CreateOperationLog;
-    createOperationLog(operation!.operationId, logRecord);
+    await createOperationLog(operation!.operationId, logRecord);
 
     logger.info(
       `Starting pool recommendations for user ${userResult.data!.userId}, volatile: ${isLookingForVolatilePool}`
