@@ -62,12 +62,16 @@ export async function recommendLiquidityPools({
     isLookingForVolatilePool,
   });
 
-  const poolsWithMetrics = await getPoolsFromDatabase();
+  let poolsWithMetrics = await getPoolsFromDatabase();
 
   if (!poolsWithMetrics || poolsWithMetrics.length === 0) {
     logger.error("No pools with metrics found", null, { userId });
     return [];
   }
+
+  // CURRENTLY POOLS ARE LIMITED TO 20 POOLS TO AVOID HIGH SPENDS ON LLM CALLS
+  // TODO: Optimize this part to use all pools and spend less on LLM calls
+  poolsWithMetrics = poolsWithMetrics.slice(0, 20);
 
   let filteredPools: PoolInfoWithMetrics[];
 
