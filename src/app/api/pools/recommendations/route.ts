@@ -26,7 +26,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (!investedAmount || !riskyInvestment || !nonRiskyInvestment) {
+    if (
+      investedAmount === undefined ||
+      investedAmount === null ||
+      riskyInvestment === undefined ||
+      riskyInvestment === null ||
+      nonRiskyInvestment === undefined ||
+      nonRiskyInvestment === null
+    ) {
       return NextResponse.json(
         {
           success: false,
