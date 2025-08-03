@@ -96,10 +96,28 @@ export async function POST(request: NextRequest) {
     );
 
     try {
-      const recommendations = await recommendLiquidityPools({
-        userId: userResult.data!.userId,
-        isLookingForVolatilePool,
-      });
+      // const recommendations = await recommendLiquidityPools({
+      //   userId: userResult.data!.userId,
+      //   isLookingForVolatilePool,
+      // });
+
+      // FOR A SMOOTHER DEMO EXPERIENCE WE ARE USING A FIXED RECOMMENDATION OF REAL POOLS DATA
+      // RECOMMENDATION WORKFLOW WORKS FINE WITH REAL POOLS DATA
+      const recommendations = [
+        {
+          poolId: "0xd0b53d9277642d899df5c87a3966a349a798f224",
+          feeTier: "500",
+          token0Symbol: "WETH",
+          token1Symbol: "USDC",
+          token0Name: "Wrapped Ether",
+          token1Name: "USD Coin",
+          token0: "0x4200000000000000000000000000000000000006",
+          token1: "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+          isStablecoinPool: false,
+          token0Decimals: 18,
+          token1Decimals: 6,
+        },
+      ];
 
       if (recommendations.length === 0) {
         logger.error(
